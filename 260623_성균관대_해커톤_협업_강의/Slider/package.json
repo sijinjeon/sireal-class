@@ -5,7 +5,7 @@
     "prebuild": "node scripts/merge-slides.js",
     "build": "marp --no-stdin dist/deck.md --theme theme/lecture.css --html --allow-local-files -o dist/index.html",
     "build:pdf": "marp --no-stdin dist/deck.md --theme theme/lecture.css --allow-local-files --pdf -o dist/slides.pdf",
-    "build:all": "npm run build && npm run build:pdf && node scripts/copy-to-docs.js",
+    "build:all": "npm run build && npm run build:pdf && node scripts/prepare-dist.js",
     "watch": "npm run build -- --watch",
     "preview": "npx serve dist -p 3456"
   },
