@@ -2,29 +2,35 @@ const fs = require('fs');
 const path = require('path');
 
 const distDir = path.join(__dirname, '..', 'dist');
-const docsDir = path.join(__dirname, '..', '..', '..', 'docs');
+const repoRoot = path.join(__dirname, '..', '..', '..');
+const docsDir = path.join(repoRoot, 'docs');
 
-const files = ['index.html', 'slides.pdf', '.nojekyll'];
+const files = ['index.html', 'slides.pdf'];
 
-fs.mkdirSync(docsDir, { recursive: true });
+const targets = [
+  { dir: docsDir, label: 'docs/' },
+  { dir: repoRoot, label: 'repo root (legacy Pages /)' },
+];
 
-for (const file of files) {
-  const src = path.join(distDir, file);
-  const dest = path.join(docsDir, file);
-  if (!fs.existsSync(src) && file !== '.nojekyll') {
-    console.error(`Missing build artifact: ${src}`);
-    process.exit(1);
-  }
-  if (fs.existsSync(src)) {
+for (const { dir, label } of targets) {
+  fs.mkdirSync(dir, { recursive: true });
+
+  for (const file of files) {
+    const src = path.join(distDir, file);
+    const dest = path.join(dir, file);
+    if (!fs.existsSync(src)) {
+      console.error(`Missing build artifact: ${src}`);
+      process.exit(1);
+    }
     fs.copyFileSync(src, dest);
-    console.log(`Copied ${file} → docs/`);
+    console.log(`Copied ${file} → ${label}`);
   }
-}
 
-// GitHub Pages 404 → 슬라이드 홈으로
-fs.writeFileSync(
-  path.join(docsDir, '404.html'),
-  `<!DOCTYPE html>
+  fs.writeFileSync(path.join(dir, '.nojekyll'), '');
+
+  fs.writeFileSync(
+    path.join(dir, '404.html'),
+    `<!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="utf-8">
@@ -38,6 +44,6 @@ fs.writeFileSync(
 <body><p><a href="/sireal-class/">해커톤 협업 강의 슬라이드로 이동</a></p></body>
 </html>
 `
-);
-
-console.log('Updated docs/404.html');
+  );
+  console.log(`Updated ${label}404.html`);
+}
