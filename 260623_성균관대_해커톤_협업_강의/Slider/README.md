@@ -25,6 +25,17 @@ Slider/
 
 ## 보기
 
+### GitHub Pages (iPad·모바일 포함)
+
+**https://sijinjeon.github.io/sireal-class/**
+
+> 저장소 Settings → Pages → Source를 **GitHub Actions**로 설정해야 합니다.
+
+- **HTML 슬라이드:** 위 URL (Safari에서 열기, 홈 화면 추가 가능)
+- **PDF:** https://sijinjeon.github.io/sireal-class/slides.pdf
+
+### 로컬
+
 - **바로 보기:** `dist/index.html`을 브라우저에서 연다
 - **키보드:** ← → 또는 Space로 넘김, F = 전체화면
 
@@ -33,11 +44,12 @@ Slider/
 ```bash
 cd Slider
 npm install
-npm run build      # slides/*.md → dist/index.html
-npm run preview    # http://localhost:3456
+npm run build:all    # HTML + PDF → docs/ (GitHub Pages용)
+npm run preview      # http://localhost:3456
 ```
 
-섹션별 `slides/` 파일을 수정한 뒤 `npm run build`를 실행하면 됩니다.
+섹션별 `slides/` 파일을 수정한 뒤 `npm run build:all`을 실행하면 `docs/`가 갱신됩니다.
+push하면 GitHub Actions가 Pages에 자동 배포합니다.
 
 ## 슬라이드 구성 (49장)
 
