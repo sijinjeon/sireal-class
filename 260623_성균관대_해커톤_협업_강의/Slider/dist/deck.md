@@ -36,6 +36,12 @@ footer: '전시진 (SIREAL) · 성균관대학교 해커톤 협업 강의'
 
 ---
 
+<!-- _class: intro-cover -->
+
+# 인트로
+
+---
+
 <!-- _class: intro -->
 
 <p class="t-meta">Intro</p>
@@ -91,15 +97,7 @@ footer: '전시진 (SIREAL) · 성균관대학교 해커톤 협업 강의'
 
 <!-- _class: section-cover -->
 
-<div class="cover-row">
-<span class="cover-num">01</span>
-<div>
-<p class="t-meta">Section 01</p>
-<h1>소통 창구 만들기</h1>
-</div>
-</div>
-
-<p class="lead">모든 기록이 모이는 팀의 단 하나의 창구</p>
+# 소통 창구 만들기
 
 ---
 
@@ -217,15 +215,7 @@ footer: '전시진 (SIREAL) · 성균관대학교 해커톤 협업 강의'
 
 <!-- _class: section-cover -->
 
-<div class="cover-row">
-<span class="cover-num">02</span>
-<div>
-<p class="t-meta">Section 02</p>
-<h1>아이데이션</h1>
-</div>
-</div>
-
-<p class="lead">판단은 보류, 양으로 승부</p>
+# 아이데이션
 
 ---
 
@@ -341,15 +331,7 @@ footer: '전시진 (SIREAL) · 성균관대학교 해커톤 협업 강의'
 
 <!-- _class: section-cover -->
 
-<div class="cover-row">
-<span class="cover-num">03</span>
-<div>
-<p class="t-meta">Section 03</p>
-<h1>아이디어 선별</h1>
-</div>
-</div>
-
-<p class="lead">딥리서치로 근거를 모으고, 심사 기준으로 1개를 고른다</p>
+# 아이디어 선별
 
 ---
 
@@ -474,15 +456,7 @@ footer: '전시진 (SIREAL) · 성균관대학교 해커톤 협업 강의'
 
 <!-- _class: section-cover -->
 
-<div class="cover-row">
-<span class="cover-num">04</span>
-<div>
-<p class="t-meta">Section 04</p>
-<h1>문서화</h1>
-</div>
-</div>
-
-<p class="lead">AI가 읽기 좋은 `docs/` — 구현·발표의 재료</p>
+# 문서화
 
 ---
 
@@ -600,15 +574,7 @@ footer: '전시진 (SIREAL) · 성균관대학교 해커톤 협업 강의'
 
 <!-- _class: section-cover -->
 
-<div class="cover-row">
-<span class="cover-num">05</span>
-<div>
-<p class="t-meta">Section 05</p>
-<h1>구현</h1>
-</div>
-</div>
-
-<p class="lead">`docs/`를 @첨부하고 Agent mode로 구현한다</p>
+# 구현
 
 ---
 
@@ -738,15 +704,7 @@ footer: '전시진 (SIREAL) · 성균관대학교 해커톤 협업 강의'
 
 <!-- _class: section-cover -->
 
-<div class="cover-row">
-<span class="cover-num">06</span>
-<div>
-<p class="t-meta">Section 06</p>
-<h1>오류수정</h1>
-</div>
-</div>
-
-<p class="lead">코드를 고치는 게 아니라, 잘 기록하고 AI에게 시킨다</p>
+# 오류수정
 
 ---
 
@@ -875,15 +833,7 @@ footer: '전시진 (SIREAL) · 성균관대학교 해커톤 협업 강의'
 
 <!-- _class: section-cover -->
 
-<div class="cover-row">
-<span class="cover-num">07</span>
-<div>
-<p class="t-meta">Section 07</p>
-<h1>발표준비</h1>
-</div>
-</div>
-
-<p class="lead">docs/를 재료로 — 목차 → 내용 → 디자인</p>
+# 발표준비
 
 ---
 
@@ -1010,17 +960,9 @@ footer: '전시진 (SIREAL) · 성균관대학교 해커톤 협업 강의'
 
 </div>
 
-<!-- _class: section-cover faq -->
+<!-- _class: section-cover -->
 
-<div class="cover-row">
-<span class="cover-num">—</span>
-<div>
-<p class="t-meta">FAQ</p>
-<h1>자주 묻는 질문</h1>
-</div>
-</div>
-
-<p class="lead">현장에서 나오는 질문 미리 답하기</p>
+# 자주 묻는 질문
 
 ---
 

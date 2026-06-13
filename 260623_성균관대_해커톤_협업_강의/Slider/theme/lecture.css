@@ -434,49 +434,67 @@ section.toc blockquote {
   margin-top: 0.85em;
 }
 
-/* ── Section cover (S01 cover-row) ── */
-section.section-cover {
+/* ── Intro cover (인트로 구간 표지) ── */
+section.intro-cover {
+  align-items: center;
+  background: var(--ink);
+  color: #f7f8f8;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  text-align: center;
 }
 
-section.section-cover .cover-row {
-  align-items: end;
-  border-top: 1px solid var(--ink);
-  display: grid;
-  gap: 3vw;
-  grid-template-columns: minmax(80px, 18vw) 1fr;
-  margin-bottom: 2.4vh;
-  padding: 2.4vh 0;
-}
-
-section.section-cover .cover-num {
-  color: var(--ink);
-  font-size: min(10vw, 16vh);
-  font-weight: 200;
-  letter-spacing: -0.05em;
-  line-height: 0.85;
-}
-
-section.section-cover h1 {
+section.intro-cover h1 {
   border: none;
-  font-size: min(4.2vw, 7vh);
-  font-weight: 300;
-  letter-spacing: -0.035em;
-  line-height: 1.05;
+  color: inherit;
+  font-size: min(10vw, 14vh);
+  font-weight: 200;
+  letter-spacing: -0.04em;
+  line-height: 1;
   margin: 0;
   padding: 0;
 }
 
-section.section-cover .lead {
-  margin: 0;
+section.intro-cover::after {
+  color: rgba(255, 255, 255, 0.45) !important;
 }
 
 /* ── Intro body slides ── */
 section.intro h1 {
   font-size: 1.25em;
   font-weight: 400;
+}
+
+/* ── Section cover — 섹션명만 ── */
+section.section-cover {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+}
+
+section.section-cover h1 {
+  border: none;
+  font-size: min(8vw, 12vh);
+  font-weight: 300;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+  margin: 0;
+  padding: 0;
+}
+
+section.section-cover::before {
+  background: var(--primary);
+  content: '';
+  height: 3px;
+  left: var(--pad-x);
+  position: absolute;
+  right: var(--pad-x);
+  top: var(--pad-top);
+  width: auto;
 }
 
 /* ── Closing (S10-inspired) ── */

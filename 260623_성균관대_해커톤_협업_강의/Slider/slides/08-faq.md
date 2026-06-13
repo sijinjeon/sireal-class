@@ -5,17 +5,9 @@ paginate: true
 footer: 'FAQ · 전시진 (SIREAL)'
 ---
 
-<!-- _class: section-cover faq -->
+<!-- _class: section-cover -->
 
-<div class="cover-row">
-<span class="cover-num">—</span>
-<div>
-<p class="t-meta">FAQ</p>
-<h1>자주 묻는 질문</h1>
-</div>
-</div>
-
-<p class="lead">현장에서 나오는 질문 미리 답하기</p>
+# 자주 묻는 질문
 
 ---
 

@@ -36,6 +36,12 @@ footer: '전시진 (SIREAL) · 성균관대학교 해커톤 협업 강의'
 
 ---
 
+<!-- _class: intro-cover -->
+
+# 인트로
+
+---
+
 <!-- _class: intro -->
 
 <p class="t-meta">Intro</p>
