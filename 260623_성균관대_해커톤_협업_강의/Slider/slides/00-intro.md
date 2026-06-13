@@ -7,11 +7,11 @@ footer: '전시진 (SIREAL) · 성균관대학교 해커톤 협업 강의'
 
 <!-- _class: title -->
 
+<p class="eyebrow">SIREAL · 성균관대학교</p>
+
 # 해커톤 협업 강의
 
 ## 개발자와 비개발자가 AI와 함께 프로젝트를 완성하는 방법
-
-전시진 (SIREAL) · 성균관대학교
 
 ---
 
