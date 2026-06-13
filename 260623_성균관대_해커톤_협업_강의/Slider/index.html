@@ -1,0 +1,1656 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>해커톤 협업 강의 | 전시진 (SIREAL)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* ===== CSS VARIABLES ===== */
+:root {
+  --grad-start: #6366f1;
+  --grad-mid: #ec4899;
+  --grad-end: #f97316;
+  --accent: #fbbf24;
+  --white: #ffffff;
+  --white-70: rgba(255,255,255,0.7);
+  --white-50: rgba(255,255,255,0.5);
+  --white-20: rgba(255,255,255,0.2);
+  --white-10: rgba(255,255,255,0.1);
+}
+
+/* ===== RESET & BASE ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  width: 100%; height: 100%;
+  overflow: hidden;
+  font-family: 'Pretendard Variable', 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #0f0f14;
+  color: #fff;
+}
+
+/* ===== DECK & SLIDE ===== */
+.deck {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 80px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.45s ease;
+  overflow: hidden;
+}
+
+.slide.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* ===== GRADIENT CLASSES ===== */
+.slide-grad-1  { background: linear-gradient(135deg, #6366f1, #a855f7, #ec4899); }
+.slide-grad-2  { background: linear-gradient(135deg, #7c3aed, #db2777, #f97316); }
+.slide-grad-3  { background: linear-gradient(135deg, #6366f1, #ec4899, #f97316); }
+.slide-grad-4  { background: linear-gradient(135deg, #4f46e5, #7c3aed, #a855f7); }
+.slide-grad-5  { background: linear-gradient(135deg, #ec4899, #f97316, #fbbf24); }
+.slide-grad-6  { background: linear-gradient(135deg, #7c3aed, #6366f1, #06b6d4); }
+.slide-grad-7  { background: linear-gradient(135deg, #be185d, #7c3aed, #6366f1); }
+.slide-grad-8  { background: linear-gradient(135deg, #4f46e5, #ec4899, #f43f5e); }
+.slide-grad-9  { background: linear-gradient(135deg, #1e1b4b, #312e81, #4c1d95); }
+.slide-grad-10 { background: linear-gradient(135deg, #f97316, #ec4899, #a855f7); }
+.slide-grad-11 { background: linear-gradient(135deg, #6366f1, #a855f7, #ec4899, #f97316); }
+
+/* ===== TYPOGRAPHY ===== */
+.xl { font-size: 84px; font-weight: 900; line-height: 1.05; letter-spacing: -2px; }
+.lg { font-size: 56px; font-weight: 800; line-height: 1.1; letter-spacing: -1px; }
+.md { font-size: 36px; font-weight: 700; line-height: 1.2; }
+.sm { font-size: 22px; font-weight: 400; line-height: 1.4; }
+.xs { font-size: 14px; font-weight: 400; }
+.text-center { text-align: center; }
+.text-muted { color: rgba(255,255,255,0.6); }
+.mb-1 { margin-bottom: 8px; }
+.mb-2 { margin-bottom: 16px; }
+
+/* ===== ANIMATION ===== */
+.a {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.slide.active .a {
+  opacity: 1;
+  transform: translateY(0);
+}
+.slide.active .a:nth-child(1)  { transition-delay: 0.05s; }
+.slide.active .a:nth-child(2)  { transition-delay: 0.12s; }
+.slide.active .a:nth-child(3)  { transition-delay: 0.19s; }
+.slide.active .a:nth-child(4)  { transition-delay: 0.26s; }
+.slide.active .a:nth-child(5)  { transition-delay: 0.33s; }
+.slide.active .a:nth-child(6)  { transition-delay: 0.40s; }
+.slide.active .a:nth-child(7)  { transition-delay: 0.47s; }
+.slide.active .a:nth-child(8)  { transition-delay: 0.54s; }
+.slide.active .a:nth-child(9)  { transition-delay: 0.61s; }
+.slide.active .a:nth-child(10) { transition-delay: 0.68s; }
+.slide.active .a:nth-child(11) { transition-delay: 0.75s; }
+.slide.active .a:nth-child(12) { transition-delay: 0.82s; }
+
+/* ===== TITLE SLIDE ===== */
+.title-slide {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 20px;
+}
+.title-slide .tag {
+  display: inline-block;
+  padding: 6px 18px;
+  background: rgba(255,255,255,0.2);
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.title-slide .subtitle {
+  font-size: 24px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.8);
+  max-width: 700px;
+}
+.title-slide .date-text {
+  font-size: 16px;
+  color: rgba(255,255,255,0.55);
+  margin-top: 8px;
+}
+
+/* ===== AGENDA LIST ===== */
+.agenda-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  max-width: 640px;
+  margin-top: 8px;
+}
+.agenda-list li {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 22px;
+  font-weight: 500;
+  padding: 14px 20px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 14px;
+  backdrop-filter: blur(8px);
+}
+.agenda-list .num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 40px;
+  background: var(--accent);
+  color: #1e1b4b;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  flex-shrink: 0;
+}
+
+/* ===== CONTENT BODY ===== */
+.content-body {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 900px;
+}
+.content-body .divider {
+  width: 60px;
+  height: 4px;
+  background: var(--accent);
+  border-radius: 4px;
+  margin: 12px 0 4px;
+}
+.content-body ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 20px;
+}
+.content-body ul li {
+  font-size: 20px;
+  line-height: 1.55;
+  color: rgba(255,255,255,0.85);
+  padding-left: 24px;
+  position: relative;
+}
+.content-body ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+.highlight {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* ===== QUOTE BLOCK ===== */
+.quote-block {
+  background: rgba(255,255,255,0.1);
+  border-left: 4px solid var(--accent);
+  border-radius: 0 16px 16px 0;
+  padding: 24px 32px;
+  max-width: 760px;
+  width: 100%;
+}
+.quote-text {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.5;
+  color: rgba(255,255,255,0.95);
+}
+
+/* ===== COMPARE GRID ===== */
+.compare-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  width: 100%;
+  max-width: 900px;
+  margin-top: 24px;
+}
+
+/* ===== FLOW CONTAINER ===== */
+.flow-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  max-width: 1000px;
+}
+.flow-step {
+  position: relative;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 20px;
+  padding: 24px 20px;
+  text-align: center;
+  min-width: 150px;
+  flex: 1;
+  backdrop-filter: blur(8px);
+  overflow: hidden;
+}
+.step-glow {
+  position: absolute;
+  top: -40px; left: 50%;
+  transform: translateX(-50%);
+  width: 100px; height: 100px;
+  background: var(--accent);
+  border-radius: 50%;
+  opacity: 0.15;
+  filter: blur(30px);
+  pointer-events: none;
+}
+.step-num {
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--accent);
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+.step-title {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: #fff;
+}
+.step-desc {
+  font-size: 13px;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.4;
+}
+.flow-arrow {
+  font-size: 22px;
+  color: rgba(255,255,255,0.4);
+  flex-shrink: 0;
+}
+
+/* ===== CARDS GRID ===== */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  width: 100%;
+  max-width: 860px;
+  margin-top: 24px;
+}
+.glass-card {
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 20px;
+  padding: 28px 24px;
+  backdrop-filter: blur(12px);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.card-icon { font-size: 32px; }
+.glass-card h3 { font-size: 20px; font-weight: 700; }
+.glass-card p { font-size: 15px; color: rgba(255,255,255,0.75); line-height: 1.5; }
+
+/* ===== CLOSING SLIDE ===== */
+.closing-slide {
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-align: center;
+}
+.closing-title { font-size: 80px; font-weight: 900; letter-spacing: -3px; }
+.closing-sub {
+  font-size: 20px;
+  color: rgba(255,255,255,0.8);
+  line-height: 1.6;
+  max-width: 800px;
+}
+.closing-slide .date-text {
+  font-size: 16px;
+  color: rgba(255,255,255,0.5);
+  margin-top: 16px;
+}
+
+/* ===== SECTION COVER ===== */
+.section-cover {
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+.section-num {
+  font-size: 160px;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -6px;
+  color: rgba(255,255,255,0.15);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -55%);
+}
+.section-title {
+  font-size: 52px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+.section-subtitle {
+  font-size: 20px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.7);
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  margin-top: 8px;
+}
+
+/* ===== NUMBERED LIST ===== */
+.num-list {
+  list-style: none;
+  width: 100%;
+  max-width: 860px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 24px;
+}
+.num-list li {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  font-size: 19px;
+  line-height: 1.5;
+  color: rgba(255,255,255,0.85);
+}
+.num-list .n {
+  min-width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #1e1b4b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 800;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.num-list li strong { color: #fff; }
+
+/* ===== DATA TABLE ===== */
+.data-table {
+  width: 100%;
+  max-width: 900px;
+  border-collapse: collapse;
+  margin-top: 28px;
+  font-size: 17px;
+}
+.data-table th {
+  padding: 12px 18px;
+  background: rgba(255,255,255,0.15);
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: left;
+}
+.data-table td {
+  padding: 13px 18px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.82);
+  line-height: 1.5;
+}
+.data-table tr:last-child td { border-bottom: none; }
+.data-table tr:hover td { background: rgba(255,255,255,0.06); }
+.data-table td strong { color: #fff; }
+
+/* ===== TWO-COLUMN LAYOUT ===== */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  width: 100%;
+  max-width: 1000px;
+  margin-top: 24px;
+}
+.two-col-item {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 20px;
+  padding: 28px;
+  backdrop-filter: blur(8px);
+}
+.two-col-item h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: var(--accent);
+}
+.two-col-item ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.two-col-item ul li {
+  font-size: 16px;
+  line-height: 1.5;
+  color: rgba(255,255,255,0.8);
+  padding-left: 20px;
+  position: relative;
+}
+.two-col-item ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+/* ===== WARNING BOX ===== */
+.warn-box {
+  width: 100%;
+  max-width: 860px;
+  background: rgba(251,191,36,0.15);
+  border: 1px solid rgba(251,191,36,0.4);
+  border-radius: 16px;
+  padding: 16px 24px;
+  margin-top: 20px;
+  font-size: 17px;
+  color: rgba(255,255,255,0.9);
+  line-height: 1.6;
+}
+.warn-box strong { color: var(--accent); }
+
+/* ===== BIG QUOTE ===== */
+.big-quote {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--accent);
+  text-align: center;
+  line-height: 1.4;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* ===== FAQ ===== */
+.faq-q {
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 24px;
+  color: var(--accent);
+}
+.faq-answer {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+/* ===== FLOW DIAGRAM ===== */
+.flow-diagram {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 32px;
+}
+.flow-pill {
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 700;
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.25);
+  white-space: nowrap;
+}
+.flow-pill.loop {
+  background: rgba(251,191,36,0.2);
+  border-color: rgba(251,191,36,0.5);
+  color: var(--accent);
+}
+.flow-arr {
+  font-size: 18px;
+  color: rgba(255,255,255,0.4);
+}
+.flow-loop-label {
+  font-size: 13px;
+  color: var(--accent);
+  text-align: center;
+  margin-top: 8px;
+}
+
+/* ===== CODE ===== */
+code {
+  font-family: 'JetBrains Mono', monospace;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 6px;
+  padding: 2px 8px;
+  font-size: 0.9em;
+}
+
+/* ===== UI OVERLAY ===== */
+#progress-bar {
+  position: fixed;
+  top: 0; left: 0;
+  height: 3px;
+  background: var(--accent);
+  transition: width 0.3s ease;
+  z-index: 1000;
+}
+#counter {
+  position: fixed;
+  bottom: 20px; right: 28px;
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.5);
+  z-index: 1000;
+  letter-spacing: 0.5px;
+}
+#hint {
+  position: fixed;
+  bottom: 20px; left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  color: rgba(255,255,255,0.3);
+  z-index: 1000;
+  white-space: nowrap;
+  pointer-events: none;
+}
+#notes-btn {
+  position: fixed;
+  bottom: 16px; right: 80px;
+  padding: 6px 14px;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.6);
+  cursor: pointer;
+  z-index: 1000;
+  font-family: inherit;
+  transition: background 0.2s;
+}
+#notes-btn:hover { background: rgba(255,255,255,0.2); }
+#notes-panel {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  background: rgba(15,15,20,0.95);
+  border-top: 1px solid rgba(255,255,255,0.15);
+  padding: 20px 40px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.85);
+  max-height: 160px;
+  overflow-y: auto;
+  z-index: 999;
+  display: none;
+  backdrop-filter: blur(12px);
+}
+#notes-panel.visible { display: block; }
+#nav-prev, #nav-next {
+  position: fixed;
+  top: 0; bottom: 0;
+  width: 33%;
+  z-index: 100;
+  cursor: pointer;
+  opacity: 0;
+}
+#nav-prev { left: 0; }
+#nav-next { right: 0; width: 67%; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .slide { padding: 40px 30px; }
+  .xl { font-size: 52px; }
+  .lg { font-size: 38px; }
+  .section-num { font-size: 90px; }
+  .section-title { font-size: 32px; }
+  .two-col { grid-template-columns: 1fr; gap: 16px; }
+  .data-table { font-size: 13px; }
+  .faq-q { font-size: 22px; }
+  .cards-grid { grid-template-columns: 1fr; }
+  .flow-container { flex-direction: column; }
+  .agenda-list li { font-size: 16px; }
+}
+</style>
+</head>
+<body>
+
+<div id="progress-bar"></div>
+<div id="counter"></div>
+<div id="hint">← → 이동 &middot; F 전체화면 &middot; S 발표자 노트</div>
+<button id="notes-btn">발표자 노트 (S)</button>
+<div id="notes-panel"></div>
+
+<div class="deck">
+
+  <!-- Slide 01 -->
+  <div class="slide slide-grad-1 title-slide active" data-notes="오늘 강의에 오신 것을 환영합니다. 개발자가 아니어도 AI와 함께라면 해커톤 프로젝트를 완성할 수 있다는 것을 보여드릴게요.">
+    <span class="a tag">성균관대학교 해커톤</span>
+    <h1 class="a xl text-center">해커톤 협업 강의</h1>
+    <p class="a subtitle">개발자와 비개발자가 AI와 함께 프로젝트를 완성하는 방법</p>
+    <p class="a date-text">전시진 (SIREAL) &middot; 2026. 06. 23</p>
+  </div>
+
+  <!-- Slide 02 -->
+  <div class="slide slide-grad-2" data-notes="아이데이션 ↔ 아이디어 선별은 순서가 아니라 반복 루프임을 목차 설명 시 한 번 언급한다.">
+    <h2 class="a lg mb-2">오늘의 흐름</h2>
+    <ol class="a agenda-list">
+      <li class="a"><span class="num">01</span> 소통 창구 만들기</li>
+      <li class="a"><span class="num">02</span> 아이데이션</li>
+      <li class="a"><span class="num">03</span> 아이디어 선별</li>
+      <li class="a"><span class="num">04</span> 문서화</li>
+      <li class="a"><span class="num">05</span> 구현</li>
+      <li class="a"><span class="num">06</span> 오류수정</li>
+      <li class="a"><span class="num">07</span> 발표준비</li>
+      <li class="a"><span class="num">FAQ</span> 자주 묻는 질문</li>
+    </ol>
+  </div>
+
+  <!-- Slide 03 -->
+  <div class="slide slide-grad-3" data-notes="'코딩을 모르면 해커톤에서 할 게 없다'는 생각을 깨는 것이 이 강의의 출발점이다.">
+    <div class="content-body">
+      <p class="a sm text-muted">강의 목적</p>
+      <div class="a divider"></div>
+      <h2 class="a lg" style="margin-top:8px">이 강의는 무엇을 위한 것인가</h2>
+      <ul class="a">
+        <li class="a"><span class="highlight">개발자 + 비개발자</span>가 섞인 팀이 함께 움직이는 방법</li>
+        <li class="a">코딩을 잘 못해도 <span class="highlight">AI와 함께라면</span> 해커톤 프로젝트를 끝까지 완성할 수 있다</li>
+        <li class="a">핵심은 직접 만드는 것이 아니라 <span class="highlight">AI에게 잘 시키는 것</span></li>
+        <li class="a">잘 시키려면 <span class="highlight">명확한 기록과 문서</span>가 반드시 필요하다</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Slide 04 -->
+  <div class="slide slide-grad-4" data-notes="이 두 가지가 오늘 강의 전체를 관통하는 핵심이다. 슬라이드 곳곳에서 반복해서 언급될 것이다.">
+    <div class="content-body" style="max-width:860px">
+      <p class="a sm text-muted">핵심 원칙</p>
+      <div class="a divider"></div>
+      <h2 class="a lg" style="margin-top:8px">기억할 핵심 두 가지</h2>
+    </div>
+    <div class="a two-col" style="max-width:860px; margin-top:24px">
+      <div class="two-col-item">
+        <h3>① AI에게 "잘 시키는" 시대</h3>
+        <ul>
+          <li>직접 만드는 게 아니라 AI에게 시키는 시대</li>
+          <li>잘 시키려면 <strong>기록과 문서</strong>가 필요하다</li>
+          <li>결과물의 품질 = <strong>지시문의 품질</strong></li>
+        </ul>
+      </div>
+      <div class="two-col-item">
+        <h3>② 모든 것은 노션에 기록으로</h3>
+        <ul>
+          <li>모든 대화·자료·결정은 <strong>노션에 기록</strong></li>
+          <li>그 기록이 AI가 일하는 <strong>재료(컨텍스트)</strong></li>
+          <li>기록하지 않은 것 = 존재하지 않는 것</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 05 -->
+  <div class="slide slide-grad-5" data-notes="전체 흐름을 처음에 한 번 보여주고, 각 섹션 시작 시 '지금 여기 있습니다'처럼 위치를 짚어주면 수강생이 흐름을 놓치지 않는다.">
+    <div class="content-body" style="max-width:960px; align-items:center; display:flex; flex-direction:column">
+      <p class="a sm text-muted">전체 구조</p>
+      <div class="a divider"></div>
+      <h2 class="a lg" style="margin-top:8px; text-align:center">전체 흐름</h2>
+      <div class="a flow-diagram" style="margin-top:36px">
+        <span class="flow-pill">소통 창구</span>
+        <span class="flow-arr">→</span>
+        <span class="flow-pill loop">아이데이션</span>
+        <span class="flow-arr" style="color:var(--accent); font-weight:900">↔</span>
+        <span class="flow-pill loop">아이디어 선별</span>
+        <span class="flow-arr">→</span>
+        <span class="flow-pill">문서화</span>
+        <span class="flow-arr">→</span>
+        <span class="flow-pill">구현</span>
+        <span class="flow-arr">→</span>
+        <span class="flow-pill">오류수정</span>
+        <span class="flow-arr">→</span>
+        <span class="flow-pill">발표준비</span>
+      </div>
+      <p class="a flow-loop-label" style="margin-top:16px">↔ 반복 루프 — 좋은 아이디어가 나올 때마다 바로 딥리서치를 돌린다</p>
+      <ul class="a" style="max-width:700px; margin-top:24px">
+        <li class="a"><span class="highlight">아이데이션 ↔ 아이디어 선별</span>은 순서가 아니라 반복 루프다</li>
+        <li class="a">나머지 단계는 순서대로 진행한다</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Slide 06 -->
+  <div class="slide slide-grad-6" data-notes="각 섹션을 설명할 때 항상 이 5요소 순서를 따른다. 팀 활동도 이 순서로 진행하면 된다.">
+    <h2 class="a lg text-center mb-1">각 단계마다 같은 5요소</h2>
+    <div class="a flow-container" style="margin-top:40px">
+      <div class="a flow-step">
+        <div class="step-glow"></div>
+        <div class="step-num">01</div>
+        <div class="step-title">방법·순서</div>
+        <div class="step-desc">무엇을 어떤 순서로</div>
+      </div>
+      <div class="a flow-arrow">&rarr;</div>
+      <div class="a flow-step">
+        <div class="step-glow"></div>
+        <div class="step-num">02</div>
+        <div class="step-title">도구</div>
+        <div class="step-desc">무엇을 사용해서</div>
+      </div>
+      <div class="a flow-arrow">&rarr;</div>
+      <div class="a flow-step">
+        <div class="step-glow"></div>
+        <div class="step-num">03</div>
+        <div class="step-title">규칙</div>
+        <div class="step-desc">꼭 지켜야 할 것 ← 핵심</div>
+      </div>
+      <div class="a flow-arrow">&rarr;</div>
+      <div class="a flow-step">
+        <div class="step-glow"></div>
+        <div class="step-num">04</div>
+        <div class="step-title">실습</div>
+        <div class="step-desc">직접 해본다</div>
+      </div>
+      <div class="a flow-arrow">&rarr;</div>
+      <div class="a flow-step">
+        <div class="step-glow"></div>
+        <div class="step-num">05</div>
+        <div class="step-title">점검</div>
+        <div class="step-desc">잘 됐는지 확인</div>
+      </div>
+    </div>
+    <p class="a sm text-muted text-center" style="margin-top:28px">이것만 지켜도 절반은 성공</p>
+  </div>
+
+  <!-- Slide 07 -->
+  <div class="slide slide-grad-7 section-cover" data-notes="1번 섹션 시작. 팀이 함께 쓸 공간을 만드는 단계다.">
+    <div class="a section-num">01</div>
+    <div class="a section-title">소통 창구 만들기</div>
+    <div class="a section-subtitle">모든 기록이 모이는 팀의 단 하나의 창구</div>
+  </div>
+
+  <!-- Slide 08 -->
+  <div class="slide slide-grad-8" data-notes="복잡하게 생각할 필요 없다. 노션 페이지 하나 + 데이터베이스 하나면 충분하다.">
+    <div class="content-body">
+      <p class="a sm text-muted">소통 창구 만들기</p>
+      <div class="a divider"></div>
+      <h2 class="a lg" style="margin-top:8px">방법 · 순서</h2>
+      <ol class="a num-list">
+        <li class="a"><span class="n">1</span><div>노션 <strong>페이지</strong> 생성 — 팀 전용 공간을 만든다</div></li>
+        <li class="a"><span class="n">2</span><div><strong>팀원 전원 초대</strong> — 한 명이라도 빠지면 그 사람의 기록이 단절된다</div></li>
+        <li class="a"><span class="n">3</span><div>페이지 안에 <strong>데이터베이스</strong> 생성 — 문서를 종류별로 쌓을 그릇</div></li>
+        <li class="a"><span class="n">4</span><div>각종 문서를 <strong>종류별</strong>로 정리 — 회의록 / 자료 / 할 일 / 문서</div></li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- Slide 09 -->
+  <div class="slide slide-grad-9" data-notes="`종류` 속성 하나만 있어도 나중에 AI(MCP)가 특정 종류의 문서만 뽑아서 요약하거나 활용할 수 있다.">
+    <div class="content-body">
+      <p class="a sm text-muted">소통 창구 만들기</p>
+      <div class="a divider"></div>
+      <h2 class="a lg" style="margin-top:8px">도구</h2>
+      <ul class="a">
+        <li class="a"><span class="highlight">Notion</span> — 팀 문서의 단일 허브</li>
+        <li class="a">복잡한 DB 구조는 필요 없다 — 단순할수록 팀이 잘 쓴다</li>
+        <li class="a"><span class="highlight"><code>`종류` 속성(select) 하나</code></span>만 달면 충분 — 회의록 / 자료 / 할 일 / 문서</li>
+        <li class="a">나중에 <span class="highlight">MCP 연결</span> 시 "회의록만 모아줘" 같은 AI 활용이 가능</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Slide 10 -->
+  <div class="slide slide-grad-10" data-notes="AI 노트를 켜지 않은 회의 = 흔적이 사라진다. 기록 없는 아이디어는 존재하지 않는다.">
+    <div class="content-body">
+      <p class="a sm text-muted">소통 창구 만들기</p>
+      <div class="a divider"></div>
+      <h2 class="a lg" style="margin-top:8px">규칙</h2>
+      <ol class="a num-list">
+        <li class="a"><span class="n">1</span><div><strong>매 회의 시작 시 AI 회의 노트를 켠다</strong> ← 가장 중요</div></li>
+        <li class="a"><span class="n">2</span><div>모든 자료·기록은 노션 <strong>한곳</strong>에 — 카톡·슬랙으로 분산 금지</div></li>
+        <li class="a"><span class="n">3</span><div>제목은 나중에 봐도 알아볼 수 있게 — "회의1", "메모" 금지</div></li>
+        <li class="a"><span class="n">4</span><div><code>`종류`</code> 속성 <strong>하나만</strong> — 복잡한 태그는 쓸 일 없다</div></li>
+        <li class="a"><span class="n">5</span><div>좋은 의견·결정은 반드시 <strong>문서로</strong> 남긴다</div></li>
+      </ol>
+      <div class="a warn-box">⚠️ AI 노트를 켜지 않은 회의 = 흔적이 사라진다</div>
+    </div>
+  </div>
+
+  <!-- Slide 11 -->
+  <div class="slide slide-grad-11" data-notes="실습이 끝나면 전원 초대 여부와 첫 문서 저장 여부를 팀별로 확인한다.">
+    <div class="content-body">
+      <p class="a sm text-muted">소통 창구 만들기</p>
+      <div class="a divider"></div>
+      <h2 class="a lg" style="margin-top:8px">실습 · 점검</h2>
+    </div>
+    <div class="a two-col" style="margin-top:24px">
+      <div class="two-col-item">
+        <h3>실습</h3>
+        <ul>
+          <li>노션 페이지 만들고 팀원 <strong>전원</strong> 초대</li>
+          <li>데이터베이스 생성 → <strong>`종류` 속성</strong> 추가</li>
+          <li>첫 항목(오늘 회의록) 올려보기</li>
+        </ul>
+      </div>
+      <div class="two-col-item">
+        <h3>점검</h3>
+        <ul>
+          <li>팀원이 전원 초대됐는가?</li>
+          <li>데이터베이스에 `종류` 속성이 있는가?</li>
+          <li>첫 문서가 노션 <strong>한곳</strong>에 저장됐는가?</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 12 -->
+  <div class="slide slide-grad-1 section-cover" data-notes="2번 섹션 시작. 판단은 보류하고 양으로 승부한다.">
+    <div class="a section-num">02</div>
+    <div class="a section-title">아이데이션</div>
+    <div class="a section-subtitle">판단은 보류, 양으로 승부 — 좋은 아이디어엔 즉시 딥리서치</div>
+  </div>
+
+  <!-- Slide 13 -->
+  <div class="slide slide-grad-2" data-notes="아이데이션과 아이디어 선별은 순서가 아니라 병렬로 돌아간다. '딥리서치를 돌려두고 계속 아이디어를 내자'는 감각을 심어주는 것이 핵심.">
+    <div class="content-body">
+      <p class="a sm text-muted">아이데이션</p>
+      <div class="a divider"></div>
+      <h2 class="a lg" style="margin-top:8px">방법 · 순서</h2>
+      <ol class="a num-list">
+        <li class="a"><span class="n">1</span><div><strong>문제 정의</strong> — 우리 팀이 풀 문제가 무엇인지 먼저 좁힌다</div></li>
+        <li class="a"><span class="n">2</span><div><strong>자료 수집</strong> — 관련 뉴스·데이터·사례를 모은다</div></li>
+        <li class="a"><span class="n">3</span><div><strong>회의로 아이디어 쏟아내기</strong> — 비판 없이 양으로 승부</div></li>
+        <li class="a"><span class="n">4</span><div><strong>괜찮은 아이디어 → 즉시 딥리서치 시작</strong> ← 핵심</div></li>
+      </ol>
+      <div class="a warn-box">딥리서치는 시간이 걸린다. 아이디어가 나올 때마다 바로 돌려두면 아이데이션을 계속하면서 결과를 기다릴 수 있다.</div>
+    </div>
+  </div>
+
+  <!-- Slide 14 -->
+  <div class="slide slide-grad-3" data-notes="팀원 전체가 노션 유료 플랜이 아니면 클로바노트로 대체. 딥리서치 도구는 팀원 각자가 쓰는 걸로 시작하면 된다.">
+    <div class="content-body">
+      <p class="a sm text-muted">아이데이션</p>
+      <div class="a divider"></div>
+      <h2 class="a lg" style="margin-top:8px">도구</h2>
+    </div>
+    <div class="a two-col" style="margin-top:20px">
+      <div class="two-col-item">
+        <h3>회의 기록</h3>
+        <ul>
+          <li><strong>노션 AI 노트</strong> (우선) — 자동 기록·요약</li>
+          <li><strong>클로바노트</strong> (대안) — 웹 접속 가능</li>
+        </ul>
+      </div>
+      <div class="two-col-item">
+        <h3>딥리서치 (즉시)</h3>
+        <ul>
+          <li><strong>Gemini Deep Research</strong> — 긴 리포트, 출처 포함</li>
+          <li><strong>ChatGPT Deep Research</strong> — 단계별, 근거 풍부</li>
+          <li><strong>Claude</strong> — 문서 분석·구조화 평가</li>
+          <li><strong>Perplexity</strong> — 빠른 팩트체크</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 15 -->
+  <div class="slide slide-grad-4" data-notes="비판 금지 규칙이 가장 중요하다. 초반에 아이디어를 죽이면 팀 전체가 위축된다.">
+    <div class="content-body">
+      <p class="a sm text-muted">아이데이션</p>
+      <div class="a divider"></div>
+      <h2 class="a lg" style="margin-top:8px">규칙</h2>
+      <ul class="a">
+        <li class="a">회의 시작과 동시에 <span class="highlight">AI 노트부터</span> 켠다</li>
+        <li class="a">다른 사람 아이디어 <span class="highlight">비판 금지</span> — 지금은 아이디어를 늘리는 단계</li>
+        <li class="a"><span class="highlight">긍정·확장만</span> — "그 아이디어에서 이렇게 가면 어떨까?"</li>
+        <li class="a">판단 보류, <span class="highlight">양으로 승부</span> — 아이디어 10개 중 1개면 충분</li>
+        <li class="a">떠오르면 <span class="highlight">즉시 기록</span> — 기록하지 않으면 사라진다</li>
+        <li class="a"><span class="highlight">괜찮다 싶으면 즉시 딥리서치</span> — 기다리지 않는다</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Slide 16 -->
+  <div class="slide slide-grad-5" data-notes="딥리서치가 최소 1개 이상 돌아가고 있는지 확인한다.">
+    <div class="content-body">
+      <p class="a sm text-muted">아이데이션</p>
+      <div class="a divider"></div>
+      <h2 class="a lg" style="margin-top:8px">실습 · 점검</h2>
+    </div>
+    <div class="a two-col" style="margin-top:24px">
+      <div class="two-col-item">
+        <h3>실습</h3>
+        <ul>
+          <li>클로바노트(또는 노션 AI 노트)로 아이디어 회의 진행</li>
+          <li>회의 내용을 노션 문서로 정리</li>
+          <li>괜찮은 아이디어 1~2개 → 딥리서치 시작</li>
+        </ul>
+      </div>
+      <div class="two-col-item">
+        <h3>점검</h3>
+        <ul>
+          <li>회의 내용이 노션에 정리됐는가?</li>
+          <li>아이디어별 코멘트가 달렸는가?</li>
+          <li>딥리서치가 최소 1개 이상 돌아가고 있는가?</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 17 -->
+  <div class="slide slide-grad-6 section-cover" data-notes="3번 섹션 시작. 딥리서치 결과를 심사 기준에 대입해 1개를 확정한다.">
+    <div class="a section-num">03</div>
+    <div class="a section-title">아이디어 선별</div>
+    <div class="a section-subtitle">딥리서치 결과를 심사 기준에 대입해 1개를 확정한다</div>
+  </div>
+
+  <!-- Slide 18 -->
+  <div class="slide slide-grad-7" data-notes="아이디어를 선별할 때 '느낌'만으로 고르는 팀이 많다. 심사 기준표를 실제로 채워보게 하면 토론이 구체화된다.">
+    <div class="content-body">
+      <p class="a sm text-muted">아이디어 선별</p>
+      <div class="a divider"></div>
+      <h2 class="a lg" style="margin-top:8px">방법 · 순서</h2>
+      <p class="a sm" style="color:rgba(255,255,255,0.7); margin-top:12px">아이데이션 단계에서 딥리서치를 반복했다면, 이미 근거 자료가 쌓여 있다.</p>
+      <ol class="a num-list" style="margin-top:16px">
+        <li class="a"><span class="n">1</span><div>딥리서치 결과를 <strong>후보별로 정리</strong></div></li>
+        <li class="a"><span class="n">2</span><div><strong>심사 기준 5가지</strong> 적용 → 항목별 점수</div></li>
+        <li class="a"><span class="n">3</span><div><strong>우선순위</strong> 결정 — 점수 + 팀 반응 ("이거 좋은데요?")</div></li>
+        <li class="a"><span class="n">4</span><div><strong>1개 확정</strong> → 선정 이유를 노션에 기록</div></li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- Slide 19 -->
+  <div class="slide slide-grad-8" data-notes="이 5가지는 해커톤 심사위원이 실제로 보는 기준이다. 팀이 이 관점으로 아이디어를 보는 연습을 해야 한다.">
+    <div class="content-body">
+      <p class="a sm text-muted">아이디어 선별</p>
+      <div class="a divider"></div>
+      <h2 class="a lg" style="margin-top:8px">심사 기준 5가지</h2>
+      <ol class="a num-list">
+        <li class="a"><span class="n">1</span><div><strong>문제 정의 및 사회적 필요성</strong> — 이 문제가 실제로 존재하고 중요한가?</div></li>
+        <li class="a"><span class="n">2</span><div><strong>창의성 및 독창성</strong> — 기존 솔루션과 어떻게 다른가?</div></li>
+        <li class="a"><span class="n">3</span><div><strong>AI 활용의 적절성 및 기술 타당성</strong> — AI를 의미있게 쓰고 있는가?</div></li>
+        <li class="a"><span class="n">4</span><div><strong>실현 가능성 및 완성도</strong> — 24~48시간 내에 MVP를 만들 수 있는가?</div></li>
+        <li class="a"><span class="n">5</span><div><strong>기대 효과 및 파급력</strong> — 실제로 적용됐을 때 어떤 변화가 생기는가?</div></li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- Slide 20 -->
+  <div class="slide slide-grad-9" data-notes="딥리서치 도구는 하나만 써도 되고, 여러 개를 병행해도 된다. 팀원 각자가 쓰는 걸로 시작하면 된다.">
+    <div class="content-body" style="max-width:920px">
+      <p class="a sm text-muted">아이디어 선별</p>
+      <div class="a divider"></div>
+      <h2 class="a lg" style="margin-top:8px">딥리서치 도구</h2>
+      <table class="a data-table">
+        <thead>
+          <tr><th>도구</th><th>특징</th><th>언제 쓰면 좋은가</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Gemini Deep Research</strong></td><td>긴 리포트, 출처 링크 자동 포함</td><td>시장·경쟁사 분석</td></tr>
+          <tr><td><strong>ChatGPT Deep Research</strong></td><td>단계별 리서치, 근거 풍부</td><td>문제·사회적 필요성 검증</td></tr>
+          <tr><td><strong>Claude</strong></td><td>긴 문서 분석·구조화 평가</td><td>심사 기준별 평가 요청</td></tr>
+          <tr><td><strong>Perplexity</strong></td><td>빠른 팩트체크, 최신 정보</td><td>아이디어 첫 검증</td></tr>
+        </tbody>
+      </table>
+      <p class="a xs text-muted" style="margin-top:16px">예시 프롬프트 → Example_prompt/ 폴더 참고</p>
+    </div>
+  </div>
+
+  <!-- Slide 21 -->
+  <div class="slide slide-grad-10" data-notes="심사 기준표를 채우고 선정 이유를 문서에 남겨야 발표 때 근거가 된다.">
+    <div class="content-body">
+      <p class="a sm text-muted">아이디어 선별</p>
+      <div class="a divider"></div>
+      <h2 class="a lg" style="margin-top:8px">규칙</h2>
+      <ul class="a">
+        <li class="a"><span class="highlight">심사위원 관점</span>으로 본다 — "내가 보기엔 좋은데"가 아니라 기준표로</li>
+        <li class="a"><span class="highlight">"이거 좋은데요?" 반응을 신호로</span> 포착 — 이유를 반드시 기록</li>
+        <li class="a">딥리서치는 <span class="highlight">아이디어 나올 때 즉시</span> — 선별 단계까지 기다리지 않는다</li>
+        <li class="a">결과를 기다리는 동안 <span class="highlight">다음 아이디어를 발전</span>시킨다</li>
+        <li class="a">선정한 이유를 <span class="highlight">반드시 문서에</span> 남긴다</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Slide 22 -->
+  <div class="slide slide-grad-11" data-notes="심사 기준표가 채워졌는지, 선정 이유가 근거로 설명되는지 팀별로 발표하게 한다.">
+    <div class="content-body">
+      <p class="a sm text-muted">아이디어 선별</p>
+      <div class="a divider"></div>
+      <h2 class="a lg" style="margin-top:8px">실습 · 점검</h2>
+    </div>
+    <div class="a two-col" style="margin-top:24px">
+      <div class="two-col-item">
+        <h3>실습</h3>
+        <ul>
+          <li>아이디어 1개 → Example_prompt/ 에서 프롬프트 선택</li>
+          <li>딥리서치 도구에 입력 → 결과를 심사 기준표에 대입</li>
+          <li>후보 2~3개 점수화 → 팀 합의로 1개 선택</li>
+          <li>선정 이유를 노션에 한 단락으로 기록</li>
+        </ul>
+      </div>
+      <div class="two-col-item">
+        <h3>점검</h3>
+        <ul>
+          <li>심사 기준표가 채워졌는가?</li>
+          <li>선정 이유가 문서로 남았는가?</li>
+          <li>기준이 "느낌"이 아니라 근거로 설명되는가?</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 23 -->
+  <div class="slide slide-grad-1 section-cover" data-notes="4번 섹션 시작. AI가 읽기 좋은 마크다운 문서가 구현과 발표의 재료다.">
+    <div class="a section-num">04</div>
+    <div class="a section-title">문서화</div>
+    <div class="a section-subtitle">AI가 읽기 좋은 마크다운 문서 — 구현과 발표의 재료</div>
+  </div>
+
+  <!-- Slide 24 -->
+  <div class="slide slide-grad-2" data-notes="문서화는 한 번 만들고 끝이 아니다. 구현하면서 기능이 바뀔 때 반드시 문서를 먼저 업데이트하고 AI에게 구현을 맡겨야 한다.">
+    <div class="content-body">
+      <p class="a sm text-muted">문서화</p>
+      <div class="a divider"></div>
+      <h2 class="a lg" style="margin-top:8px">방법 · 순서</h2>
+      <ol class="a num-list">
+        <li class="a"><span class="n">1</span><div><strong>문서 목록 잡기</strong> — 무엇을 문서로 만들지 먼저 리스트업</div></li>
+        <li class="a"><span class="n">2</span><div><strong>마크다운으로 작성</strong> — AI가 가장 잘 읽는 형식</div></li>
+        <li class="a"><span class="n">3</span><div><strong>팀 검토</strong> — AI가 읽기 좋은 구조인가? 빠진 내용은?</div></li>
+        <li class="a"><span class="n">4</span><div><strong>docs/ 폴더에 묶기</strong> — 하나의 폴더로 관리</div></li>
+        <li class="a"><span class="n">5</span><div><strong>지속 업데이트</strong> — 구현 중에도 변경사항 즉시 반영</div></li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- Slide 25 -->
+  <div class="slide slide-grad-3" data-notes="PRD와 README가 없으면 AI에게 구현을 맡길 수 없다. 이 두 개는 필수다.">
+    <div class="content-body" style="max-width:880px">
+      <p class="a sm text-muted">문서화</p>
+      <div class="a divider"></div>
+      <h2 class="a lg" style="margin-top:8px">어떤 문서를 만들까</h2>
+      <table class="a data-table">
+        <thead>
+          <tr><th>우선순위</th><th>문서</th><th>역할</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>필수</strong></td><td>PRD</td><td>무엇을 — 범위·기능·기대효과</td></tr>
+          <tr><td><strong>필수</strong></td><td>README</td><td>프로젝트 한 줄 소개, 실행 방법</td></tr>
+          <tr><td>권장</td><td>화면·기능 정의</td><td>구현 단위 (한 화면 = 한 문서)</td></tr>
+          <tr><td>권장</td><td>Changelog</td><td>무엇을 만들고 고쳤는지 이력</td></tr>
+          <tr><td>선택</td><td>디자인 가이드</td><td>색·폰트·컴포넌트 톤</td></tr>
+          <tr><td>선택</td><td>API 명세</td><td>백엔드-프론트 연동 기준</td></tr>
+        </tbody>
+      </table>
+      <div class="a warn-box" style="margin-top:16px">모든 문서 → 프로젝트 루트의 <strong>docs/</strong> 폴더 하나에 모은다</div>
+    </div>
+  </div>
+
+  <!-- Slide 26 -->
+  <div class="slide slide-grad-4" data-notes="AI에 너무 의존하면 문장만 늘어난다. 핵심만 담은 짧은 문서가 AI가 더 잘 활용한다.">
+    <div class="content-body">
+      <p class="a sm text-muted">문서화</p>
+      <div class="a divider"></div>
+      <h2 class="a lg" style="margin-top:8px">도구 · 규칙</h2>
+      <p class="a sm" style="color:rgba(255,255,255,0.7); margin-top:12px">도구 — 마크다운 에디터, Claude, Cursor</p>
+      <ul class="a" style="margin-top:12px">
+        <li class="a"><span class="highlight">마크다운</span>으로 작성 — AI가 가장 잘 읽는 형식이다</li>
+        <li class="a">AI에 너무 의존하면 <span class="highlight">문장만 늘어난다</span> — 핵심만 담은 짧은 문서</li>
+        <li class="a"><span class="highlight">2,000줄 이내</span>로 유지 — 짧을수록 AI가 더 잘 활용한다</li>
+        <li class="a">길어지면 <span class="highlight">주제별로 쪼개기</span> — 하나의 문서가 너무 많으면 AI도 헷갈린다</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Slide 27 -->
+  <div class="slide slide-grad-5" data-notes="AI는 결정을 대신하지 않는다. 방향·결정은 팀이 먼저 한다. AI는 그 결정을 실행하는 도구다.">
+    <div class="content-body">
+      <p class="a sm text-muted">문서화</p>
+      <div class="a divider"></div>
+      <h2 class="a lg" style="margin-top:8px">기억할 것</h2>
+      <ul class="a">
+        <li class="a">AI는 <span class="highlight">결정을 대신하지 않는다</span></li>
+        <li class="a">프롬프트를 입력하는 사람의 기반에 맞춰 결과를 낼 뿐이다</li>
+        <li class="a">방향·결정은 팀이 먼저 한다. AI는 그 결정을 <span class="highlight">실행하는 도구</span>다</li>
+        <li class="a">의사결정 시 → 팀원 의견 + 딥리서치 근거 + 심사 기준으로 결정한다</li>
+      </ul>
+      <div class="a warn-box" style="margin-top:20px">
+        <strong>실습</strong> — PRD를 마크다운 1장으로 작성 (기능 3~5개, 기대효과 포함)<br>
+        <strong>점검</strong> — "AI에게 이 문서를 주면 바로 구현할 수 있는가?" 상호 리뷰
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 28 -->
+  <div class="slide slide-grad-6 section-cover" data-notes="5번 섹션 시작. docs/를 붙이고 Agent mode로 — 잘 시키는 게 전부다.">
+    <div class="a section-num">05</div>
+    <div class="a section-title">구현</div>
+    <div class="a section-subtitle">docs/를 붙이고 Agent mode로 — 잘 시키는 게 전부다</div>
+  </div>
+
+  <!-- Slide 29 -->
+  <div class="slide slide-grad-7" data-notes="Repo 선정 → 배포 선정 → 구현 순서로 가도 된다. 오류수정은 나중에 해도 늦지 않다.">
+    <div class="content-body">
+      <p class="a sm text-muted">구현</p>
+      <div class="a divider"></div>
+      <h2 class="a lg" style="margin-top:8px">방법 · 순서</h2>
+      <ol class="a num-list">
+        <li class="a"><span class="n">1</span><div><strong>Repo 생성</strong> (GitHub) + <strong>배포 환경 준비</strong> (Vercel 등)</div></li>
+        <li class="a"><span class="n">2</span><div><strong>docs/ 폴더</strong> 확인 — PRD, README 최소 준비</div></li>
+        <li class="a"><span class="n">3</span><div><strong>구현 범위 확정</strong> — PRD 기준으로 이번 세션에 만들 기능 1개 선택</div></li>
+        <li class="a"><span class="n">4</span><div><strong>Agent mode</strong>로 구현 — docs/ 파일을 @첨부하고 지시</div></li>
+        <li class="a"><span class="n">5</span><div><strong>브라우저에서 직접 확인</strong> — AI 말만 믿지 않는다</div></li>
+        <li class="a"><span class="n">6</span><div><strong>Commit + Push</strong> — 확인된 것만 커밋</div></li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- Slide 30 -->
+  <div class="slide slide-grad-8" data-notes="Agent mode가 기본이다. Plan mode는 방향이 불명확할 때만 쓴다.">
+    <div class="content-body">
+      <p class="a sm text-muted">구현</p>
+      <div class="a divider"></div>
+      <h2 class="a lg" style="margin-top:8px">Agent mode가 기본</h2>
+    </div>
+    <div class="a two-col" style="margin-top:20px">
+      <div class="two-col-item">
+        <h3>Agent mode (기본)</h3>
+        <ul>
+          <li>docs/ @첨부 → "○○ 기능 구현해줘"</li>
+          <li>방향이 명확하면 바로 구현 시작</li>
+        </ul>
+      </div>
+      <div class="two-col-item">
+        <h3>Plan mode (불명확할 때만)</h3>
+        <ul>
+          <li>"어떻게 구현할지 계획 먼저 보여줘"</li>
+          <li>확인 후 Agent 전환</li>
+        </ul>
+      </div>
+    </div>
+    <div class="a warn-box" style="margin-top:20px; max-width:860px">Commit + Push는 <strong>팀원 누구나</strong> 한다 — 개발자 전담이 아니다 | 기능 추가 시 <strong>New 세션</strong></div>
+  </div>
+
+  <!-- Slide 31 -->
+  <div class="slide slide-grad-9" data-notes="AI에게 지시할 때 @docs/PRD.md, @docs/화면정의.md처럼 관련 문서를 함께 첨부하는 것이 핵심이다.">
+    <div class="content-body" style="max-width:880px">
+      <p class="a sm text-muted">구현</p>
+      <div class="a divider"></div>
+      <h2 class="a lg" style="margin-top:8px">구현할 때 docs/를 이렇게 쓴다</h2>
+      <table class="a data-table">
+        <thead>
+          <tr><th>문서</th><th>AI에게 넘길 때 역할</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>PRD</strong></td><td>무엇을 왜 만드는지 — 범위·기능</td></tr>
+          <tr><td><strong>화면·기능 정의</strong></td><td>이번 세션에서 만들 것 — 구현 단위</td></tr>
+          <tr><td><strong>README</strong></td><td>프로젝트 맥락 — 스택·구조</td></tr>
+          <tr><td><strong>디자인 가이드</strong></td><td>UI 톤·컴포넌트 스타일</td></tr>
+          <tr><td><strong>Changelog</strong></td><td>지금까지 만든 것 — 충돌 방지</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Slide 32 -->
+  <div class="slide slide-grad-10" data-notes="'로그인 버튼 만들어줘'가 아니라 구체적으로 어떤 동작을 원하는지 적어야 한다.">
+    <div class="content-body">
+      <p class="a sm text-muted">구현</p>
+      <div class="a divider"></div>
+      <h2 class="a lg" style="margin-top:8px">AI에게 잘 시키는 법 ①</h2>
+      <p class="a sm" style="color:rgba(255,255,255,0.7); margin-top:8px">이제는 직접 만드는 게 아니라 <strong>AI에게 시키는 시대</strong>다.</p>
+      <ol class="a num-list" style="margin-top:16px">
+        <li class="a"><span class="n">1</span><div><strong>구체적으로</strong> — "로그인 버튼 만들어줘"가 아니라 동작·결과까지 명확히</div></li>
+        <li class="a"><span class="n">2</span><div><strong>맥락을 함께</strong> — 관련 문서·파일을 @첨부하고 무엇을 만들지 알려준다</div></li>
+        <li class="a"><span class="n">3</span><div><strong>한 번에 하나씩</strong> — 큰 작업은 기능·화면 단위로 쪼개서 지시한다</div></li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- Slide 33 -->
+  <div class="slide slide-grad-11" data-notes="결국 결과물의 품질은 지시문의 품질이 결정한다.">
+    <div class="content-body">
+      <p class="a sm text-muted">구현</p>
+      <div class="a divider"></div>
+      <h2 class="a lg" style="margin-top:8px">AI에게 잘 시키는 법 ②</h2>
+      <ol class="a num-list">
+        <li class="a"><span class="n">4</span><div><strong>제약을 명시</strong> — 언어·라이브러리·스타일·형식 조건을 분명히</div></li>
+        <li class="a"><span class="n">5</span><div><strong>기대 결과를 보여준다</strong> — 예시 화면, 원하는 출력 형태 제시</div></li>
+        <li class="a"><span class="n">6</span><div><strong>안 되면 다시</strong> — 결과 확인 후 부족하면 지시문을 고쳐서 반복</div></li>
+      </ol>
+      <div class="a quote-block" style="margin-top:28px">
+        <p class="a quote-text" style="font-size:32px">결과물의 품질은<br><span style="color:var(--accent)">지시문의 품질</span>이 결정한다.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 34 -->
+  <div class="slide slide-grad-1 section-cover" data-notes="6번 섹션 시작. 오류는 반드시 생긴다. 당황하지 않고 순서를 따른다.">
+    <div class="a section-num">06</div>
+    <div class="a section-title">오류수정</div>
+    <div class="a section-subtitle">오류는 반드시 생긴다 — 재현하고, 기록하고, AI에게 시킨다</div>
+  </div>
+
+  <!-- Slide 35 -->
+  <div class="slide slide-grad-2" data-notes="오류는 무조건 생긴다. 당황하지 않고 아래 순서를 따른다.">
+    <div class="content-body">
+      <p class="a sm text-muted">오류수정</p>
+      <div class="a divider"></div>
+      <h2 class="a lg" style="margin-top:8px">방법 · 순서</h2>
+      <ol class="a num-list">
+        <li class="a"><span class="n">1</span><div><strong>문제 발견·기록</strong> — 어떤 화면, 어떤 순서, 어떤 결과가 나왔는지</div></li>
+        <li class="a"><span class="n">2</span><div><strong>2~3회 재현</strong> — 같은 조건에서 반복되는지 확인</div></li>
+        <li class="a"><span class="n">3</span><div><strong>docs/와 대조</strong> — 버그인지, 문서 오류인지, 기획 변경인지 구분</div></li>
+        <li class="a"><span class="n">4</span><div><strong>Agent mode로 수정 지시</strong> — 증상·재현 순서·기대 결과를 함께</div></li>
+        <li class="a"><span class="n">5</span><div><strong>브라우저 확인</strong> → <strong>Changelog 업데이트</strong> → <strong>Commit + Push</strong></div></li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- Slide 36 -->
+  <div class="slide slide-grad-3" data-notes="'코드를 모르면 오류수정을 못 한다'는 생각을 깨야 한다. AI에게 증상과 기대 결과를 정확하게 전달하는 것이 핵심이다.">
+    <div class="content-body" style="max-width:880px">
+      <p class="a sm text-muted">오류수정</p>
+      <div class="a divider"></div>
+      <h2 class="a lg" style="margin-top:8px">오류수정은 비개발자가 주도한다</h2>
+      <table class="a data-table">
+        <thead>
+          <tr><th>역할</th><th>하는 일</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>비개발자 (주도)</strong></td><td>발견 → 재현 → 지시문 작성 → 확인 → Changelog → <strong>Push</strong></td></tr>
+          <tr><td>개발자 (보조)</td><td>지시문 보완 · 에러 로그 해석 · 배포 환경 점검</td></tr>
+        </tbody>
+      </table>
+      <div class="a warn-box" style="margin-top:20px">비개발자 = <strong>발견 · 재현 · 기록 · 확인 · Commit + Push</strong></div>
+    </div>
+  </div>
+
+  <!-- Slide 37 -->
+  <div class="slide slide-grad-4" data-notes="'안 돼요' 같은 모호한 표현 대신 구체적인 증상을 전달하는 것이 핵심이다.">
+    <div class="content-body">
+      <p class="a sm text-muted">오류수정</p>
+      <div class="a divider"></div>
+      <h2 class="a lg" style="margin-top:8px">지시문 작성 요령 ①</h2>
+      <ol class="a num-list">
+        <li class="a"><span class="n">1</span><div><strong>증상을 구체적으로</strong> — "안 돼요"가 아니라 "로그인 버튼 클릭 시 흰 화면이 뜨고 아무 반응이 없다"</div></li>
+        <li class="a"><span class="n">2</span><div><strong>기대 결과는 docs/에서</strong> — "PRD 3번 기능 기준으로 로그인 성공 시 대시보드로 이동"</div></li>
+        <li class="a"><span class="n">3</span><div><strong>재현 순서 그대로</strong> — 1단계: 이메일 입력, 2단계: 비밀번호 입력, 3단계: 로그인 클릭</div></li>
+        <li class="a"><span class="n">4</span><div><strong>한 번에 하나만</strong> — 오류 2개를 한 번에 지시하면 AI가 하나를 빠뜨린다</div></li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- Slide 38 -->
+  <div class="slide slide-grad-5" data-notes="고치기와 기능 추가는 다르다. 새 기능 추가는 반드시 New 세션으로.">
+    <div class="content-body">
+      <p class="a sm text-muted">오류수정</p>
+      <div class="a divider"></div>
+      <h2 class="a lg" style="margin-top:8px">지시문 작성 요령 ②</h2>
+      <ol class="a num-list">
+        <li class="a"><span class="n">5</span><div><strong>스크린샷·화면 녹화 첨부</strong> — 말보다 직접 보여주는 게 빠르다</div></li>
+        <li class="a"><span class="n">6</span><div><strong>직접 확인</strong> — AI가 "수정했습니다"라고 해도 브라우저에서 반드시 확인</div></li>
+        <li class="a"><span class="n">7</span><div><strong>확인 후 Commit + Push</strong> — 개발자에게만 맡기지 않는다</div></li>
+        <li class="a"><span class="n">8</span><div><strong>고치기 ≠ 기능 추가</strong> — 새 기능은 New 세션에서 5번 구현 흐름으로</div></li>
+      </ol>
+      <div class="a warn-box" style="margin-top:16px"><strong>실습</strong> — 오류 1개 재현 → 지시문 → Agent 수정 → 확인 → Changelog → Push</div>
+    </div>
+  </div>
+
+  <!-- Slide 39 -->
+  <div class="slide slide-grad-6 section-cover" data-notes="7번 섹션 시작. docs/가 이미 재료다.">
+    <div class="a section-num">07</div>
+    <div class="a section-title">발표준비</div>
+    <div class="a section-subtitle">docs/가 이미 재료다 — 목차 → 내용 → 디자인 순서로</div>
+  </div>
+
+  <!-- Slide 40 -->
+  <div class="slide slide-grad-7" data-notes="목차·내용 먼저, 디자인은 마지막. 순서를 바꾸면 내용이 디자인에 끌려다닌다.">
+    <div class="content-body">
+      <p class="a sm text-muted">발표준비</p>
+      <div class="a divider"></div>
+      <h2 class="a lg" style="margin-top:8px">3단계 순서</h2>
+    </div>
+    <div class="a flow-container" style="margin-top:36px">
+      <div class="a flow-step">
+        <div class="step-glow"></div>
+        <div class="step-num">Step 1</div>
+        <div class="step-title">문서 정리 · 목차</div>
+        <div class="step-desc">PRD·Changelog·README에서 핵심 메시지 추출, 목차 먼저 확정</div>
+      </div>
+      <div class="a flow-arrow">&rarr;</div>
+      <div class="a flow-step">
+        <div class="step-glow"></div>
+        <div class="step-num">Step 2</div>
+        <div class="step-title">세부 내용 작성</div>
+        <div class="step-desc">목차별 문장·수치·시연 포인트, AI에게 docs/ 첨부 후 요청</div>
+      </div>
+      <div class="a flow-arrow">&rarr;</div>
+      <div class="a flow-step">
+        <div class="step-glow"></div>
+        <div class="step-num">Step 3</div>
+        <div class="step-title">디자인 적용</div>
+        <div class="step-desc">내용 완성 후 디자인 가이드에 맞춰 슬라이드 완성</div>
+      </div>
+    </div>
+    <div class="a warn-box" style="margin-top:24px; max-width:860px">목차·내용 <strong>먼저</strong>, 디자인은 <strong>마지막</strong> — 순서를 바꾸면 내용이 디자인에 끌려다닌다</div>
+  </div>
+
+  <!-- Slide 41 -->
+  <div class="slide slide-grad-8" data-notes="docs/ 없이 발표 자료를 처음부터 만들려고 하면 시간이 두 배 걸린다.">
+    <div class="content-body" style="max-width:880px">
+      <p class="a sm text-muted">발표준비</p>
+      <div class="a divider"></div>
+      <h2 class="a lg" style="margin-top:8px">docs/ → 발표 재료로 활용</h2>
+      <table class="a data-table">
+        <thead>
+          <tr><th>문서</th><th>발표에서 쓰이는 내용</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>PRD</strong></td><td>문제 정의 · 핵심 기능 · 기대 효과</td></tr>
+          <tr><td><strong>Changelog</strong></td><td>"우리가 실제로 만든 것" — 구현 증거</td></tr>
+          <tr><td><strong>README</strong></td><td>프로젝트 한 줄 소개 · 기술 스택</td></tr>
+          <tr><td><strong>딥리서치 결과</strong></td><td>시장 규모 · 사회적 필요성 근거 수치</td></tr>
+        </tbody>
+      </table>
+      <p class="a xs text-muted" style="margin-top:16px">도구 — Gemini, NotebookLM, Claude, Canva, Gamma 등</p>
+    </div>
+  </div>
+
+  <!-- Slide 42 -->
+  <div class="slide slide-grad-9" data-notes="발표 전 시연 리허설과 시간 맞추기를 반드시 한다.">
+    <div class="content-body">
+      <p class="a sm text-muted">발표준비</p>
+      <div class="a divider"></div>
+      <h2 class="a lg" style="margin-top:8px">규칙 · 실습</h2>
+      <ul class="a">
+        <li class="a">docs/에서 <span class="highlight">시작</span> — 새로 쓰지 않는다</li>
+        <li class="a"><span class="highlight">목차 먼저</span> 확정하고 내용을 채운다</li>
+        <li class="a">슬라이드 생성은 쉽다 — <span class="highlight">안에 들어가는 내용이 항상 어렵다</span></li>
+        <li class="a">AI 결과 ↔ docs/ 대조 — 사실과 다른 내용은 직접 수정</li>
+        <li class="a">발표 전 <span class="highlight">시연 리허설 + 시간 맞추기</span> 필수</li>
+      </ul>
+      <div class="a warn-box" style="margin-top:20px"><strong>실습</strong> — PRD·Changelog @첨부 → 목차 5~7장 확정 → 내용 채우기 → 슬라이드 1장 디자인</div>
+    </div>
+  </div>
+
+  <!-- Slide 43 -->
+  <div class="slide slide-grad-10 section-cover" data-notes="FAQ 섹션 시작. 현장에서 실제로 자주 나오는 질문들을 미리 답한다.">
+    <div class="a section-num" style="font-size:120px">FAQ</div>
+    <div class="a section-title">자주 묻는 질문</div>
+    <div class="a section-subtitle">현장에서 나오는 질문, 미리 답한다</div>
+  </div>
+
+  <!-- Slide 44 -->
+  <div class="slide slide-grad-11" data-notes="바빠서 안 만들면 더 바빠진다.">
+    <div class="content-body">
+      <p class="a faq-q">Q. 소통 창구 만들 시간이 어딨어요?</p>
+      <p class="a faq-answer">바쁠수록 <span class="highlight">더 필요</span>하다.</p>
+      <ul class="a">
+        <li class="a">소통 창구가 없으면 "아까 누가 뭐 말했더라"를 반복하다 시간을 다 쓴다</li>
+        <li class="a">노션 페이지 + 팀원 초대 = <span class="highlight">5분</span></li>
+        <li class="a">그 5분이 이후 문서화 → AI 구현 → 발표준비까지 전부 연결되는 기반이 된다</li>
+        <li class="a">바빠서 안 만들면, <span class="highlight">더 바빠진다</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Slide 45 -->
+  <div class="slide slide-grad-1" data-notes="'무엇을 왜 만드는가'를 가장 잘 설명하는 사람이 팀을 이끈다.">
+    <div class="content-body">
+      <p class="a faq-q">Q. 비개발자는 뭘 하나요?</p>
+      <p class="a faq-answer">할 일이 <span class="highlight">더 많아진다.</span></p>
+      <ul class="a">
+        <li class="a"><span class="highlight">문제 정의</span> · 딥리서치 · <span class="highlight">PRD 문서화</span></li>
+        <li class="a"><span class="highlight">지시문(프롬프트) 작성</span> — 결과물의 품질을 결정하는 핵심</li>
+        <li class="a"><span class="highlight">오류 수정 주도</span> — 재현 · Agent 지시 · 확인</li>
+        <li class="a"><span class="highlight">Commit + Push</span> — 확인된 코드는 누구나 올린다</li>
+        <li class="a"><span class="highlight">발표 준비</span> — 스토리라인 · 슬라이드 · 시연</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Slide 46 -->
+  <div class="slide slide-grad-2" data-notes="'AI가 했으니 맞겠지'는 발표장에서 가장 위험한 생각이다.">
+    <div class="content-body">
+      <p class="a faq-q">Q. AI 결과를 그대로 믿어도 되나요?</p>
+      <p class="a faq-answer"><span class="highlight">안 된다.</span></p>
+      <ul class="a">
+        <li class="a">AI는 <span class="highlight">결정을 대신하지 않는다</span> — 입력한 사람의 기반에 맞춰 결과를 낼 뿐</li>
+        <li class="a">코드 → <span class="highlight">브라우저에서 직접 실행·테스트</span></li>
+        <li class="a">문서·리서치 결과 → <span class="highlight">출처·사실 확인</span></li>
+        <li class="a">딥리서치 통계 → <span class="highlight">다른 도구로 교차 확인</span></li>
+      </ul>
+      <div class="a warn-box">"AI가 했으니 맞겠지"는 발표장에서 가장 위험한 생각이다</div>
+    </div>
+  </div>
+
+  <!-- Slide 47 -->
+  <div class="slide slide-grad-3" data-notes="모든 도구는 처음에 어색하다. 한 번만 써보면 그 다음은 쉬워진다.">
+    <div class="content-body">
+      <p class="a faq-q">Q. AI를 한 번도 안 써봤어요</p>
+      <p class="a faq-answer"><span class="highlight">AI 노트 켜기</span>부터 시작한다.</p>
+      <ol class="a num-list">
+        <li class="a"><span class="n">1</span><div>회의할 때 노션 AI 노트 또는 클로바노트를 켠다</div></li>
+        <li class="a"><span class="n">2</span><div>말하면 기록이 남는다 — <strong>가장 쉬운 AI 활용</strong>이다</div></li>
+        <li class="a"><span class="n">3</span><div>익숙해지면 → 검색 → 딥리서치 → 지시문 작성 순으로 확장</div></li>
+        <li class="a"><span class="n">4</span><div>팀에서 <strong>먼저 시도하는 사람</strong>이 생기면 나머지도 따라간다</div></li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- Slide 48 -->
+  <div class="slide slide-grad-4" data-notes="Commit + Push는 코딩이 아니다. '내가 확인한 변경사항을 저장한다'는 행위다.">
+    <div class="content-body">
+      <p class="a faq-q">Q. 비개발자도 Commit + Push를?</p>
+      <p class="a faq-answer"><span class="highlight">한다. 해커톤 팀원 누구나.</span></p>
+      <ul class="a">
+        <li class="a">오류 재현 → docs/ 기준 Agent 지시 → 브라우저 확인</li>
+        <li class="a">확인됐으면 → Changelog 업데이트 → <span class="highlight">Commit + Push</span></li>
+        <li class="a">개발자만 올리는 것이 아니다 — <span class="highlight">확인한 사람이 올린다</span></li>
+      </ul>
+      <div class="a warn-box" style="margin-top:20px">Commit + Push는 코딩이 아니다. "<strong>내가 확인한 변경사항을 저장한다</strong>"는 행위다.</div>
+    </div>
+  </div>
+
+  <!-- Slide 49 -->
+  <div class="slide slide-grad-5 closing-slide" data-notes="강의를 마무리하며 핵심 세 가지를 다시 한번 강조한다. 질문과 실습 시간으로 마무리한다.">
+    <h1 class="a closing-title" style="font-size:80px">정리</h1>
+    <p class="a closing-sub" style="max-width:800px; text-align:center; line-height:1.6">소통 창구 → 아이데이션 ↔ 선별(딥리서치) → 문서화 → 구현 → 오류수정 → 발표</p>
+    <div class="a cards-grid" style="margin-top:28px; max-width:860px">
+      <div class="a glass-card">
+        <span class="card-icon">📝</span>
+        <h3>기록</h3>
+        <p>모든 대화·결정은 노션에 남긴다</p>
+      </div>
+      <div class="a glass-card">
+        <span class="card-icon">📁</span>
+        <h3>문서화</h3>
+        <p>마크다운 docs/가 구현과 발표의 재료다</p>
+      </div>
+      <div class="a glass-card">
+        <span class="card-icon">🎯</span>
+        <h3>잘 시키기</h3>
+        <p>결과물의 품질은 지시문의 품질이 결정한다</p>
+      </div>
+    </div>
+    <p class="a date-text" style="margin-top:24px">질문 · 실습 시간</p>
+  </div>
+
+</div><!-- /.deck -->
+
+<script>
+(function() {
+  'use strict';
+
+  const slides = Array.from(document.querySelectorAll('.slide'));
+  const total = slides.length;
+  let current = 0;
+  let notesVisible = false;
+
+  function goTo(index) {
+    if (index < 0 || index >= total) return;
+    slides[current].classList.remove('active');
+    current = index;
+    slides[current].classList.add('active');
+    updateProgress();
+    updateCounter();
+    updateNotes();
+  }
+
+  function next() { goTo(current + 1); }
+  function prev() { goTo(current - 1); }
+
+  function updateProgress() {
+    const pct = total > 1 ? (current / (total - 1)) * 100 : 100;
+    document.getElementById('progress-bar').style.width = pct + '%';
+  }
+
+  function updateCounter() {
+    document.getElementById('counter').textContent = (current + 1) + ' / ' + total;
+  }
+
+  function updateNotes() {
+    const notes = slides[current].dataset.notes || '';
+    const panel = document.getElementById('notes-panel');
+    panel.textContent = notes || '(발표자 노트 없음)';
+  }
+
+  function toggleNotes() {
+    notesVisible = !notesVisible;
+    const panel = document.getElementById('notes-panel');
+    const btn = document.getElementById('notes-btn');
+    if (notesVisible) {
+      panel.classList.add('visible');
+      btn.textContent = '노트 닫기 (S)';
+      updateNotes();
+    } else {
+      panel.classList.remove('visible');
+      btn.textContent = '발표자 노트 (S)';
+    }
+  }
+
+  function toggleFullscreen() {
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen().catch(function() {});
+    } else {
+      document.exitFullscreen().catch(function() {});
+    }
+  }
+
+  // Keyboard
+  document.addEventListener('keydown', function(e) {
+    switch(e.key) {
+      case 'ArrowRight':
+      case 'ArrowDown':
+      case ' ':
+        e.preventDefault();
+        next();
+        break;
+      case 'ArrowLeft':
+      case 'ArrowUp':
+        e.preventDefault();
+        prev();
+        break;
+      case 'f':
+      case 'F':
+        toggleFullscreen();
+        break;
+      case 's':
+      case 'S':
+        toggleNotes();
+        break;
+      case 'Home':
+        e.preventDefault();
+        goTo(0);
+        break;
+      case 'End':
+        e.preventDefault();
+        goTo(total - 1);
+        break;
+    }
+  });
+
+  // Click navigation
+  document.querySelector('.deck').addEventListener('click', function(e) {
+    // Skip if clicking notes button
+    if (e.target.closest('#notes-btn') || e.target.closest('#notes-panel')) return;
+    const x = e.clientX;
+    const w = window.innerWidth;
+    if (x < w * 0.33) {
+      prev();
+    } else {
+      next();
+    }
+  });
+
+  // Touch swipe
+  var touchStartX = 0;
+  var touchStartY = 0;
+  document.addEventListener('touchstart', function(e) {
+    touchStartX = e.touches[0].clientX;
+    touchStartY = e.touches[0].clientY;
+  }, { passive: true });
+  document.addEventListener('touchend', function(e) {
+    var dx = e.changedTouches[0].clientX - touchStartX;
+    var dy = e.changedTouches[0].clientY - touchStartY;
+    if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 40) {
+      if (dx < 0) next();
+      else prev();
+    }
+  }, { passive: true });
+
+  // Notes button
+  document.getElementById('notes-btn').addEventListener('click', function(e) {
+    e.stopPropagation();
+    toggleNotes();
+  });
+
+  // Init
+  updateProgress();
+  updateCounter();
+  updateNotes();
+})();
+</script>
+</body>
+</html>
