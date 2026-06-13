@@ -199,19 +199,55 @@ section .eyebrow {
   text-transform: uppercase;
 }
 
-/* ── Section tag (content slides) ── */
+/* ── Section flow (5-step hierarchy) ── */
+section.content .section-header {
+  margin-bottom: 1.1em;
+}
+
 section .section-tag {
   color: var(--muted);
-  font-size: 0.48em;
+  font-size: 0.44em;
   font-weight: 600;
   letter-spacing: 0.1em;
-  margin: 0 0 0.85em;
+  margin: 0 0 0.55em;
   text-transform: uppercase;
+}
+
+section .flow-steps {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 0.36em;
+  gap: 5px;
+  letter-spacing: 0.02em;
+  margin: 0;
+}
+
+section .flow-steps span {
+  background: var(--surface-card);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-pill);
+  color: var(--muted-soft);
+  font-weight: 500;
+  padding: 0.32em 0.72em;
+  white-space: nowrap;
+}
+
+section .flow-steps span.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: var(--on-primary);
+  font-weight: 600;
+}
+
+section .flow-steps span.done {
+  border-color: var(--hairline-strong);
+  color: var(--muted);
 }
 
 section.content h1 {
   font-size: 1.2em;
   margin-bottom: 0.55em;
+  margin-top: 0.15em;
 }
 
 /* ── Title slide ── */
