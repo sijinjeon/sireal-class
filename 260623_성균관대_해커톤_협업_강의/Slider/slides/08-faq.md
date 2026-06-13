@@ -7,13 +7,17 @@ footer: 'FAQ · 전시진 (SIREAL)'
 
 <!-- _class: section-cover faq -->
 
-# FAQ
+<p class="section-eyebrow">FAQ</p>
 
-## 자주 묻는 질문
+# 자주 묻는 질문
 
 현장에서 나오는 질문 미리 답하기
 
 ---
+
+<!-- _class: content -->
+
+<p class="section-tag">FAQ</p>
 
 # Q. 소통 창구 만들 시간이 어딨어요?
 
@@ -24,6 +28,10 @@ footer: 'FAQ · 전시진 (SIREAL)'
 - 이후 문서화 → 구현 → 발표까지 **전부 연결**
 
 ---
+
+<!-- _class: content -->
+
+<p class="section-tag">FAQ</p>
 
 # Q. 비개발자는 뭘 하나요?
 
@@ -36,6 +44,10 @@ footer: 'FAQ · 전시진 (SIREAL)'
 
 ---
 
+<!-- _class: content -->
+
+<p class="section-tag">FAQ</p>
+
 # Q. AI 결과를 그대로 믿어도 되나요?
 
 **안 된다.**
@@ -47,6 +59,10 @@ footer: 'FAQ · 전시진 (SIREAL)'
 
 ---
 
+<!-- _class: content -->
+
+<p class="section-tag">FAQ</p>
+
 # Q. AI를 한 번도 안 써봤어요
 
 **AI 노트 켜기**부터.
@@ -57,6 +73,10 @@ footer: 'FAQ · 전시진 (SIREAL)'
 4. 역할 나눠서 **먼저 시도하는 사람**부터
 
 ---
+
+<!-- _class: content -->
+
+<p class="section-tag">FAQ</p>
 
 # Q. 비개발자도 Commit + Push?
 

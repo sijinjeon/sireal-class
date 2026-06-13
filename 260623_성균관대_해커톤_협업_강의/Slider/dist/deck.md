@@ -71,15 +71,19 @@ footer: '전시진 (SIREAL) · 성균관대학교 해커톤 협업 강의'
 
 <!-- _class: section-cover -->
 
-# 01
+<p class="section-eyebrow">Section 01</p>
 
-## 소통 창구 만들기
+# 소통 창구 만들기
 
 모든 기록이 모이는 팀의 단 하나의 창구
 
 ---
 
-# 1. 소통 창구 — 방법·순서
+<!-- _class: content -->
+
+<p class="section-tag">01 · 소통 창구</p>
+
+# 방법·순서
 
 1. 노션 **페이지** 생성
 2. **팀원 초대**
@@ -88,7 +92,11 @@ footer: '전시진 (SIREAL) · 성균관대학교 해커톤 협업 강의'
 
 ---
 
-# 1. 소통 창구 — 도구
+<!-- _class: content -->
+
+<p class="section-tag">01 · 소통 창구</p>
+
+# 도구
 
 - **Notion** (나중에 MCP 연결)
 - 복잡한 DB 구조는 필요 없다
@@ -97,7 +105,11 @@ footer: '전시진 (SIREAL) · 성균관대학교 해커톤 협업 강의'
 
 ---
 
-# 1. 소통 창구 — 규칙
+<!-- _class: content -->
+
+<p class="section-tag">01 · 소통 창구</p>
+
+# 규칙
 
 1. **매 회의 시작 시 AI 회의 노트를 켠다** ← 가장 중요
 2. 모든 자료·기록은 노션 **한곳**에
@@ -109,7 +121,11 @@ footer: '전시진 (SIREAL) · 성균관대학교 해커톤 협업 강의'
 
 ---
 
-# 1. 소통 창구 — 실습 · 점검
+<!-- _class: content -->
+
+<p class="section-tag">01 · 소통 창구</p>
+
+# 실습 · 점검
 
 ### 실습
 - 노션 페이지 만들고 팀원 초대
@@ -121,15 +137,19 @@ footer: '전시진 (SIREAL) · 성균관대학교 해커톤 협업 강의'
 
 <!-- _class: section-cover -->
 
-# 02
+<p class="section-eyebrow">Section 02</p>
 
-## 아이데이션
+# 아이데이션
 
 판단은 보류, 양으로 승부
 
 ---
 
-# 2. 아이데이션 — 방법·순서
+<!-- _class: content -->
+
+<p class="section-tag">02 · 아이데이션</p>
+
+# 방법·순서
 
 1. **문제 정의**
 2. **자료 수집**
@@ -137,7 +157,11 @@ footer: '전시진 (SIREAL) · 성균관대학교 해커톤 협업 강의'
 
 ---
 
-# 2. 아이데이션 — 도구
+<!-- _class: content -->
+
+<p class="section-tag">02 · 아이데이션</p>
+
+# 도구
 
 - **노션 AI 노트** (우선)
 - **클로바노트** (대안 — 웹 접속 가능)
@@ -147,7 +171,11 @@ footer: '전시진 (SIREAL) · 성균관대학교 해커톤 협업 강의'
 
 ---
 
-# 2. 아이데이션 — 규칙
+<!-- _class: content -->
+
+<p class="section-tag">02 · 아이데이션</p>
+
+# 규칙
 
 - 회의 시작과 동시에 **AI 노트부터**
 - 다른 사람 아이디어 **비판 금지**
@@ -157,7 +185,11 @@ footer: '전시진 (SIREAL) · 성균관대학교 해커톤 협업 강의'
 
 ---
 
-# 2. 아이데이션 — 실습 · 점검
+<!-- _class: content -->
+
+<p class="section-tag">02 · 아이데이션</p>
+
+# 실습 · 점검
 
 ### 실습
 - 클로바노트로 아이디어 회의 → 문서로 정리
@@ -169,15 +201,19 @@ footer: '전시진 (SIREAL) · 성균관대학교 해커톤 협업 강의'
 
 <!-- _class: section-cover -->
 
-# 03
+<p class="section-eyebrow">Section 03</p>
 
-## 아이디어 선별
+# 아이디어 선별
 
 딥리서치로 근거를 모으고, 심사 기준으로 1개를 고른다
 
 ---
 
-# 3. 아이디어 선별 — 방법·순서
+<!-- _class: content -->
+
+<p class="section-tag">03 · 아이디어 선별</p>
+
+# 방법·순서
 
 1. 후보 **나열**
 2. 후보별 **딥리서치** → 근거 수집
@@ -188,7 +224,11 @@ footer: '전시진 (SIREAL) · 성균관대학교 해커톤 협업 강의'
 
 ---
 
-# 3. 심사 기준 5가지
+<!-- _class: content -->
+
+<p class="section-tag">03 · 아이디어 선별</p>
+
+# 심사 기준 5가지
 
 1. 문제 정의 및 사회적 필요성
 2. 창의성 및 독창성
@@ -198,9 +238,11 @@ footer: '전시진 (SIREAL) · 성균관대학교 해커톤 협업 강의'
 
 ---
 
-<!-- _class: compact -->
+<!-- _class: content compact -->
 
-# 3. 아이디어 선별 — 도구
+<p class="section-tag">03 · 아이디어 선별</p>
+
+# 도구
 
 | 도구 | 특징 |
 |------|------|
@@ -214,7 +256,11 @@ footer: '전시진 (SIREAL) · 성균관대학교 해커톤 협업 강의'
 
 ---
 
-# 3. 아이디어 선별 — 규칙
+<!-- _class: content -->
+
+<p class="section-tag">03 · 아이디어 선별</p>
+
+# 규칙
 
 - **심사위원** 관점·기준으로 본다
 - "이거 좋은데요?" 반응 = **신호**
@@ -224,7 +270,11 @@ footer: '전시진 (SIREAL) · 성균관대학교 해커톤 협업 강의'
 
 ---
 
-# 3. 아이디어 선별 — 실습 · 점검
+<!-- _class: content -->
+
+<p class="section-tag">03 · 아이디어 선별</p>
+
+# 실습 · 점검
 
 ### 실습
 - 아이디어 1개 → 딥리서치 프롬프트 작성
@@ -236,15 +286,19 @@ footer: '전시진 (SIREAL) · 성균관대학교 해커톤 협업 강의'
 
 <!-- _class: section-cover -->
 
-# 04
+<p class="section-eyebrow">Section 04</p>
 
-## 문서화
+# 문서화
 
 AI가 읽기 좋은 `docs/` — 구현·발표의 재료
 
 ---
 
-# 4. 문서화 — 방법·순서
+<!-- _class: content -->
+
+<p class="section-tag">04 · 문서화</p>
+
+# 방법·순서
 
 1. **문서 목록** 잡기
 2. **마크다운** 작성
@@ -254,7 +308,11 @@ AI가 읽기 좋은 `docs/` — 구현·발표의 재료
 
 ---
 
-# 4. 문서 목록 (예시)
+<!-- _class: content -->
+
+<p class="section-tag">04 · 문서화</p>
+
+# 문서 목록 (예시)
 
 - **필수** — PRD, TRD, README
 - **권장** — 디자인 가이드, 화면·기능 정의, Changelog
@@ -264,7 +322,11 @@ AI가 읽기 좋은 `docs/` — 구현·발표의 재료
 
 ---
 
-# 4. 문서화 — 도구 · 규칙
+<!-- _class: content -->
+
+<p class="section-tag">04 · 문서화</p>
+
+# 도구 · 규칙
 
 **도구** — 마크다운 에디터, Claude, Cursor
 
@@ -275,7 +337,11 @@ AI가 읽기 좋은 `docs/` — 구현·발표의 재료
 
 ---
 
-# 4. 문서화 — 기억할 것
+<!-- _class: content -->
+
+<p class="section-tag">04 · 문서화</p>
+
+# 기억할 것
 
 - AI는 **결정을 대신하지 않는다**
 - 프롬프트 입력자의 **기반**에 맞춰 결과를 낸다
@@ -289,15 +355,19 @@ AI가 읽기 좋은 `docs/` — 구현·발표의 재료
 
 <!-- _class: section-cover -->
 
-# 05
+<p class="section-eyebrow">Section 05</p>
 
-## 구현
+# 구현
 
 `docs/`를 @첨부하고 Agent mode로 구현한다
 
 ---
 
-# 5. 구현 — 방법·순서
+<!-- _class: content -->
+
+<p class="section-tag">05 · 구현</p>
+
+# 방법·순서
 
 1. **Repo·배포 준비** (GitHub + Cursor clone)
 2. **`docs/`** 폴더 확인
@@ -308,7 +378,11 @@ AI가 읽기 좋은 `docs/` — 구현·발표의 재료
 
 ---
 
-# 5. Agent mode가 기본
+<!-- _class: content -->
+
+<p class="section-tag">05 · 구현</p>
+
+# Agent mode가 기본
 
 - **Agent mode** — `docs/` @첨부 → "○○ 기능 구현해줘"
 - **Plan mode** — 범위·방향이 **불명확할 때만** 추가
@@ -316,9 +390,11 @@ AI가 읽기 좋은 `docs/` — 구현·발표의 재료
 
 ---
 
-<!-- _class: compact -->
+<!-- _class: content compact -->
 
-# 5. docs/ → 구현 시 활용
+<p class="section-tag">05 · 구현</p>
+
+# docs/ → 구현 시 활용
 
 | 문서 | 역할 |
 |------|------|
@@ -330,7 +406,11 @@ AI가 읽기 좋은 `docs/` — 구현·발표의 재료
 
 ---
 
-# 5. 구현 — 잘 시키는 법 (1)
+<!-- _class: content -->
+
+<p class="section-tag">05 · 구현</p>
+
+# 잘 시키는 법 (1)
 
 1. **문서를 먼저 붙인다** — `@docs/PRD.md`
 2. **역할을 나눈다** — PRD=범위, TRD=제약
@@ -339,7 +419,11 @@ AI가 읽기 좋은 `docs/` — 구현·발표의 재료
 
 ---
 
-# 5. 구현 — 잘 시키는 법 (2)
+<!-- _class: content -->
+
+<p class="section-tag">05 · 구현</p>
+
+# 잘 시키는 법 (2)
 
 5. **기대 결과를 문서로** — acceptance criteria 인용
 6. **어긋나면 문서부터** — 코드 vs 문서, 팀 확인
@@ -354,15 +438,19 @@ docs/와 실제 동작 일치? GitHub 커밋?
 
 <!-- _class: section-cover -->
 
-# 06
+<p class="section-eyebrow">Section 06</p>
 
-## 오류수정
+# 오류수정
 
 코드를 고치는 게 아니라, 잘 기록하고 AI에게 시킨다
 
 ---
 
-# 6. 오류수정 — 방법·순서
+<!-- _class: content -->
+
+<p class="section-tag">06 · 오류수정</p>
+
+# 방법·순서
 
 1. **문제 발견·기록** (화면 / 순서 / 결과)
 2. **재현** (2~3회)
@@ -374,9 +462,11 @@ docs/와 실제 동작 일치? GitHub 커밋?
 
 ---
 
-<!-- _class: compact -->
+<!-- _class: content compact -->
 
-# 6. 비개발자도 오류수정을 한다
+<p class="section-tag">06 · 오류수정</p>
+
+# 비개발자도 오류수정을 한다
 
 | 역할 | 하는 일 |
 |------|---------|
@@ -387,7 +477,11 @@ docs/와 실제 동작 일치? GitHub 커밋?
 
 ---
 
-# 6. 오류 수정 지시문 (1)
+<!-- _class: content -->
+
+<p class="section-tag">06 · 오류수정</p>
+
+# 오류 수정 지시문 (1)
 
 1. **증상을 구체적으로** — "로그인 클릭 → 흰 화면"
 2. **기대 결과는 docs/에서** — PRD 기준 명시
@@ -396,7 +490,11 @@ docs/와 실제 동작 일치? GitHub 커밋?
 
 ---
 
-# 6. 오류 수정 지시문 (2)
+<!-- _class: content -->
+
+<p class="section-tag">06 · 오류수정</p>
+
+# 오류 수정 지시문 (2)
 
 5. **스크린샷·녹화** 첨부
 6. **직접 확인** — AI 말만 믿지 않는다
@@ -408,15 +506,19 @@ docs/와 실제 동작 일치? GitHub 커밋?
 
 <!-- _class: section-cover -->
 
-# 07
+<p class="section-eyebrow">Section 07</p>
 
-## 발표준비
+# 발표준비
 
 docs/를 재료로 — 목차 → 내용 → 디자인
 
 ---
 
-# 7. 발표준비 — 슬라이드 3단계
+<!-- _class: content -->
+
+<p class="section-tag">07 · 발표준비</p>
+
+# 슬라이드 3단계
 
 1. **문서 정리·목차 구성**
    - PRD, Changelog, README → 핵심 메시지·목차 확정
@@ -429,9 +531,11 @@ docs/를 재료로 — 목차 → 내용 → 디자인
 
 ---
 
-<!-- _class: compact -->
+<!-- _class: content compact -->
 
-# 7. docs/ → 발표 · 도구
+<p class="section-tag">07 · 발표준비</p>
+
+# docs/ → 발표 · 도구
 
 | 문서 | 발표에서 |
 |------|---------|
@@ -444,7 +548,11 @@ docs/를 재료로 — 목차 → 내용 → 디자인
 
 ---
 
-# 7. 발표준비 — 규칙 · 실습
+<!-- _class: content -->
+
+<p class="section-tag">07 · 발표준비</p>
+
+# 규칙 · 실습
 
 - `docs/`에서 **시작** (새로 쓰지 않는다)
 - **목차 먼저** 확정
@@ -457,13 +565,17 @@ PRD·Changelog @첨부 → 목차 5~7장 → 내용 → 디자인 1장
 
 <!-- _class: section-cover faq -->
 
-# FAQ
+<p class="section-eyebrow">FAQ</p>
 
-## 자주 묻는 질문
+# 자주 묻는 질문
 
 현장에서 나오는 질문 미리 답하기
 
 ---
+
+<!-- _class: content -->
+
+<p class="section-tag">FAQ</p>
 
 # Q. 소통 창구 만들 시간이 어딨어요?
 
@@ -474,6 +586,10 @@ PRD·Changelog @첨부 → 목차 5~7장 → 내용 → 디자인 1장
 - 이후 문서화 → 구현 → 발표까지 **전부 연결**
 
 ---
+
+<!-- _class: content -->
+
+<p class="section-tag">FAQ</p>
 
 # Q. 비개발자는 뭘 하나요?
 
@@ -486,6 +602,10 @@ PRD·Changelog @첨부 → 목차 5~7장 → 내용 → 디자인 1장
 
 ---
 
+<!-- _class: content -->
+
+<p class="section-tag">FAQ</p>
+
 # Q. AI 결과를 그대로 믿어도 되나요?
 
 **안 된다.**
@@ -497,6 +617,10 @@ PRD·Changelog @첨부 → 목차 5~7장 → 내용 → 디자인 1장
 
 ---
 
+<!-- _class: content -->
+
+<p class="section-tag">FAQ</p>
+
 # Q. AI를 한 번도 안 써봤어요
 
 **AI 노트 켜기**부터.
@@ -507,6 +631,10 @@ PRD·Changelog @첨부 → 목차 5~7장 → 내용 → 디자인 1장
 4. 역할 나눠서 **먼저 시도하는 사람**부터
 
 ---
+
+<!-- _class: content -->
+
+<p class="section-tag">FAQ</p>
 
 # Q. 비개발자도 Commit + Push?
 
