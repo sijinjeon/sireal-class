@@ -7,19 +7,19 @@ footer: '전시진 (SIREAL) · 성균관대학교 해커톤 협업 강의'
 
 <!-- _class: title -->
 
-<p class="eyebrow">SIREAL · 성균관대학교</p>
+<p class="deck-label">SIREAL · 성균관대학교</p>
 
 # 해커톤 협업 강의
 
-## 개발자와 비개발자가 AI와 함께 프로젝트를 완성하는 방법
+<p class="deck-sub">개발자와 비개발자가 AI와 함께 프로젝트를 완성하는 방법</p>
 
-<p class="title-foot">성균관대학교 해커톤 · 2026</p>
+<p class="deck-foot">전시진 (SIREAL) · 성균관대학교</p>
 
 ---
 
 <!-- _class: toc -->
 
-<p class="t-meta">Agenda</p>
+<p class="deck-label">Agenda</p>
 
 # 오늘의 흐름
 
@@ -36,15 +36,7 @@ footer: '전시진 (SIREAL) · 성균관대학교 해커톤 협업 강의'
 
 ---
 
-<!-- _class: intro-cover -->
-
-# 인트로
-
----
-
-<!-- _class: intro -->
-
-<p class="t-meta">Intro</p>
+<!-- _class: body -->
 
 # 이 강의는 무엇을 위한 것인가
 
@@ -54,9 +46,7 @@ footer: '전시진 (SIREAL) · 성균관대학교 해커톤 협업 강의'
 
 ---
 
-<!-- _class: intro -->
-
-<p class="t-meta">Intro</p>
+<!-- _class: body -->
 
 # 기억할 핵심 두 가지
 
@@ -67,9 +57,7 @@ footer: '전시진 (SIREAL) · 성균관대학교 해커톤 협업 강의'
 
 ---
 
-<!-- _class: intro -->
-
-<p class="t-meta">Intro</p>
+<!-- _class: body -->
 
 # 전체 흐름
 
@@ -82,9 +70,7 @@ footer: '전시진 (SIREAL) · 성균관대학교 해커톤 협업 강의'
 
 ---
 
-<!-- _class: intro -->
-
-<p class="t-meta">Intro</p>
+<!-- _class: body -->
 
 # 각 단계마다 같은 5요소
 
@@ -97,69 +83,39 @@ footer: '전시진 (SIREAL) · 성균관대학교 해커톤 협업 강의'
 
 <!-- _class: section-cover -->
 
-# 소통 창구 만들기
+<p class="section-num">01</p>
+
+## 소통 창구 만들기
+
+<p class="section-tagline">모든 기록이 모이는 팀의 단 하나의 창구</p>
 
 ---
 
-<!-- _class: content step-1 -->
+<!-- _class: body -->
 
-<div class="slide-chrome">
-<div class="chrome-head">
-<p class="t-meta">01 · 소통 창구</p>
-<p class="t-cat">방법·순서</p>
-</div>
-<span class="t-step">1 / 5</span>
-</div>
-
-<nav class="flow-rail" aria-label="섹션 진행"><span>방법·순서</span><span>도구</span><span>규칙</span><span>실습</span><span>점검</span></nav>
-
-<div class="slide-body">
+# 1. 소통 창구 — 방법·순서
 
 1. 노션 **페이지** 생성
 2. **팀원 초대**
 3. 페이지 안에 **데이터베이스** 생성
 4. 각종 문서를 **종류별**로 정리
 
-</div>
-
 ---
 
-<!-- _class: content step-2 -->
+<!-- _class: body -->
 
-<div class="slide-chrome">
-<div class="chrome-head">
-<p class="t-meta">01 · 소통 창구</p>
-<p class="t-cat">도구</p>
-</div>
-<span class="t-step">2 / 5</span>
-</div>
-
-<nav class="flow-rail" aria-label="섹션 진행"><span>방법·순서</span><span>도구</span><span>규칙</span><span>실습</span><span>점검</span></nav>
-
-<div class="slide-body">
+# 1. 소통 창구 — 도구
 
 - **Notion** (나중에 MCP 연결)
 - 복잡한 DB 구조는 필요 없다
 - `종류` 속성(select) 하나면 충분
   - 회의록 / 자료 / 할 일 / 문서 등
 
-</div>
-
 ---
 
-<!-- _class: content step-3 -->
+<!-- _class: body -->
 
-<div class="slide-chrome">
-<div class="chrome-head">
-<p class="t-meta">01 · 소통 창구</p>
-<p class="t-cat">규칙</p>
-</div>
-<span class="t-step">3 / 5</span>
-</div>
-
-<nav class="flow-rail" aria-label="섹션 진행"><span>방법·순서</span><span>도구</span><span>규칙</span><span>실습</span><span>점검</span></nav>
-
-<div class="slide-body">
+# 1. 소통 창구 — 규칙
 
 1. **매 회의 시작 시 AI 회의 노트를 켠다** ← 가장 중요
 2. 모든 자료·기록은 노션 **한곳**에
@@ -169,115 +125,55 @@ footer: '전시진 (SIREAL) · 성균관대학교 해커톤 협업 강의'
 
 > ⚠️ AI 노트를 켜지 않은 회의 = 흔적이 사라진다
 
-</div>
-
 ---
 
-<!-- _class: content step-4 -->
+<!-- _class: body -->
 
-<div class="slide-chrome">
-<div class="chrome-head">
-<p class="t-meta">01 · 소통 창구</p>
-<p class="t-cat">실습</p>
-</div>
-<span class="t-step">4 / 5</span>
-</div>
+# 1. 소통 창구 — 실습 · 점검
 
-<nav class="flow-rail" aria-label="섹션 진행"><span>방법·순서</span><span>도구</span><span>규칙</span><span>실습</span><span>점검</span></nav>
-
-<div class="slide-body">
-
+### 실습
 - 노션 페이지 만들고 팀원 초대
 - DB 생성 → 첫 항목(회의록) 올려보기
 
-</div>
-
----
-
-<!-- _class: content step-5 -->
-
-<div class="slide-chrome">
-<div class="chrome-head">
-<p class="t-meta">01 · 소통 창구</p>
-<p class="t-cat">점검</p>
-</div>
-<span class="t-step">5 / 5</span>
-</div>
-
-<nav class="flow-rail" aria-label="섹션 진행"><span>방법·순서</span><span>도구</span><span>규칙</span><span>실습</span><span>점검</span></nav>
-
-<div class="slide-body">
-
+### 점검
 - 전원 초대됐는가?
 - 문서가 한곳에 종류별로 쌓이는가?
 
-</div>
-
 <!-- _class: section-cover -->
 
-# 아이데이션
+<p class="section-num">02</p>
+
+## 아이데이션
+
+<p class="section-tagline">판단은 보류, 양으로 승부</p>
 
 ---
 
-<!-- _class: content step-1 -->
+<!-- _class: body -->
 
-<div class="slide-chrome">
-<div class="chrome-head">
-<p class="t-meta">02 · 아이데이션</p>
-<p class="t-cat">방법·순서</p>
-</div>
-<span class="t-step">1 / 5</span>
-</div>
-
-<nav class="flow-rail" aria-label="섹션 진행"><span>방법·순서</span><span>도구</span><span>규칙</span><span>실습</span><span>점검</span></nav>
-
-<div class="slide-body">
+# 2. 아이데이션 — 방법·순서
 
 1. **문제 정의**
 2. **자료 수집**
 3. **회의**로 아이디어 쏟아내기
 
-</div>
-
 ---
 
-<!-- _class: content step-2 -->
+<!-- _class: body -->
 
-<div class="slide-chrome">
-<div class="chrome-head">
-<p class="t-meta">02 · 아이데이션</p>
-<p class="t-cat">도구</p>
-</div>
-<span class="t-step">2 / 5</span>
-</div>
-
-<nav class="flow-rail" aria-label="섹션 진행"><span>방법·순서</span><span>도구</span><span>규칙</span><span>실습</span><span>점검</span></nav>
-
-<div class="slide-body">
+# 2. 아이데이션 — 도구
 
 - **노션 AI 노트** (우선)
 - **클로바노트** (대안 — 웹 접속 가능)
 - AI 음성 모드, 검색
 
-> 팀원 전체가 노션 AI 노트를 쓸 수 없으면 클로바노트로 대체
-
-</div>
+<p class="inline-note">팀원 전체가 노션 AI 노트를 쓸 수 없으면 클로바노트로 대체</p>
 
 ---
 
-<!-- _class: content step-3 -->
+<!-- _class: body -->
 
-<div class="slide-chrome">
-<div class="chrome-head">
-<p class="t-meta">02 · 아이데이션</p>
-<p class="t-cat">규칙</p>
-</div>
-<span class="t-step">3 / 5</span>
-</div>
-
-<nav class="flow-rail" aria-label="섹션 진행"><span>방법·순서</span><span>도구</span><span>규칙</span><span>실습</span><span>점검</span></nav>
-
-<div class="slide-body">
+# 2. 아이데이션 — 규칙
 
 - 회의 시작과 동시에 **AI 노트부터**
 - 다른 사람 아이디어 **비판 금지**
@@ -285,96 +181,58 @@ footer: '전시진 (SIREAL) · 성균관대학교 해커톤 협업 강의'
 - 판단 보류, **양**으로 승부
 - 떠오르면 **즉시 기록**
 
-</div>
-
 ---
 
-<!-- _class: content step-4 -->
+<!-- _class: body -->
 
-<div class="slide-chrome">
-<div class="chrome-head">
-<p class="t-meta">02 · 아이데이션</p>
-<p class="t-cat">실습</p>
-</div>
-<span class="t-step">4 / 5</span>
-</div>
+# 2. 아이데이션 — 실습 · 점검
 
-<nav class="flow-rail" aria-label="섹션 진행"><span>방법·순서</span><span>도구</span><span>규칙</span><span>실습</span><span>점검</span></nav>
-
-<div class="slide-body">
-
+### 실습
 - 클로바노트로 아이디어 회의 → 문서로 정리
 - (또는) 노션 AI 노트로 동일 실습
 
-</div>
-
----
-
-<!-- _class: content step-5 -->
-
-<div class="slide-chrome">
-<div class="chrome-head">
-<p class="t-meta">02 · 아이데이션</p>
-<p class="t-cat">점검</p>
-</div>
-<span class="t-step">5 / 5</span>
-</div>
-
-<nav class="flow-rail" aria-label="섹션 진행"><span>방법·순서</span><span>도구</span><span>규칙</span><span>실습</span><span>점검</span></nav>
-
-<div class="slide-body">
-
+### 점검
 - 정리된 문서 공유
 - 흥미도·실현성 코멘트
 
-</div>
-
 <!-- _class: section-cover -->
 
-# 아이디어 선별
+<p class="section-num">03</p>
+
+## 아이디어 선별
+
+<p class="section-tagline">딥리서치로 근거를 모으고, 심사 기준으로 1개를 고른다</p>
 
 ---
 
-<!-- _class: content step-1 -->
+<!-- _class: body -->
 
-<div class="slide-chrome">
-<div class="chrome-head">
-<p class="t-meta">03 · 아이디어 선별</p>
-<p class="t-cat">방법·순서</p>
-</div>
-<span class="t-step">1 / 5</span>
-</div>
-
-<nav class="flow-rail" aria-label="섹션 진행"><span>방법·순서</span><span>도구</span><span>규칙</span><span>실습</span><span>점검</span></nav>
-
-<div class="slide-body">
+# 3. 아이디어 선별 — 방법·순서
 
 1. 후보 **나열**
 2. 후보별 **딥리서치** → 근거 수집
 3. **심사 기준** 적용 → 점수
 4. **우선순위** → **1개 확정**
 
-> 딥리서치는 시간이 걸린다 → 후보 정해지는 대로 **바로 돌려두기**
-
-**심사 기준 5가지** — 문제 정의·창의성·AI 활용·실현 가능성·기대 효과
-
-</div>
+<p class="inline-note">딥리서치는 시간이 걸린다 → 후보 정해지는 대로 **바로 돌려두기**</p>
 
 ---
 
-<!-- _class: content compact step-2 -->
+<!-- _class: body -->
 
-<div class="slide-chrome">
-<div class="chrome-head">
-<p class="t-meta">03 · 아이디어 선별</p>
-<p class="t-cat">도구</p>
-</div>
-<span class="t-step">2 / 5</span>
-</div>
+# 3. 심사 기준 5가지
 
-<nav class="flow-rail" aria-label="섹션 진행"><span>방법·순서</span><span>도구</span><span>규칙</span><span>실습</span><span>점검</span></nav>
+1. 문제 정의 및 사회적 필요성
+2. 창의성 및 독창성
+3. AI 활용의 적절성 및 기술 타당성
+4. 실현 가능성 및 완성도
+5. 기대 효과 및 파급력
 
-<div class="slide-body">
+---
+
+<!-- _class: body compact -->
+
+# 3. 아이디어 선별 — 도구
 
 | 도구 | 특징 |
 |------|------|
@@ -386,23 +244,11 @@ footer: '전시진 (SIREAL) · 성균관대학교 해커톤 협업 강의'
 - 평가표: Notion / 스프레드시트
 - 예시 프롬프트: `Example_prompt/` 폴더
 
-</div>
-
 ---
 
-<!-- _class: content step-3 -->
+<!-- _class: body -->
 
-<div class="slide-chrome">
-<div class="chrome-head">
-<p class="t-meta">03 · 아이디어 선별</p>
-<p class="t-cat">규칙</p>
-</div>
-<span class="t-step">3 / 5</span>
-</div>
-
-<nav class="flow-rail" aria-label="섹션 진행"><span>방법·순서</span><span>도구</span><span>규칙</span><span>실습</span><span>점검</span></nav>
-
-<div class="slide-body">
+# 3. 아이디어 선별 — 규칙
 
 - **심사위원** 관점·기준으로 본다
 - "이거 좋은데요?" 반응 = **신호**
@@ -410,69 +256,33 @@ footer: '전시진 (SIREAL) · 성균관대학교 해커톤 협업 강의'
 - 결과 + 점수를 **노션에 함께** 기록
 - **선정 이유**를 문서에 남긴다
 
-</div>
-
 ---
 
-<!-- _class: content step-4 -->
+<!-- _class: body -->
 
-<div class="slide-chrome">
-<div class="chrome-head">
-<p class="t-meta">03 · 아이디어 선별</p>
-<p class="t-cat">실습</p>
-</div>
-<span class="t-step">4 / 5</span>
-</div>
+# 3. 아이디어 선별 — 실습 · 점검
 
-<nav class="flow-rail" aria-label="섹션 진행"><span>방법·순서</span><span>도구</span><span>규칙</span><span>실습</span><span>점검</span></nav>
-
-<div class="slide-body">
-
+### 실습
 - 아이디어 1개 → 딥리서치 프롬프트 작성
 - 심사 기준표에 대입 → 점수화 → 1개 선택
 
-</div>
-
----
-
-<!-- _class: content step-5 -->
-
-<div class="slide-chrome">
-<div class="chrome-head">
-<p class="t-meta">03 · 아이디어 선별</p>
-<p class="t-cat">점검</p>
-</div>
-<span class="t-step">5 / 5</span>
-</div>
-
-<nav class="flow-rail" aria-label="섹션 진행"><span>방법·순서</span><span>도구</span><span>규칙</span><span>실습</span><span>점검</span></nav>
-
-<div class="slide-body">
-
+### 점검
 - 선정 사유 발표
 - 기준이 명확한가?
 
-</div>
-
 <!-- _class: section-cover -->
 
-# 문서화
+<p class="section-num">04</p>
+
+## 문서화
+
+<p class="section-tagline">AI가 읽기 좋은 `docs/` — 구현·발표의 재료</p>
 
 ---
 
-<!-- _class: content step-1 -->
+<!-- _class: body -->
 
-<div class="slide-chrome">
-<div class="chrome-head">
-<p class="t-meta">04 · 문서화</p>
-<p class="t-cat">방법·순서</p>
-</div>
-<span class="t-step">1 / 5</span>
-</div>
-
-<nav class="flow-rail" aria-label="섹션 진행"><span>방법·순서</span><span>도구</span><span>규칙</span><span>실습</span><span>점검</span></nav>
-
-<div class="slide-body">
+# 4. 문서화 — 방법·순서
 
 1. **문서 목록** 잡기
 2. **마크다운** 작성
@@ -480,117 +290,60 @@ footer: '전시진 (SIREAL) · 성균관대학교 해커톤 협업 강의'
 4. **`docs/`** 폴더에 묶기
 5. **지속 업데이트**
 
-**문서 목록 (예시)** — 필수: PRD, TRD, README · 권장: 디자인 가이드, 화면·기능 정의, Changelog
-
-</div>
-
 ---
 
-<!-- _class: content step-2 -->
+<!-- _class: body -->
 
-<div class="slide-chrome">
-<div class="chrome-head">
-<p class="t-meta">04 · 문서화</p>
-<p class="t-cat">도구</p>
-</div>
-<span class="t-step">2 / 5</span>
-</div>
+# 4. 문서 목록 (예시)
 
-<nav class="flow-rail" aria-label="섹션 진행"><span>방법·순서</span><span>도구</span><span>규칙</span><span>실습</span><span>점검</span></nav>
-
-<div class="slide-body">
-
-- **마크다운 에디터**
-- **Claude**, **Cursor**
+- **필수** — PRD, TRD, README
+- **권장** — 디자인 가이드, 화면·기능 정의, Changelog
+- **선택** — 데이터 모델, API 명세, 컨벤션, 배포 가이드, 발표 개요
 
 > 모든 문서 → 프로젝트 루트의 **`docs/`** 폴더
 
-</div>
-
 ---
 
-<!-- _class: content step-3 -->
+<!-- _class: body -->
 
-<div class="slide-chrome">
-<div class="chrome-head">
-<p class="t-meta">04 · 문서화</p>
-<p class="t-cat">규칙</p>
-</div>
-<span class="t-step">3 / 5</span>
-</div>
+# 4. 문서화 — 도구 · 규칙
 
-<nav class="flow-rail" aria-label="섹션 진행"><span>방법·순서</span><span>도구</span><span>규칙</span><span>실습</span><span>점검</span></nav>
-
-<div class="slide-body">
+**도구** — 마크다운 에디터, Claude, Cursor
 
 - AI에 너무 의존 → 문장만 늘어난다
 - **마크다운** = AI가 가장 좋아하는 형식
 - **2,000줄 이내** — 짧을수록 좋음
 - 길어지면 **주제별로 쪼개기**
-- AI는 **결정을 대신하지 않는다** — 의사결정은 **팀**이 한다
-
-</div>
 
 ---
 
-<!-- _class: content step-4 -->
+<!-- _class: body -->
 
-<div class="slide-chrome">
-<div class="chrome-head">
-<p class="t-meta">04 · 문서화</p>
-<p class="t-cat">실습</p>
-</div>
-<span class="t-step">4 / 5</span>
-</div>
+# 4. 문서화 — 기억할 것
 
-<nav class="flow-rail" aria-label="섹션 진행"><span>방법·순서</span><span>도구</span><span>규칙</span><span>실습</span><span>점검</span></nav>
+- AI는 **결정을 대신하지 않는다**
+- 프롬프트 입력자의 **기반**에 맞춰 결과를 낸다
+- 의사결정은 **팀**이 한다
 
-<div class="slide-body">
+### 실습
+`docs/` 폴더 + PRD 1장 작성
 
-- `docs/` 폴더 만들기
-- 기능명세(PRD) 마크다운 1장 작성
-
-</div>
-
----
-
-<!-- _class: content step-5 -->
-
-<div class="slide-chrome">
-<div class="chrome-head">
-<p class="t-meta">04 · 문서화</p>
-<p class="t-cat">점검</p>
-</div>
-<span class="t-step">5 / 5</span>
-</div>
-
-<nav class="flow-rail" aria-label="섹션 진행"><span>방법·순서</span><span>도구</span><span>규칙</span><span>실습</span><span>점검</span></nav>
-
-<div class="slide-body">
-
-- "AI가 읽기 좋은 구조인가?" 상호 리뷰
-
-</div>
+### 점검
+"AI가 읽기 좋은 구조인가?" 상호 리뷰
 
 <!-- _class: section-cover -->
 
-# 구현
+<p class="section-num">05</p>
+
+## 구현
+
+<p class="section-tagline">`docs/`를 @첨부하고 Agent mode로 구현한다</p>
 
 ---
 
-<!-- _class: content step-1 -->
+<!-- _class: body -->
 
-<div class="slide-chrome">
-<div class="chrome-head">
-<p class="t-meta">05 · 구현</p>
-<p class="t-cat">방법·순서</p>
-</div>
-<span class="t-step">1 / 5</span>
-</div>
-
-<nav class="flow-rail" aria-label="섹션 진행"><span>방법·순서</span><span>도구</span><span>규칙</span><span>실습</span><span>점검</span></nav>
-
-<div class="slide-body">
+# 5. 구현 — 방법·순서
 
 1. **Repo·배포 준비** (GitHub + Cursor clone)
 2. **`docs/`** 폴더 확인
@@ -599,128 +352,71 @@ footer: '전시진 (SIREAL) · 성균관대학교 해커톤 협업 강의'
 5. **확인** (브라우저)
 6. **Commit + Push**
 
-> Agent mode가 기본 · Plan mode는 **불명확할 때만**
+---
 
-</div>
+<!-- _class: body -->
+
+# 5. Agent mode가 기본
+
+- **Agent mode** — `docs/` @첨부 → "○○ 기능 구현해줘"
+- **Plan mode** — 범위·방향이 **불명확할 때만** 추가
+- **Commit + Push** — **팀원 누구나** (개발자 전담 아님)
 
 ---
 
-<!-- _class: content compact step-2 -->
+<!-- _class: body compact -->
 
-<div class="slide-chrome">
-<div class="chrome-head">
-<p class="t-meta">05 · 구현</p>
-<p class="t-cat">도구</p>
-</div>
-<span class="t-step">2 / 5</span>
-</div>
-
-<nav class="flow-rail" aria-label="섹션 진행"><span>방법·순서</span><span>도구</span><span>규칙</span><span>실습</span><span>점검</span></nav>
-
-<div class="slide-body">
-
-- **Cursor** — Agent mode (기본) / Plan mode (선택)
-- **GitHub** — Commit + Push (팀원 전원)
-- **Vercel** — 웹 앱 배포 (선택)
+# 5. docs/ → 구현 시 활용
 
 | 문서 | 역할 |
 |------|------|
 | PRD | 무엇을 — 범위·기능 |
 | TRD | 어떻게 — 스택·구조 |
+| README | 프로젝트 맥락 |
 | 화면·기능 정의 | 구현 단위 (1개씩) |
-
-</div>
+| Changelog | 구현·수정 이력 |
 
 ---
 
-<!-- _class: content compact step-3 -->
+<!-- _class: body -->
 
-<div class="slide-chrome">
-<div class="chrome-head">
-<p class="t-meta">05 · 구현</p>
-<p class="t-cat">규칙</p>
-</div>
-<span class="t-step">3 / 5</span>
-</div>
-
-<nav class="flow-rail" aria-label="섹션 진행"><span>방법·순서</span><span>도구</span><span>규칙</span><span>실습</span><span>점검</span></nav>
-
-<div class="slide-body">
+# 5. 구현 — 잘 시키는 법 (1)
 
 1. **문서를 먼저 붙인다** — `@docs/PRD.md`
 2. **역할을 나눈다** — PRD=범위, TRD=제약
 3. **한 번에 하나씩** — 기능·화면 1개 단위
 4. **제약을 문서에서** — TRD·디자인 가이드 그대로
+
+---
+
+<!-- _class: body -->
+
+# 5. 구현 — 잘 시키는 법 (2)
+
 5. **기대 결과를 문서로** — acceptance criteria 인용
-6. **어긋나면 문서부터** — 팀에서 확인
+6. **어긋나면 문서부터** — 코드 vs 문서, 팀 확인
 7. **확인 후 Commit + Push**
 8. **안 되면 다시** — 지시문·문서 수정 후 반복
 
-</div>
+### 실습
+Repo → PRD @첨부 → Agent → 확인 → Push
 
----
-
-<!-- _class: content step-4 -->
-
-<div class="slide-chrome">
-<div class="chrome-head">
-<p class="t-meta">05 · 구현</p>
-<p class="t-cat">실습</p>
-</div>
-<span class="t-step">4 / 5</span>
-</div>
-
-<nav class="flow-rail" aria-label="섹션 진행"><span>방법·순서</span><span>도구</span><span>규칙</span><span>실습</span><span>점검</span></nav>
-
-<div class="slide-body">
-
-- GitHub Repo 생성 · Cursor clone
-- `docs/` PRD(및 TRD) @첨부 → Agent mode로 첫 기능 1개 구현
-- 브라우저 확인 → Commit + Push
-
-</div>
-
----
-
-<!-- _class: content step-5 -->
-
-<div class="slide-chrome">
-<div class="chrome-head">
-<p class="t-meta">05 · 구현</p>
-<p class="t-cat">점검</p>
-</div>
-<span class="t-step">5 / 5</span>
-</div>
-
-<nav class="flow-rail" aria-label="섹션 진행"><span>방법·순서</span><span>도구</span><span>규칙</span><span>실습</span><span>점검</span></nav>
-
-<div class="slide-body">
-
-- 구현 결과가 `docs/` PRD·TRD·화면·기능 정의와 일치하는가?
-- GitHub에 커밋이 올라갔는가?
-- 어긋난 부분 → 문서 수정 vs 지시문 수정, 팀에서 결정
-
-</div>
+### 점검
+docs/와 실제 동작 일치? GitHub 커밋?
 
 <!-- _class: section-cover -->
 
-# 오류수정
+<p class="section-num">06</p>
+
+## 오류수정
+
+<p class="section-tagline">코드를 고치는 게 아니라, 잘 기록하고 AI에게 시킨다</p>
 
 ---
 
-<!-- _class: content step-1 -->
+<!-- _class: body -->
 
-<div class="slide-chrome">
-<div class="chrome-head">
-<p class="t-meta">06 · 오류수정</p>
-<p class="t-cat">방법·순서</p>
-</div>
-<span class="t-step">1 / 5</span>
-</div>
-
-<nav class="flow-rail" aria-label="섹션 진행"><span>방법·순서</span><span>도구</span><span>규칙</span><span>실습</span><span>점검</span></nav>
-
-<div class="slide-body">
+# 6. 오류수정 — 방법·순서
 
 1. **문제 발견·기록** (화면 / 순서 / 결과)
 2. **재현** (2~3회)
@@ -730,126 +426,57 @@ footer: '전시진 (SIREAL) · 성균관대학교 해커톤 협업 강의'
 6. **`docs/Changelog.md`** 기록
 7. **Commit + Push**
 
-</div>
-
 ---
 
-<!-- _class: content compact step-2 -->
+<!-- _class: body compact -->
 
-<div class="slide-chrome">
-<div class="chrome-head">
-<p class="t-meta">06 · 오류수정</p>
-<p class="t-cat">도구</p>
-</div>
-<span class="t-step">2 / 5</span>
-</div>
-
-<nav class="flow-rail" aria-label="섹션 진행"><span>방법·순서</span><span>도구</span><span>규칙</span><span>실습</span><span>점검</span></nav>
-
-<div class="slide-body">
-
-- **Cursor** — Agent mode (기본) / Plan mode (선택)
-- **브라우저** — 직접 확인 (비개발자 주 검증)
-- **GitHub** — Commit + Push
-- **`docs/`** — PRD, 화면·기능 정의, Changelog
+# 6. 비개발자도 오류수정을 한다
 
 | 역할 | 하는 일 |
 |------|---------|
-| **비개발자 (주도)** | 발견·재현·지시·확인·Changelog·Push |
+| **비개발자 (주도)** | 발견·재현·지시·확인·Changelog·**Push** |
 | **개발자 (보조)** | 지시 보완·에러 로그·배포 점검 |
 
-</div>
+> 비개발자 = **발견 · 재현 · 기록 · 확인 · Commit + Push**
 
 ---
 
-<!-- _class: content compact step-3 -->
+<!-- _class: body -->
 
-<div class="slide-chrome">
-<div class="chrome-head">
-<p class="t-meta">06 · 오류수정</p>
-<p class="t-cat">규칙</p>
-</div>
-<span class="t-step">3 / 5</span>
-</div>
-
-<nav class="flow-rail" aria-label="섹션 진행"><span>방법·순서</span><span>도구</span><span>규칙</span><span>실습</span><span>점검</span></nav>
-
-<div class="slide-body">
+# 6. 오류 수정 지시문 (1)
 
 1. **증상을 구체적으로** — "로그인 클릭 → 흰 화면"
 2. **기대 결과는 docs/에서** — PRD 기준 명시
 3. **재현 순서 그대로** — 1, 2, 3단계
 4. **한 번에 하나만** — 오류 1건 = 지시 1개
+
+---
+
+<!-- _class: body -->
+
+# 6. 오류 수정 지시문 (2)
+
 5. **스크린샷·녹화** 첨부
 6. **직접 확인** — AI 말만 믿지 않는다
-7. **확인 후 Commit + Push**
+7. **확인 후 Commit + Push** — 개발자에게만 맡기지 않는다
 8. **고치기 ≠ 기능 추가** — 추가는 New 세션 + 5번 흐름
 
-</div>
-
----
-
-<!-- _class: content step-4 -->
-
-<div class="slide-chrome">
-<div class="chrome-head">
-<p class="t-meta">06 · 오류수정</p>
-<p class="t-cat">실습</p>
-</div>
-<span class="t-step">4 / 5</span>
-</div>
-
-<nav class="flow-rail" aria-label="섹션 진행"><span>방법·순서</span><span>도구</span><span>규칙</span><span>실습</span><span>점검</span></nav>
-
-<div class="slide-body">
-
-- 오류 1건 재현 (예: 버튼 클릭 시 반응 없음)
-- `docs/PRD.md` @첨부 → Agent mode 수정 지시
-- 브라우저 확인 → `docs/Changelog.md` 3줄 기록 → Push
-
-</div>
-
----
-
-<!-- _class: content step-5 -->
-
-<div class="slide-chrome">
-<div class="chrome-head">
-<p class="t-meta">06 · 오류수정</p>
-<p class="t-cat">점검</p>
-</div>
-<span class="t-step">5 / 5</span>
-</div>
-
-<nav class="flow-rail" aria-label="섹션 진행"><span>방법·순서</span><span>도구</span><span>규칙</span><span>실습</span><span>점검</span></nav>
-
-<div class="slide-body">
-
-- `docs/Changelog.md`에 증상 / 원인(추정) / 해결 기록됐는가?
-- PRD·화면·기능 정의와 실제 동작이 일치하는가?
-- GitHub에 커밋이 올라갔는가?
-
-</div>
+### 실습
+오류 재현 → Agent 수정 → Changelog → Push
 
 <!-- _class: section-cover -->
 
-# 발표준비
+<p class="section-num">07</p>
+
+## 발표준비
+
+<p class="section-tagline">docs/를 재료로 — 목차 → 내용 → 디자인</p>
 
 ---
 
-<!-- _class: content step-1 -->
+<!-- _class: body -->
 
-<div class="slide-chrome">
-<div class="chrome-head">
-<p class="t-meta">07 · 발표준비</p>
-<p class="t-cat">방법·순서</p>
-</div>
-<span class="t-step">1 / 5</span>
-</div>
-
-<nav class="flow-rail" aria-label="섹션 진행"><span>방법·순서</span><span>도구</span><span>규칙</span><span>실습</span><span>점검</span></nav>
-
-<div class="slide-body">
+# 7. 발표준비 — 슬라이드 3단계
 
 1. **문서 정리·목차 구성**
    - PRD, Changelog, README → 핵심 메시지·목차 확정
@@ -860,122 +487,47 @@ footer: '전시진 (SIREAL) · 성균관대학교 해커톤 협업 강의'
 
 > 목차·내용 **먼저**, 디자인은 **마지막**
 
-</div>
-
 ---
 
-<!-- _class: content compact step-2 -->
+<!-- _class: body compact -->
 
-<div class="slide-chrome">
-<div class="chrome-head">
-<p class="t-meta">07 · 발표준비</p>
-<p class="t-cat">도구</p>
-</div>
-<span class="t-step">2 / 5</span>
-</div>
-
-<nav class="flow-rail" aria-label="섹션 진행"><span>방법·순서</span><span>도구</span><span>규칙</span><span>실습</span><span>점검</span></nav>
-
-<div class="slide-body">
-
-- **Gemini / NotebookLM / Claude** — 목차·슬라이드별 문장 초안
-- **Canva / Gamma / Claude Design** — 디자인 적용
-- **`docs/`** — 모든 발표 내용의 원본
+# 7. docs/ → 발표 · 도구
 
 | 문서 | 발표에서 |
 |------|---------|
 | PRD | 문제·기능·기대효과 |
 | Changelog | "우리가 만든 것" |
+| README | 프로젝트 소개 |
 | 디자인 가이드 | 슬라이드 톤·색 |
 
-</div>
+**도구** — Gemini, NotebookLM, Claude, Canva, Gamma 등
 
 ---
 
-<!-- _class: content compact step-3 -->
+<!-- _class: body -->
 
-<div class="slide-chrome">
-<div class="chrome-head">
-<p class="t-meta">07 · 발표준비</p>
-<p class="t-cat">규칙</p>
-</div>
-<span class="t-step">3 / 5</span>
-</div>
-
-<nav class="flow-rail" aria-label="섹션 진행"><span>방법·순서</span><span>도구</span><span>규칙</span><span>실습</span><span>점검</span></nav>
-
-<div class="slide-body">
+# 7. 발표준비 — 규칙 · 실습
 
 - `docs/`에서 **시작** (새로 쓰지 않는다)
 - **목차 먼저** 확정
-- **3단계 순서** 지키기 — 한 번에 전부 만들지 않는다
-- **디자인 가이드** 따르기
-- **시연 리허설** + **발표 시간 맞추기**
+- **3단계 순서** 지키기
 - AI 결과 ↔ **docs/ 대조**
+- **시연 리허설** + **시간 맞추기**
 
-</div>
+### 실습
+PRD·Changelog @첨부 → 목차 5~7장 → 내용 → 디자인 1장
 
----
+<!-- _class: section-cover faq -->
 
-<!-- _class: content step-4 -->
+<p class="section-num">FAQ</p>
 
-<div class="slide-chrome">
-<div class="chrome-head">
-<p class="t-meta">07 · 발표준비</p>
-<p class="t-cat">실습</p>
-</div>
-<span class="t-step">4 / 5</span>
-</div>
+## 자주 묻는 질문
 
-<nav class="flow-rail" aria-label="섹션 진행"><span>방법·순서</span><span>도구</span><span>규칙</span><span>실습</span><span>점검</span></nav>
-
-<div class="slide-body">
-
-- `docs/PRD.md`·`docs/Changelog.md` @첨부
-- AI로 발표 목차 5~7장 구성 → 내용 초안 작성
-- 디자인 가이드 참고해 1장 디자인 적용
-
-</div>
+<p class="section-tagline">현장에서 나오는 질문 미리 답하기</p>
 
 ---
 
-<!-- _class: content step-5 -->
-
-<div class="slide-chrome">
-<div class="chrome-head">
-<p class="t-meta">07 · 발표준비</p>
-<p class="t-cat">점검</p>
-</div>
-<span class="t-step">5 / 5</span>
-</div>
-
-<nav class="flow-rail" aria-label="섹션 진행"><span>방법·순서</span><span>도구</span><span>규칙</span><span>실습</span><span>점검</span></nav>
-
-<div class="slide-body">
-
-- 목차가 PRD·심사 기준과 맞는가?
-- 슬라이드 내용이 `docs/`와 일치하는가?
-- 디자인 가이드 톤이 맞는가?
-- 모의 발표로 시간·전달력 확인
-
-</div>
-
-<!-- _class: section-cover -->
-
-# 자주 묻는 질문
-
----
-
-<!-- _class: content faq-item -->
-
-<div class="slide-chrome">
-<div class="chrome-head">
-<p class="t-meta">FAQ</p>
-<p class="t-cat">Q1</p>
-</div>
-</div>
-
-<div class="slide-body">
+<!-- _class: body faq -->
 
 # Q. 소통 창구 만들 시간이 어딨어요?
 
@@ -985,20 +537,9 @@ footer: '전시진 (SIREAL) · 성균관대학교 해커톤 협업 강의'
 - 노션 페이지 + 초대 = **5분**
 - 이후 문서화 → 구현 → 발표까지 **전부 연결**
 
-</div>
-
 ---
 
-<!-- _class: content faq-item -->
-
-<div class="slide-chrome">
-<div class="chrome-head">
-<p class="t-meta">FAQ</p>
-<p class="t-cat">Q2</p>
-</div>
-</div>
-
-<div class="slide-body">
+<!-- _class: body faq -->
 
 # Q. 비개발자는 뭘 하나요?
 
@@ -1009,20 +550,9 @@ footer: '전시진 (SIREAL) · 성균관대학교 해커톤 협업 강의'
 - **Commit + Push** · **발표 준비**
 - "무엇을 왜 만드는가" = 비개발자 강점
 
-</div>
-
 ---
 
-<!-- _class: content faq-item -->
-
-<div class="slide-chrome">
-<div class="chrome-head">
-<p class="t-meta">FAQ</p>
-<p class="t-cat">Q3</p>
-</div>
-</div>
-
-<div class="slide-body">
+<!-- _class: body faq -->
 
 # Q. AI 결과를 그대로 믿어도 되나요?
 
@@ -1033,20 +563,9 @@ footer: '전시진 (SIREAL) · 성균관대학교 해커톤 협업 강의'
 - 문서·리서치 → **출처·사실 확인**
 - 딥리서치 통계 → **교차 확인**
 
-</div>
-
 ---
 
-<!-- _class: content faq-item -->
-
-<div class="slide-chrome">
-<div class="chrome-head">
-<p class="t-meta">FAQ</p>
-<p class="t-cat">Q4</p>
-</div>
-</div>
-
-<div class="slide-body">
+<!-- _class: body faq -->
 
 # Q. AI를 한 번도 안 써봤어요
 
@@ -1057,20 +576,9 @@ footer: '전시진 (SIREAL) · 성균관대학교 해커톤 협업 강의'
 3. 익숙해지면 → 검색 → 딥리서치 → 지시문
 4. 역할 나눠서 **먼저 시도하는 사람**부터
 
-</div>
-
 ---
 
-<!-- _class: content faq-item -->
-
-<div class="slide-chrome">
-<div class="chrome-head">
-<p class="t-meta">FAQ</p>
-<p class="t-cat">Q5</p>
-</div>
-</div>
-
-<div class="slide-body">
+<!-- _class: body faq -->
 
 # Q. 비개발자도 Commit + Push?
 
@@ -1080,15 +588,13 @@ footer: '전시진 (SIREAL) · 성균관대학교 해커톤 협업 강의'
 - 브라우저 확인 → Changelog → **Push**
 - 개발자만의 일 **아님**
 
-</div>
-
 ---
 
 <!-- _class: closing -->
 
-<h1>정리</h1>
+<p class="deck-label">Closing</p>
 
-<div class="closing-body">
+# 정리
 
 ```
 소통 창구 → 아이데이션 ↔ 선별 → docs/ → Agent 구현 → 오류수정 → 발표
@@ -1096,6 +602,4 @@ footer: '전시진 (SIREAL) · 성균관대학교 해커톤 협업 강의'
 
 <p class="highlight">기록하고, 문서화하고, AI에게 잘 시키자.</p>
 
-질문 · 실습 시간
-
-</div>
+<p class="deck-foot">질문 · 실습 시간</p>

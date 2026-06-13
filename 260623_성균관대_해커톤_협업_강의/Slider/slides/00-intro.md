@@ -7,19 +7,19 @@ footer: '전시진 (SIREAL) · 성균관대학교 해커톤 협업 강의'
 
 <!-- _class: title -->
 
-<p class="eyebrow">SIREAL · 성균관대학교</p>
+<p class="deck-label">SIREAL · 성균관대학교</p>
 
 # 해커톤 협업 강의
 
-## 개발자와 비개발자가 AI와 함께 프로젝트를 완성하는 방법
+<p class="deck-sub">개발자와 비개발자가 AI와 함께 프로젝트를 완성하는 방법</p>
 
-<p class="title-foot">성균관대학교 해커톤 · 2026</p>
+<p class="deck-foot">전시진 (SIREAL) · 성균관대학교</p>
 
 ---
 
 <!-- _class: toc -->
 
-<p class="t-meta">Agenda</p>
+<p class="deck-label">Agenda</p>
 
 # 오늘의 흐름
 
@@ -36,15 +36,7 @@ footer: '전시진 (SIREAL) · 성균관대학교 해커톤 협업 강의'
 
 ---
 
-<!-- _class: intro-cover -->
-
-# 인트로
-
----
-
-<!-- _class: intro -->
-
-<p class="t-meta">Intro</p>
+<!-- _class: body -->
 
 # 이 강의는 무엇을 위한 것인가
 
@@ -54,9 +46,7 @@ footer: '전시진 (SIREAL) · 성균관대학교 해커톤 협업 강의'
 
 ---
 
-<!-- _class: intro -->
-
-<p class="t-meta">Intro</p>
+<!-- _class: body -->
 
 # 기억할 핵심 두 가지
 
@@ -67,9 +57,7 @@ footer: '전시진 (SIREAL) · 성균관대학교 해커톤 협업 강의'
 
 ---
 
-<!-- _class: intro -->
-
-<p class="t-meta">Intro</p>
+<!-- _class: body -->
 
 # 전체 흐름
 
@@ -82,9 +70,7 @@ footer: '전시진 (SIREAL) · 성균관대학교 해커톤 협업 강의'
 
 ---
 
-<!-- _class: intro -->
-
-<p class="t-meta">Intro</p>
+<!-- _class: body -->
 
 # 각 단계마다 같은 5요소
 

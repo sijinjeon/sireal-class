@@ -1,31 +1,35 @@
-# Future Slide 레이아웃 참조
+# Future Slide / 슬라이드_구성안 레이아웃
 
-[future-slide](https://github.com/bytonylee/future-slide)의 **tightened-slide** 원칙을 Marp 테마에 적용했습니다.
+[슬라이드_구성안.md](../슬라이드_구성안.md)의 **유형별 디자인 가이드**를 Marp 테마에 매핑했습니다.
 
-## 적용한 UX 규칙
+## 4가지 슬라이드 유형
 
-| 원칙 | Marp 구현 |
-|------|-----------|
-| 헤더 · 본문 · 푸터 구역 분리 | `slide-chrome` → `flow-rail` → `slide-body` |
-| Kicker가 제목 위 | `t-meta` (섹션) + `t-cat` (단계) |
-| 본문 제목 좌측 정렬 | 모든 content 슬라이드 left-aligned |
-| 고정 레이아웃 (S01~S22) | `section-cover`, `content step-N`, `closing` |
-| 헤어라인·플랫 surface | 그라데이션·둥근 카드 제거 |
-| Mono 메타 / Light display | JetBrains Mono + Noto Sans KR 300 |
-| 하단 safe area | `--nav-safe-bottom` 여백 |
+| 유형 | 클래스 | 장수 | 디자인 |
+|------|--------|------|--------|
+| 표지 | `title`, `closing` | 2 | 크게 타이틀, deck-label · deck-foot |
+| 목차 | `toc` | 1 | 2열 번호 목록 (01–08) |
+| 섹션 표지 | `section-cover` | 8 | **다크 배경** · 큰 번호 + 부제 + 한 줄 |
+| 본문 | `body` | ~38 | cream 배경 · h1 제목 + 불릿/표 |
 
-## 슬라이드 타입
+## 섹션 표지 구조
 
-- **title** — S01 Index Cover (대형 light title)
-- **section-cover** — S01 cover-row (번호 + 제목)
-- **content step-1~5** — 본문 5단계 (flow-rail 타임라인)
-- **faq-item** — Q&A (flow-rail 없음)
-- **closing** — S10 Split Closing
+```markdown
+<!-- _class: section-cover -->
 
-## 본문 5단계
-
-```
-방법·순서 → 도구 → 규칙 → 실습 → 점검
+<p class="section-num">01</p>
+## 소통 창구 만들기
+<p class="section-tagline">모든 기록이 모이는…</p>
 ```
 
-`step-N` 클래스가 flow-rail active/done 상태를 CSS로 제어합니다.
+본문 슬라이드와 **배경색·타이포**로 명확히 구분됩니다.
+
+## 본문 슬라이드
+
+- 제목: `1. 소통 창구 — 방법·순서` 형식 (구성안 그대로)
+- flow-rail / chrome 없음 — 내용 중심
+- `compact` — 표·긴 목록
+- `faq` — Q&A 슬라이드
+
+## 총 49장
+
+구성안 Slide 01–49와 1:1 대응.

@@ -5,22 +5,17 @@ paginate: true
 footer: 'FAQ · 전시진 (SIREAL)'
 ---
 
-<!-- _class: section-cover -->
+<!-- _class: section-cover faq -->
 
-# 자주 묻는 질문
+<p class="section-num">FAQ</p>
+
+## 자주 묻는 질문
+
+<p class="section-tagline">현장에서 나오는 질문 미리 답하기</p>
 
 ---
 
-<!-- _class: content faq-item -->
-
-<div class="slide-chrome">
-<div class="chrome-head">
-<p class="t-meta">FAQ</p>
-<p class="t-cat">Q1</p>
-</div>
-</div>
-
-<div class="slide-body">
+<!-- _class: body faq -->
 
 # Q. 소통 창구 만들 시간이 어딨어요?
 
@@ -30,20 +25,9 @@ footer: 'FAQ · 전시진 (SIREAL)'
 - 노션 페이지 + 초대 = **5분**
 - 이후 문서화 → 구현 → 발표까지 **전부 연결**
 
-</div>
-
 ---
 
-<!-- _class: content faq-item -->
-
-<div class="slide-chrome">
-<div class="chrome-head">
-<p class="t-meta">FAQ</p>
-<p class="t-cat">Q2</p>
-</div>
-</div>
-
-<div class="slide-body">
+<!-- _class: body faq -->
 
 # Q. 비개발자는 뭘 하나요?
 
@@ -54,20 +38,9 @@ footer: 'FAQ · 전시진 (SIREAL)'
 - **Commit + Push** · **발표 준비**
 - "무엇을 왜 만드는가" = 비개발자 강점
 
-</div>
-
 ---
 
-<!-- _class: content faq-item -->
-
-<div class="slide-chrome">
-<div class="chrome-head">
-<p class="t-meta">FAQ</p>
-<p class="t-cat">Q3</p>
-</div>
-</div>
-
-<div class="slide-body">
+<!-- _class: body faq -->
 
 # Q. AI 결과를 그대로 믿어도 되나요?
 
@@ -78,20 +51,9 @@ footer: 'FAQ · 전시진 (SIREAL)'
 - 문서·리서치 → **출처·사실 확인**
 - 딥리서치 통계 → **교차 확인**
 
-</div>
-
 ---
 
-<!-- _class: content faq-item -->
-
-<div class="slide-chrome">
-<div class="chrome-head">
-<p class="t-meta">FAQ</p>
-<p class="t-cat">Q4</p>
-</div>
-</div>
-
-<div class="slide-body">
+<!-- _class: body faq -->
 
 # Q. AI를 한 번도 안 써봤어요
 
@@ -102,20 +64,9 @@ footer: 'FAQ · 전시진 (SIREAL)'
 3. 익숙해지면 → 검색 → 딥리서치 → 지시문
 4. 역할 나눠서 **먼저 시도하는 사람**부터
 
-</div>
-
 ---
 
-<!-- _class: content faq-item -->
-
-<div class="slide-chrome">
-<div class="chrome-head">
-<p class="t-meta">FAQ</p>
-<p class="t-cat">Q5</p>
-</div>
-</div>
-
-<div class="slide-body">
+<!-- _class: body faq -->
 
 # Q. 비개발자도 Commit + Push?
 
@@ -125,15 +76,13 @@ footer: 'FAQ · 전시진 (SIREAL)'
 - 브라우저 확인 → Changelog → **Push**
 - 개발자만의 일 **아님**
 
-</div>
-
 ---
 
 <!-- _class: closing -->
 
-<h1>정리</h1>
+<p class="deck-label">Closing</p>
 
-<div class="closing-body">
+# 정리
 
 ```
 소통 창구 → 아이데이션 ↔ 선별 → docs/ → Agent 구현 → 오류수정 → 발표
@@ -141,6 +90,4 @@ footer: 'FAQ · 전시진 (SIREAL)'
 
 <p class="highlight">기록하고, 문서화하고, AI에게 잘 시키자.</p>
 
-질문 · 실습 시간
-
-</div>
+<p class="deck-foot">질문 · 실습 시간</p>

@@ -1,13 +1,12 @@
-/* @theme lecture — Cursor + Future Slide (tightened) layout discipline */
+/* @theme lecture — 슬라이드_구성안.md 유형별 디자인 */
 
 @import 'default';
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+KR:wght@300;400;500;600&display=swap');
 
 :root {
-  /* Cursor tokens */
   --canvas: #f7f7f4;
   --canvas-soft: #fafaf7;
-  --surface-card: #ffffff;
+  --surface: #ffffff;
   --ink: #26251e;
   --body: #5a5852;
   --muted: #807d72;
@@ -17,19 +16,18 @@
   --primary: #f54e00;
   --primary-active: #d04200;
   --on-primary: #ffffff;
+  --section-bg: #26251e;
+  --section-ink: #f7f8f8;
 
-  /* Tightened spacing (5.6vh / 5vw rhythm) */
   --pad-x: 5vw;
-  --pad-top: 5.6vh;
-  --pad-bottom: 4.4vh;
-  --nav-safe-bottom: 6vh;
+  --pad-y: 5.6vh;
 
   --font-display: 'Noto Sans KR', 'Inter', system-ui, sans-serif;
   --font-body: 'Noto Sans KR', 'Inter', system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, monospace;
 }
 
-/* ── Base slide ── */
+/* ── Base ── */
 section {
   background: var(--canvas);
   color: var(--ink);
@@ -38,11 +36,11 @@ section {
   font-weight: 300;
   letter-spacing: -0.01em;
   line-height: 1.55;
-  padding: var(--pad-top) var(--pad-x) var(--pad-bottom);
+  padding: var(--pad-y) var(--pad-x);
 }
 
 section::after {
-  bottom: 2.2vh !important;
+  bottom: 2vh !important;
   color: var(--muted-soft) !important;
   font-family: var(--font-mono) !important;
   font-size: 10px !important;
@@ -50,38 +48,33 @@ section::after {
   text-transform: uppercase !important;
 }
 
-/* ── Typography ── */
 h1 {
   border-bottom: 1px solid var(--hairline);
   color: var(--ink);
-  font-family: var(--font-display);
-  font-size: 1.35em;
-  font-weight: 400;
+  font-size: 1.28em;
+  font-weight: 500;
   letter-spacing: -0.03em;
-  line-height: 1.15;
-  margin-bottom: 0.65em;
-  padding-bottom: 0.4em;
+  line-height: 1.2;
+  margin-bottom: 0.6em;
+  padding-bottom: 0.38em;
 }
 
 h2 {
-  color: var(--body);
+  color: var(--ink);
   font-size: 1.05em;
-  font-weight: 300;
-  letter-spacing: -0.01em;
-  line-height: 1.45;
-  margin-top: 0;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+  margin: 0;
 }
 
 h3 {
-  border-top: 1px solid var(--hairline);
-  color: var(--ink);
-  display: block;
-  font-size: 0.72em;
+  color: var(--primary);
+  font-family: var(--font-mono);
+  font-size: 0.62em;
   font-weight: 600;
-  letter-spacing: 0.06em;
-  margin-bottom: 0.55em;
-  margin-top: 0.5em;
-  padding-top: 0.45em;
+  letter-spacing: 0.1em;
+  margin: 1em 0 0.45em;
   text-transform: uppercase;
 }
 
@@ -98,7 +91,6 @@ strong {
 code {
   background: var(--canvas-soft);
   border: 1px solid var(--hairline);
-  border-radius: 0;
   color: var(--primary-active);
   font-family: var(--font-mono);
   font-size: 0.82em;
@@ -106,13 +98,13 @@ code {
 }
 
 pre {
-  background: var(--surface-card);
+  background: var(--surface);
   border: 1px solid var(--hairline);
-  border-radius: 0;
   font-family: var(--font-mono);
   font-size: 0.68em;
   line-height: 1.65;
-  padding: 1em 1.15em;
+  margin: 0.5em 0;
+  padding: 0.9em 1.1em;
 }
 
 pre code {
@@ -125,8 +117,8 @@ pre code {
 table {
   border: 1px solid var(--hairline);
   border-collapse: collapse;
-  border-radius: 0;
   font-size: 0.74em;
+  margin-top: 0.4em;
   width: 100%;
 }
 
@@ -137,17 +129,15 @@ th {
   font-family: var(--font-mono);
   font-size: 0.88em;
   font-weight: 500;
-  letter-spacing: 0.06em;
-  padding: 0.55em 0.9em;
+  letter-spacing: 0.05em;
+  padding: 0.5em 0.85em;
   text-align: left;
   text-transform: uppercase;
 }
 
 td {
-  background: var(--surface-card);
   border-bottom: 1px solid var(--hairline);
-  color: var(--body);
-  padding: 0.48em 0.9em;
+  padding: 0.45em 0.85em;
 }
 
 tr:last-child td {
@@ -155,11 +145,11 @@ tr:last-child td {
 }
 
 ul, ol {
-  margin-top: 0.25em;
+  margin-top: 0.2em;
 }
 
 li {
-  margin-bottom: 0.36em;
+  margin-bottom: 0.34em;
 }
 
 li::marker {
@@ -167,14 +157,11 @@ li::marker {
 }
 
 blockquote {
-  background: transparent;
-  border: none;
   border-left: 2px solid var(--primary);
-  border-radius: 0;
   color: var(--muted);
   font-size: 0.84em;
-  margin-top: 0.75em;
-  padding: 0.15em 0 0.15em 0.9em;
+  margin-top: 0.7em;
+  padding: 0.1em 0 0.1em 0.85em;
 }
 
 footer, header {
@@ -185,206 +172,51 @@ footer, header {
   text-transform: uppercase;
 }
 
-/* ── Meta typography (tightened chrome) ── */
-.t-meta {
-  color: var(--muted);
-  font-family: var(--font-mono);
-  font-size: 0.42em;
-  font-weight: 500;
-  letter-spacing: 0.16em;
-  line-height: 1;
-  margin: 0 0 0.55em;
-  text-transform: uppercase;
-}
-
-.t-cat {
-  color: var(--primary);
-  font-family: var(--font-body);
-  font-size: 0.5em;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  line-height: 1.1;
-  margin: 0;
-  text-transform: uppercase;
-}
-
-.t-step {
-  color: var(--muted-soft);
-  font-family: var(--font-mono);
-  font-size: 0.42em;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  line-height: 1;
-  text-transform: uppercase;
-  white-space: nowrap;
-}
-
-.lead {
-  color: var(--body);
-  font-size: 0.82em;
-  font-weight: 300;
-  line-height: 1.55;
-  max-width: 58ch;
-}
-
-/* ── Content slide layout (header → rail → body) ── */
-section.content {
-  display: flex;
-  flex-direction: column;
-  padding-bottom: calc(var(--pad-bottom) + var(--nav-safe-bottom));
-}
-
-section.content .slide-chrome {
-  align-items: flex-end;
-  border-bottom: 1px solid var(--hairline);
-  display: flex;
-  flex-shrink: 0;
-  justify-content: space-between;
-  margin-bottom: 1.4em;
-  padding-bottom: 1em;
-}
-
-section.content .flow-rail {
-  display: grid;
-  flex-shrink: 0;
-  font-size: 0.34em;
-  gap: 0;
-  grid-template-columns: repeat(5, 1fr);
-  margin-bottom: 1.6em;
-  position: relative;
-}
-
-section.content .flow-rail::before {
-  background: var(--hairline-strong);
-  content: '';
-  height: 1px;
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 4px;
-}
-
-section.content .flow-rail span {
-  color: var(--muted-soft);
-  font-weight: 400;
-  padding-top: 14px;
-  position: relative;
-}
-
-section.content .flow-rail span::before {
-  background: var(--canvas);
-  border: 1px solid var(--hairline-strong);
-  content: '';
-  height: 8px;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 8px;
-}
-
-section.content .slide-body {
-  flex: 1;
-  min-height: 0;
-}
-
-section.content .slide-body > :first-child {
-  margin-top: 0;
-}
-
-section.content h1 {
-  border: none;
-  font-size: 1.15em;
-  font-weight: 400;
-  margin-bottom: 0.6em;
-  padding: 0;
-}
-
-/* Flow rail step states */
-section.content.step-1 .flow-rail span:nth-child(1),
-section.content.step-2 .flow-rail span:nth-child(2),
-section.content.step-3 .flow-rail span:nth-child(3),
-section.content.step-4 .flow-rail span:nth-child(4),
-section.content.step-5 .flow-rail span:nth-child(5) {
-  color: var(--ink);
-  font-weight: 600;
-}
-
-section.content.step-1 .flow-rail span:nth-child(1)::before,
-section.content.step-2 .flow-rail span:nth-child(2)::before,
-section.content.step-3 .flow-rail span:nth-child(3)::before,
-section.content.step-4 .flow-rail span:nth-child(4)::before,
-section.content.step-5 .flow-rail span:nth-child(5)::before {
-  background: var(--primary);
-  border-color: var(--primary);
-}
-
-section.content.step-2 .flow-rail span:nth-child(1)::before,
-section.content.step-3 .flow-rail span:nth-child(-n+2)::before,
-section.content.step-4 .flow-rail span:nth-child(-n+3)::before,
-section.content.step-5 .flow-rail span:nth-child(-n+4)::before {
-  background: var(--ink);
-  border-color: var(--ink);
-}
-
-section.content.step-2 .flow-rail span:nth-child(1),
-section.content.step-3 .flow-rail span:nth-child(-n+2),
-section.content.step-4 .flow-rail span:nth-child(-n+3),
-section.content.step-5 .flow-rail span:nth-child(-n+4) {
-  color: var(--muted);
-}
-
-/* FAQ content — no flow rail */
-section.content.faq-item .slide-chrome {
-  margin-bottom: 1.2em;
-}
-
-section.content.faq-item h1 {
-  font-size: 1.05em;
-  font-weight: 400;
-  line-height: 1.35;
-}
-
-/* ── Title slide (S01-inspired) ── */
-section.title {
-  align-items: stretch;
-  background: var(--canvas);
+/* ══════════════════════════════════════
+   TYPE 1 — 표지 (Slide 01, 49)
+   ══════════════════════════════════════ */
+section.title,
+section.closing {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  min-height: 100%;
 }
 
-section.title .eyebrow {
+section.title .deck-label,
+section.closing .deck-label {
   color: var(--primary);
   font-family: var(--font-mono);
-  font-size: 0.48em;
+  font-size: 0.46em;
   font-weight: 500;
   letter-spacing: 0.16em;
-  margin: 0 0 2.4vh;
+  margin-bottom: 2vh;
   text-transform: uppercase;
 }
 
-section.title h1 {
+section.title h1,
+section.closing h1 {
   border: none;
-  font-size: min(9.6vw, 16vh);
+  font-size: min(9.5vw, 15vh);
   font-weight: 200;
   letter-spacing: -0.045em;
   line-height: 0.95;
   margin-bottom: 0.35em;
   padding: 0;
-  text-align: left;
 }
 
-section.title h2 {
+section.title .deck-sub,
+section.closing .deck-sub {
   color: var(--body);
-  font-size: 0.88em;
+  font-size: 0.9em;
   font-weight: 300;
-  line-height: 1.55;
+  line-height: 1.5;
   margin-bottom: 0;
-  max-width: 58ch;
-  text-align: left;
+  max-width: 52ch;
 }
 
-section.title .title-foot {
+section.title .deck-foot,
+section.closing .deck-foot {
   border-top: 1px solid var(--hairline);
   color: var(--muted);
   font-family: var(--font-mono);
@@ -395,26 +227,50 @@ section.title .title-foot {
   text-transform: uppercase;
 }
 
-/* ── TOC ── */
+section.closing .highlight {
+  border: 1px solid var(--primary);
+  color: var(--ink);
+  font-size: 0.92em;
+  font-weight: 500;
+  margin-top: 0.85em;
+  padding: 0.6em 1em;
+}
+
+section.closing pre {
+  font-size: 0.6em;
+  margin-bottom: 0.6em;
+}
+
+/* ══════════════════════════════════════
+   TYPE 2 — 목차 (Slide 02)
+   ══════════════════════════════════════ */
+section.toc .deck-label {
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.44em;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  margin-bottom: 0.8em;
+  text-transform: uppercase;
+}
+
 section.toc h1 {
-  margin-bottom: 0.65em;
+  margin-bottom: 0.55em;
 }
 
 section.toc ol {
-  column-gap: 16px;
   columns: 2;
+  column-gap: 2vw;
   counter-reset: toc;
-  font-size: 0.84em;
+  font-size: 0.82em;
   list-style: none;
   padding: 0;
 }
 
 section.toc ol li {
   border-top: 1px solid var(--hairline);
-  color: var(--body);
   counter-increment: toc;
-  margin-bottom: 0;
-  padding: 12px 0 12px 40px;
+  padding: 11px 0 11px 36px;
   position: relative;
 }
 
@@ -422,7 +278,7 @@ section.toc ol li::before {
   color: var(--primary);
   content: counter(toc, decimal-leading-zero);
   font-family: var(--font-mono);
-  font-size: 0.75em;
+  font-size: 0.72em;
   font-weight: 500;
   left: 0;
   position: absolute;
@@ -431,117 +287,82 @@ section.toc ol li::before {
 }
 
 section.toc blockquote {
-  margin-top: 0.85em;
+  margin-top: 0.8em;
 }
 
-/* ── Intro cover (인트로 구간 표지) ── */
-section.intro-cover {
-  align-items: center;
-  background: var(--ink);
-  color: #f7f8f8;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-}
-
-section.intro-cover h1 {
-  border: none;
-  color: inherit;
-  font-size: min(10vw, 14vh);
-  font-weight: 200;
-  letter-spacing: -0.04em;
-  line-height: 1;
-  margin: 0;
-  padding: 0;
-}
-
-section.intro-cover::after {
-  color: rgba(255, 255, 255, 0.45) !important;
-}
-
-/* ── Intro body slides ── */
-section.intro h1 {
-  font-size: 1.25em;
-  font-weight: 400;
-}
-
-/* ── Section cover — 섹션명만 ── */
+/* ══════════════════════════════════════
+   TYPE 3 — 섹션 표지 (Slide 07, 12, …)
+   큰 번호 + 부제 + 한 줄
+   ══════════════════════════════════════ */
 section.section-cover {
-  align-items: center;
+  background: var(--section-bg);
+  color: var(--section-ink);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  position: relative;
-  text-align: center;
 }
 
-section.section-cover h1 {
-  border: none;
-  font-size: min(8vw, 12vh);
-  font-weight: 300;
-  letter-spacing: -0.04em;
-  line-height: 1.1;
-  margin: 0;
-  padding: 0;
+section.section-cover::after {
+  color: rgba(255, 255, 255, 0.35) !important;
 }
 
-section.section-cover::before {
-  background: var(--primary);
-  content: '';
-  height: 3px;
-  left: var(--pad-x);
-  position: absolute;
-  right: var(--pad-x);
-  top: var(--pad-top);
-  width: auto;
-}
-
-/* ── Closing (S10-inspired) ── */
-section.closing {
-  display: grid;
-  gap: 4vw;
-  grid-template-columns: 5fr 7fr;
-}
-
-section.closing h1 {
-  border: none;
-  font-size: min(5vw, 8vh);
+section.section-cover .section-num {
+  color: var(--primary);
+  font-size: min(18vw, 24vh);
   font-weight: 200;
-  letter-spacing: -0.04em;
-  line-height: 0.95;
-  padding: 0;
+  letter-spacing: -0.06em;
+  line-height: 0.82;
+  margin: 0 0 0.15em;
 }
 
-section.closing .closing-body {
-  border-top: 1px solid var(--hairline);
-  padding-top: 1.2em;
+section.section-cover.faq .section-num {
+  font-size: min(10vw, 14vh);
+  font-weight: 300;
+  letter-spacing: 0.04em;
 }
 
-section.closing pre {
-  font-size: 0.58em;
-  margin-bottom: 1em;
-}
-
-section.closing p.highlight {
-  border: 1px solid var(--primary);
-  border-radius: 0;
-  color: var(--ink);
-  font-size: 0.9em;
+section.section-cover h2 {
+  color: var(--section-ink);
+  font-size: min(4.5vw, 7vh);
   font-weight: 400;
-  margin-top: 0.75em;
-  padding: 0.65em 1em;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  margin-bottom: 0.55em;
 }
 
-/* ── Utilities ── */
-section.compact {
+section.section-cover .section-tagline {
+  color: rgba(247, 248, 248, 0.65);
+  font-size: 0.82em;
+  font-weight: 300;
+  line-height: 1.5;
+  margin: 0;
+  max-width: 52ch;
+}
+
+/* ══════════════════════════════════════
+   TYPE 4 — 본문 (Slide 03–06, 08–48)
+   제목 + 불릿 / 표
+   ══════════════════════════════════════ */
+section.body h1 {
+  font-size: 1.22em;
+  font-weight: 500;
+}
+
+section.body.compact {
   font-size: 24px;
 }
 
-section.compact li {
-  margin-bottom: 0.2em;
+section.body.compact li {
+  margin-bottom: 0.18em;
 }
 
-section.accent-warm strong {
-  color: var(--primary);
+section.body .inline-note {
+  color: var(--muted);
+  font-size: 0.84em;
+  margin-top: 0.65em;
+}
+
+section.body.faq h1 {
+  font-size: 1.08em;
+  line-height: 1.35;
 }
