@@ -13,9 +13,13 @@ footer: '전시진 (SIREAL) · 성균관대학교 해커톤 협업 강의'
 
 ## 개발자와 비개발자가 AI와 함께 프로젝트를 완성하는 방법
 
+<p class="title-foot">성균관대학교 해커톤 · 2026</p>
+
 ---
 
 <!-- _class: toc -->
+
+<p class="t-meta">Agenda</p>
 
 # 오늘의 흐름
 
@@ -32,6 +36,10 @@ footer: '전시진 (SIREAL) · 성균관대학교 해커톤 협업 강의'
 
 ---
 
+<!-- _class: intro -->
+
+<p class="t-meta">Intro</p>
+
 # 이 강의는 무엇을 위한 것인가
 
 - **개발자 + 비개발자**가 섞인 팀이
@@ -39,6 +47,10 @@ footer: '전시진 (SIREAL) · 성균관대학교 해커톤 협업 강의'
 - 직접 코딩·만드는 방법이 아니라 **AI에게 잘 시키는 방법**
 
 ---
+
+<!-- _class: intro -->
+
+<p class="t-meta">Intro</p>
 
 # 기억할 핵심 두 가지
 
@@ -48,6 +60,10 @@ footer: '전시진 (SIREAL) · 성균관대학교 해커톤 협업 강의'
    - 그 기록이 곧 AI가 일하는 **재료(컨텍스트)**
 
 ---
+
+<!-- _class: intro -->
+
+<p class="t-meta">Intro</p>
 
 # 전체 흐름
 
@@ -59,6 +75,10 @@ footer: '전시진 (SIREAL) · 성균관대학교 해커톤 협업 강의'
 - 괜찮은 아이디어 → 선별·검증 → 결과 보고 다시 아이디어 발전
 
 ---
+
+<!-- _class: intro -->
+
+<p class="t-meta">Intro</p>
 
 # 각 단계마다 같은 5요소
 

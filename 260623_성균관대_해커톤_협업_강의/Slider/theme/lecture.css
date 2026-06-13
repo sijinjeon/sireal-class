@@ -1,34 +1,31 @@
-/* @theme lecture — Cursor (awesome-design-md) */
+/* @theme lecture — Cursor + Future Slide (tightened) layout discipline */
 
 @import 'default';
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+KR:wght@300;400;500;600&display=swap');
 
 :root {
-  /* Cursor — design-md/cursor */
+  /* Cursor tokens */
   --canvas: #f7f7f4;
   --canvas-soft: #fafaf7;
   --surface-card: #ffffff;
-  --surface-strong: #e6e5e0;
   --ink: #26251e;
   --body: #5a5852;
   --muted: #807d72;
   --muted-soft: #a09c92;
   --hairline: #e6e5e0;
-  --hairline-soft: #efeee8;
   --hairline-strong: #cfcdc4;
   --primary: #f54e00;
   --primary-active: #d04200;
   --on-primary: #ffffff;
-  --semantic-success: #1f8a65;
 
-  --radius-sm: 6px;
-  --radius-md: 8px;
-  --radius-lg: 12px;
-  --radius-xl: 16px;
-  --radius-pill: 9999px;
+  /* Tightened spacing (5.6vh / 5vw rhythm) */
+  --pad-x: 5vw;
+  --pad-top: 5.6vh;
+  --pad-bottom: 4.4vh;
+  --nav-safe-bottom: 6vh;
 
-  --font-display: 'Inter', system-ui, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  --font-body: 'Inter', system-ui, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-display: 'Noto Sans KR', 'Inter', system-ui, sans-serif;
+  --font-body: 'Noto Sans KR', 'Inter', system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, monospace;
 }
 
@@ -38,16 +35,19 @@ section {
   color: var(--ink);
   font-family: var(--font-body);
   font-size: 26px;
-  font-weight: 400;
+  font-weight: 300;
   letter-spacing: -0.01em;
-  line-height: 1.5;
-  padding: 48px 56px 44px;
+  line-height: 1.55;
+  padding: var(--pad-top) var(--pad-x) var(--pad-bottom);
 }
 
 section::after {
+  bottom: 2.2vh !important;
   color: var(--muted-soft) !important;
-  font-size: 11px !important;
-  letter-spacing: 0.02em;
+  font-family: var(--font-mono) !important;
+  font-size: 10px !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
 }
 
 /* ── Typography ── */
@@ -56,59 +56,59 @@ h1 {
   color: var(--ink);
   font-family: var(--font-display);
   font-size: 1.35em;
-  font-weight: 600;
+  font-weight: 400;
   letter-spacing: -0.03em;
-  line-height: 1.2;
-  margin-bottom: 0.5em;
-  padding-bottom: 0.35em;
+  line-height: 1.15;
+  margin-bottom: 0.65em;
+  padding-bottom: 0.4em;
 }
 
 h2 {
   color: var(--body);
   font-size: 1.05em;
-  font-weight: 400;
+  font-weight: 300;
   letter-spacing: -0.01em;
-  line-height: 1.4;
+  line-height: 1.45;
   margin-top: 0;
 }
 
 h3 {
-  background: var(--canvas-soft);
-  border: 1px solid var(--hairline);
-  border-radius: var(--radius-sm);
+  border-top: 1px solid var(--hairline);
   color: var(--ink);
-  display: inline-block;
-  font-size: 0.78em;
+  display: block;
+  font-size: 0.72em;
   font-weight: 600;
-  letter-spacing: 0.01em;
-  margin-bottom: 0.5em;
-  padding: 0.28em 0.65em;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.55em;
+  margin-top: 0.5em;
+  padding-top: 0.45em;
+  text-transform: uppercase;
 }
 
 p, li {
   color: var(--body);
+  font-weight: 300;
 }
 
 strong {
   color: var(--ink);
-  font-weight: 600;
+  font-weight: 500;
 }
 
 code {
   background: var(--canvas-soft);
   border: 1px solid var(--hairline);
-  border-radius: 4px;
+  border-radius: 0;
   color: var(--primary-active);
   font-family: var(--font-mono);
   font-size: 0.82em;
-  font-weight: 400;
-  padding: 0.1em 0.38em;
+  padding: 0.08em 0.35em;
 }
 
 pre {
   background: var(--surface-card);
   border: 1px solid var(--hairline);
-  border-radius: var(--radius-lg);
+  border-radius: 0;
   font-family: var(--font-mono);
   font-size: 0.68em;
   line-height: 1.65;
@@ -122,14 +122,11 @@ pre code {
   padding: 0;
 }
 
-/* ── Table ── */
 table {
   border: 1px solid var(--hairline);
-  border-collapse: separate;
-  border-radius: var(--radius-lg);
-  border-spacing: 0;
+  border-collapse: collapse;
+  border-radius: 0;
   font-size: 0.74em;
-  overflow: hidden;
   width: 100%;
 }
 
@@ -137,9 +134,10 @@ th {
   background: var(--canvas-soft);
   border-bottom: 1px solid var(--hairline);
   color: var(--muted);
-  font-size: 0.92em;
-  font-weight: 600;
-  letter-spacing: 0.03em;
+  font-family: var(--font-mono);
+  font-size: 0.88em;
+  font-weight: 500;
+  letter-spacing: 0.06em;
   padding: 0.55em 0.9em;
   text-align: left;
   text-transform: uppercase;
@@ -156,12 +154,12 @@ tr:last-child td {
   border-bottom: none;
 }
 
-ul {
-  margin-top: 0.3em;
+ul, ol {
+  margin-top: 0.25em;
 }
 
 li {
-  margin-bottom: 0.38em;
+  margin-bottom: 0.36em;
 }
 
 li::marker {
@@ -169,128 +167,232 @@ li::marker {
 }
 
 blockquote {
-  background: var(--surface-card);
-  border: 1px solid var(--hairline);
-  border-left: 3px solid var(--primary);
-  border-radius: var(--radius-md);
+  background: transparent;
+  border: none;
+  border-left: 2px solid var(--primary);
+  border-radius: 0;
   color: var(--muted);
   font-size: 0.84em;
   margin-top: 0.75em;
-  padding: 0.7em 1em;
-}
-
-blockquote strong {
-  color: var(--ink);
+  padding: 0.15em 0 0.15em 0.9em;
 }
 
 footer, header {
   color: var(--muted-soft);
-  font-size: 0.48em;
-  letter-spacing: 0.04em;
-}
-
-/* ── Eyebrow (title slide) ── */
-section .eyebrow {
-  color: var(--primary);
-  font-size: 0.52em;
-  font-weight: 600;
+  font-family: var(--font-mono);
+  font-size: 0.44em;
   letter-spacing: 0.12em;
-  margin: 0 0 1.2em;
   text-transform: uppercase;
 }
 
-/* ── Section flow (5-step hierarchy) ── */
-section.content .section-header {
-  margin-bottom: 1.1em;
-}
-
-section .section-tag {
+/* ── Meta typography (tightened chrome) ── */
+.t-meta {
   color: var(--muted);
-  font-size: 0.44em;
-  font-weight: 600;
-  letter-spacing: 0.1em;
+  font-family: var(--font-mono);
+  font-size: 0.42em;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  line-height: 1;
   margin: 0 0 0.55em;
   text-transform: uppercase;
 }
 
-section .flow-steps {
-  display: flex;
-  flex-wrap: wrap;
-  font-size: 0.36em;
-  gap: 5px;
-  letter-spacing: 0.02em;
+.t-cat {
+  color: var(--primary);
+  font-family: var(--font-body);
+  font-size: 0.5em;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  line-height: 1.1;
   margin: 0;
+  text-transform: uppercase;
 }
 
-section .flow-steps span {
-  background: var(--surface-card);
-  border: 1px solid var(--hairline);
-  border-radius: var(--radius-pill);
+.t-step {
   color: var(--muted-soft);
+  font-family: var(--font-mono);
+  font-size: 0.42em;
   font-weight: 500;
-  padding: 0.32em 0.72em;
+  letter-spacing: 0.12em;
+  line-height: 1;
+  text-transform: uppercase;
   white-space: nowrap;
 }
 
-section .flow-steps span.active {
-  background: var(--primary);
-  border-color: var(--primary);
-  color: var(--on-primary);
-  font-weight: 600;
+.lead {
+  color: var(--body);
+  font-size: 0.82em;
+  font-weight: 300;
+  line-height: 1.55;
+  max-width: 58ch;
 }
 
-section .flow-steps span.done {
-  border-color: var(--hairline-strong);
-  color: var(--muted);
+/* ── Content slide layout (header → rail → body) ── */
+section.content {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: calc(var(--pad-bottom) + var(--nav-safe-bottom));
+}
+
+section.content .slide-chrome {
+  align-items: flex-end;
+  border-bottom: 1px solid var(--hairline);
+  display: flex;
+  flex-shrink: 0;
+  justify-content: space-between;
+  margin-bottom: 1.4em;
+  padding-bottom: 1em;
+}
+
+section.content .flow-rail {
+  display: grid;
+  flex-shrink: 0;
+  font-size: 0.34em;
+  gap: 0;
+  grid-template-columns: repeat(5, 1fr);
+  margin-bottom: 1.6em;
+  position: relative;
+}
+
+section.content .flow-rail::before {
+  background: var(--hairline-strong);
+  content: '';
+  height: 1px;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 4px;
+}
+
+section.content .flow-rail span {
+  color: var(--muted-soft);
+  font-weight: 400;
+  padding-top: 14px;
+  position: relative;
+}
+
+section.content .flow-rail span::before {
+  background: var(--canvas);
+  border: 1px solid var(--hairline-strong);
+  content: '';
+  height: 8px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 8px;
+}
+
+section.content .slide-body {
+  flex: 1;
+  min-height: 0;
+}
+
+section.content .slide-body > :first-child {
+  margin-top: 0;
 }
 
 section.content h1 {
-  font-size: 1.2em;
-  margin-bottom: 0.55em;
-  margin-top: 0.15em;
+  border: none;
+  font-size: 1.15em;
+  font-weight: 400;
+  margin-bottom: 0.6em;
+  padding: 0;
 }
 
-/* ── Title slide ── */
+/* Flow rail step states */
+section.content.step-1 .flow-rail span:nth-child(1),
+section.content.step-2 .flow-rail span:nth-child(2),
+section.content.step-3 .flow-rail span:nth-child(3),
+section.content.step-4 .flow-rail span:nth-child(4),
+section.content.step-5 .flow-rail span:nth-child(5) {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+section.content.step-1 .flow-rail span:nth-child(1)::before,
+section.content.step-2 .flow-rail span:nth-child(2)::before,
+section.content.step-3 .flow-rail span:nth-child(3)::before,
+section.content.step-4 .flow-rail span:nth-child(4)::before,
+section.content.step-5 .flow-rail span:nth-child(5)::before {
+  background: var(--primary);
+  border-color: var(--primary);
+}
+
+section.content.step-2 .flow-rail span:nth-child(1)::before,
+section.content.step-3 .flow-rail span:nth-child(-n+2)::before,
+section.content.step-4 .flow-rail span:nth-child(-n+3)::before,
+section.content.step-5 .flow-rail span:nth-child(-n+4)::before {
+  background: var(--ink);
+  border-color: var(--ink);
+}
+
+section.content.step-2 .flow-rail span:nth-child(1),
+section.content.step-3 .flow-rail span:nth-child(-n+2),
+section.content.step-4 .flow-rail span:nth-child(-n+3),
+section.content.step-5 .flow-rail span:nth-child(-n+4) {
+  color: var(--muted);
+}
+
+/* FAQ content — no flow rail */
+section.content.faq-item .slide-chrome {
+  margin-bottom: 1.2em;
+}
+
+section.content.faq-item h1 {
+  font-size: 1.05em;
+  font-weight: 400;
+  line-height: 1.35;
+}
+
+/* ── Title slide (S01-inspired) ── */
 section.title {
-  align-items: center;
-  background:
-    radial-gradient(ellipse 90% 60% at 50% -20%, hsl(20 90% 90% / 0.55) 0%, transparent 55%),
-    radial-gradient(ellipse 50% 40% at 80% 100%, hsl(20 80% 92% / 0.35) 0%, transparent 50%),
-    var(--canvas);
+  align-items: stretch;
+  background: var(--canvas);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  text-align: center;
+}
+
+section.title .eyebrow {
+  color: var(--primary);
+  font-family: var(--font-mono);
+  font-size: 0.48em;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  margin: 0 0 2.4vh;
+  text-transform: uppercase;
 }
 
 section.title h1 {
   border: none;
-  font-size: 2.15em;
-  font-weight: 600;
-  letter-spacing: -0.04em;
-  line-height: 1.08;
-  margin-bottom: 0.4em;
+  font-size: min(9.6vw, 16vh);
+  font-weight: 200;
+  letter-spacing: -0.045em;
+  line-height: 0.95;
+  margin-bottom: 0.35em;
   padding: 0;
+  text-align: left;
 }
 
 section.title h2 {
-  color: var(--muted);
-  font-size: 0.95em;
-  font-weight: 400;
-  letter-spacing: -0.01em;
+  color: var(--body);
+  font-size: 0.88em;
+  font-weight: 300;
   line-height: 1.55;
-  margin-bottom: 2em;
-  max-width: 78%;
+  margin-bottom: 0;
+  max-width: 58ch;
+  text-align: left;
 }
 
-section.title p {
-  background: var(--surface-card);
-  border: 1px solid var(--hairline);
-  border-radius: var(--radius-pill);
+section.title .title-foot {
+  border-top: 1px solid var(--hairline);
   color: var(--muted);
-  font-size: 0.65em;
-  letter-spacing: 0.02em;
-  padding: 0.45em 1.15em;
+  font-family: var(--font-mono);
+  font-size: 0.44em;
+  letter-spacing: 0.12em;
+  margin-top: auto;
+  padding-top: 2vh;
+  text-transform: uppercase;
 }
 
 /* ── TOC ── */
@@ -299,7 +401,7 @@ section.toc h1 {
 }
 
 section.toc ol {
-  column-gap: 12px;
+  column-gap: 16px;
   columns: 2;
   counter-reset: toc;
   font-size: 0.84em;
@@ -308,27 +410,21 @@ section.toc ol {
 }
 
 section.toc ol li {
-  background: var(--surface-card);
-  border: 1px solid var(--hairline);
-  border-radius: var(--radius-md);
+  border-top: 1px solid var(--hairline);
   color: var(--body);
   counter-increment: toc;
-  margin-bottom: 8px;
-  padding: 10px 14px 10px 48px;
+  margin-bottom: 0;
+  padding: 12px 0 12px 40px;
   position: relative;
 }
 
 section.toc ol li::before {
-  background: var(--canvas-soft);
-  border: 1px solid var(--hairline-strong);
-  border-radius: var(--radius-sm);
   color: var(--primary);
   content: counter(toc, decimal-leading-zero);
+  font-family: var(--font-mono);
   font-size: 0.75em;
-  font-weight: 600;
-  left: 12px;
-  line-height: 1.5;
-  padding: 2px 7px;
+  font-weight: 500;
+  left: 0;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -338,88 +434,85 @@ section.toc blockquote {
   margin-top: 0.85em;
 }
 
-/* ── Section cover (dedicated slide) ── */
+/* ── Section cover (S01 cover-row) ── */
 section.section-cover {
-  align-items: flex-start;
-  background:
-    radial-gradient(ellipse 70% 80% at 100% 0%, hsl(20 90% 92% / 0.6) 0%, transparent 50%),
-    var(--canvas);
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-section.section-cover .section-eyebrow {
-  background: var(--surface-card);
-  border: 1px solid var(--hairline);
-  border-radius: var(--radius-pill);
-  color: var(--primary);
-  display: inline-block;
-  font-size: 0.55em;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  margin: 0 0 1.1em;
-  padding: 0.35em 0.95em;
-  text-transform: uppercase;
+section.section-cover .cover-row {
+  align-items: end;
+  border-top: 1px solid var(--ink);
+  display: grid;
+  gap: 3vw;
+  grid-template-columns: minmax(80px, 18vw) 1fr;
+  margin-bottom: 2.4vh;
+  padding: 2.4vh 0;
+}
+
+section.section-cover .cover-num {
+  color: var(--ink);
+  font-size: min(10vw, 16vh);
+  font-weight: 200;
+  letter-spacing: -0.05em;
+  line-height: 0.85;
 }
 
 section.section-cover h1 {
   border: none;
-  font-size: 2.1em;
-  font-weight: 600;
-  letter-spacing: -0.04em;
-  line-height: 1.12;
-  margin-bottom: 0.45em;
+  font-size: min(4.2vw, 7vh);
+  font-weight: 300;
+  letter-spacing: -0.035em;
+  line-height: 1.05;
+  margin: 0;
   padding: 0;
 }
 
-section.section-cover p {
-  color: var(--muted);
-  font-size: 0.82em;
-  line-height: 1.55;
+section.section-cover .lead {
   margin: 0;
-  max-width: 72%;
 }
 
-section.section-cover.faq .section-eyebrow {
-  letter-spacing: 0.1em;
+/* ── Intro body slides ── */
+section.intro h1 {
+  font-size: 1.25em;
+  font-weight: 400;
 }
 
-/* ── Closing ── */
+/* ── Closing (S10-inspired) ── */
 section.closing {
-  align-items: center;
-  background:
-    radial-gradient(ellipse 80% 50% at 50% 110%, hsl(20 85% 90% / 0.45) 0%, transparent 55%),
-    var(--canvas);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
+  display: grid;
+  gap: 4vw;
+  grid-template-columns: 5fr 7fr;
 }
 
 section.closing h1 {
   border: none;
-  font-size: 1.75em;
+  font-size: min(5vw, 8vh);
+  font-weight: 200;
   letter-spacing: -0.04em;
+  line-height: 0.95;
   padding: 0;
+}
+
+section.closing .closing-body {
+  border-top: 1px solid var(--hairline);
+  padding-top: 1.2em;
 }
 
 section.closing pre {
   font-size: 0.58em;
-  max-width: 94%;
-  text-align: left;
+  margin-bottom: 1em;
 }
 
 section.closing p.highlight {
-  background: var(--surface-card);
   border: 1px solid var(--primary);
-  border-radius: var(--radius-lg);
+  border-radius: 0;
   color: var(--ink);
-  font-size: 0.95em;
-  font-weight: 500;
-  letter-spacing: -0.02em;
-  margin-top: 1em;
-  padding: 0.65em 1.3em;
+  font-size: 0.9em;
+  font-weight: 400;
+  margin-top: 0.75em;
+  padding: 0.65em 1em;
 }
 
 /* ── Utilities ── */
@@ -429,10 +522,6 @@ section.compact {
 
 section.compact li {
   margin-bottom: 0.2em;
-}
-
-section.two-col ul {
-  font-size: 0.86em;
 }
 
 section.accent-warm strong {
