@@ -12,7 +12,6 @@
   src: url('fonts/PretendardVariable.woff2') format('woff2-variations'),
        url('fonts/PretendardVariable.woff2') format('woff2');
 }
-
 :root {
   --primary:       #f54e00;
   --ink:           #26251e;
@@ -24,175 +23,118 @@
   --surface-card:  #ffffff;
   --surface-strong:#e6e5e0;
 }
-
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
 html, body {
-  width: 1280px;
-  height: 720px;
+  width: 1280px; height: 720px;
   overflow: hidden;
   background: var(--canvas);
-  font-family: 'Pretendard Variable', 'Pretendard', -apple-system, BlinkMacSystemFont,
-               'Apple SD Gothic Neo', sans-serif;
+  font-family: 'Pretendard Variable', 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
 }
-
 .slide {
-  width: 1280px;
-  height: 720px;
-  background: var(--canvas);
-  display: flex;
-  flex-direction: column;
-  padding: 52px 72px 44px;
-}
-
-/* ── header ── */
-.header {
-  display: flex;
-  align-items: baseline;
-  gap: 16px;
-  margin-bottom: 6px;
+  width: 1280px; height: 720px;
+  display: flex; flex-direction: column;
+  padding: 48px 72px 40px;
 }
 .section-label {
-  font-size: 12px;
-  font-weight: 500;
-  color: var(--muted);
-  letter-spacing: 0.5px;
+  font-size: 12px; font-weight: 500;
+  color: var(--muted); letter-spacing: 0.5px;
+  margin-bottom: 10px;
 }
 .divider-line {
-  flex: none;
-  width: 100%;
-  height: 1px;
+  width: 100%; height: 1px;
   background: var(--hairline);
-  margin-bottom: 18px;
+  margin-bottom: 20px;
 }
 .slide-title {
-  font-size: 34px;
-  font-weight: 700;
-  color: var(--ink);
-  letter-spacing: -0.8px;
-  margin-bottom: 22px;
+  font-size: 32px; font-weight: 700;
+  color: var(--ink); letter-spacing: -0.8px;
+  margin-bottom: 24px;
 }
 .slide-title span { color: var(--primary); }
 
-/* ── matrix table ── */
-.matrix-wrap {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
+/* ── table ── */
 table {
   width: 100%;
   border-collapse: collapse;
-  table-layout: fixed;
+  background: var(--surface-card);
+  border: 1px solid var(--hairline);
+  border-radius: 14px;
+  overflow: hidden;
+  font-size: 15px;
 }
-
-/* group header row */
-.group-hd {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.7px;
-  text-transform: uppercase;
-  padding: 8px 0 6px;
-  text-align: center;
-  color: var(--surface-card);
-}
-.group-hd.g3 { background: #2a8264; }
-.group-hd.g4 { background: #2c5fa8; }
-.group-hd.g5 { background: #7c3aed; }
-.group-hd.role-label-hd {
+thead tr th {
+  padding: 10px 20px;
   background: var(--surface-strong);
-  color: var(--ink);
-  text-align: left;
-  padding-left: 16px;
-  font-size: 11px;
+  font-size: 11px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.8px;
+  color: var(--ink); text-align: left;
 }
-
-/* person header row */
-.person-hd {
-  font-size: 18px;
+thead tr th.num-col {
   text-align: center;
-  padding: 6px 0;
+  border-left: 1px solid var(--hairline);
+  font-size: 12px;
+}
+thead tr th.col-3 { color: #2a8264; }
+thead tr th.col-4 { color: #2c5fa8; }
+thead tr th.col-5 { color: #7c3aed; }
+
+tbody tr { border-top: 1px solid var(--hairline-soft); }
+tbody tr:hover { background: #fafaf7; }
+td.role-cell {
+  padding: 14px 20px;
+  font-weight: 600; color: var(--ink);
+  white-space: nowrap; width: 110px;
+}
+td.desc-cell {
+  padding: 14px 20px;
   color: var(--body-color);
-  font-weight: 500;
-  background: var(--surface-card);
-  border-bottom: 1px solid var(--hairline);
+  line-height: 1.5;
 }
-.person-hd.g3 { color: #2a8264; }
-.person-hd.g4 { color: #2c5fa8; }
-.person-hd.g5 { color: #7c3aed; }
-
-.role-label-cell {
-  padding: 0 0 0 16px;
-  background: var(--surface-strong);
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--ink);
-  border-bottom: 1px solid var(--hairline);
-  white-space: nowrap;
-}
-
-/* dot cells */
-.dot-cell {
+td.dot-cell {
   text-align: center;
-  padding: 0;
-  border-bottom: 1px solid var(--hairline-soft);
-  height: 62px;
+  border-left: 1px solid var(--hairline-soft);
+  width: 90px;
   vertical-align: middle;
-  background: var(--surface-card);
 }
-.dot-cell.g3 { border-right: 1px solid #efeee8; }
-.dot-cell.g4 { border-right: 1px solid #efeee8; }
 
-/* group separator (right border of last col in group) */
-.group-sep { border-right: 2px solid var(--hairline) !important; }
-
-/* dot elements */
+/* ── dots ── */
 .dot {
   display: inline-block;
-  width: 18px;
-  height: 18px;
+  width: 20px; height: 20px;
   border-radius: 50%;
 }
-.dot.filled-3 { background: #2a8264; }
-.dot.filled-4 { background: #2c5fa8; }
-.dot.filled-5 { background: #7c3aed; }
-.dot.empty {
-  background: transparent;
-  border: 1.5px solid var(--hairline-strong, #cfcdc4);
-  opacity: 0.35;
+/* 전담 (dedicated) */
+.dot.d3 { background: #2a8264; }
+.dot.d4 { background: #2c5fa8; }
+.dot.d5 { background: #7c3aed; }
+/* 겸임 (combined) — half-filled */
+.dot.c3 {
+  background: linear-gradient(to right, #2a8264 50%, transparent 50%);
+  border: 2px solid #2a8264;
+}
+.dot.c4 {
+  background: linear-gradient(to right, #2c5fa8 50%, transparent 50%);
+  border: 2px solid #2c5fa8;
 }
 
-/* note row */
-.note-row td {
-  padding-top: 14px;
-  font-size: 12.5px;
-  color: var(--muted);
-  text-align: center;
-}
+/* ── legend ── */
 .legend {
-  display: flex;
-  align-items: center;
-  gap: 28px;
-  justify-content: flex-start;
-  margin-top: 14px;
-  padding-left: 2px;
+  display: flex; align-items: center; gap: 32px;
+  margin-top: 16px; padding-left: 2px;
 }
 .legend-item {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  font-size: 12px;
-  color: var(--body-color);
+  display: flex; align-items: center; gap: 8px;
+  font-size: 13px; color: var(--body-color);
 }
-.legend-dot {
-  width: 14px; height: 14px;
-  border-radius: 50%;
+.leg-dot-full {
+  width: 14px; height: 14px; border-radius: 50%;
+  background: var(--ink);
 }
-.ld3 { background: #2a8264; }
-.ld4 { background: #2c5fa8; }
-.ld5 { background: #7c3aed; }
+.leg-dot-half {
+  width: 14px; height: 14px; border-radius: 50%;
+  background: linear-gradient(to right, var(--ink) 50%, transparent 50%);
+  border: 2px solid var(--ink);
+}
 </style>
 </head>
 <body>
@@ -202,142 +144,72 @@ table {
   <div class="divider-line"></div>
   <h1 class="slide-title">팀 역할 분담 — <span>누가 무엇을 맡는가</span></h1>
 
-  <div class="matrix-wrap">
-    <table>
+  <table>
+    <thead>
+      <tr>
+        <th>역할</th>
+        <th>핵심 책임</th>
+        <th class="num-col col-3">3명</th>
+        <th class="num-col col-4">4명</th>
+        <th class="num-col col-5">5명</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="role-cell">팀장</td>
+        <td class="desc-cell">전체 일정 조율, 회의 진행, 의사결정, 발표 주도</td>
+        <td class="dot-cell"><span class="dot c3" title="기획자와 겸임"></span></td>
+        <td class="dot-cell"><span class="dot d4"></span></td>
+        <td class="dot-cell"><span class="dot d5"></span></td>
+      </tr>
+      <tr>
+        <td class="role-cell">기획자</td>
+        <td class="desc-cell">아이디어 발전, 요구사항 정리(PRD), 딥리서치 주도</td>
+        <td class="dot-cell"><span class="dot c3" title="팀장과 겸임"></span></td>
+        <td class="dot-cell"><span class="dot c4" title="리서처와 겸임"></span></td>
+        <td class="dot-cell"><span class="dot d5"></span></td>
+      </tr>
+      <tr>
+        <td class="role-cell">개발자</td>
+        <td class="desc-cell">구현, 오류수정, GitHub · Vercel 관리</td>
+        <td class="dot-cell"><span class="dot d3"></span></td>
+        <td class="dot-cell"><span class="dot d4"></span></td>
+        <td class="dot-cell"><span class="dot d5"></span></td>
+      </tr>
+      <tr>
+        <td class="role-cell">디자이너</td>
+        <td class="desc-cell">UI/UX, 슬라이드 제작, 시각자료</td>
+        <td class="dot-cell"><span class="dot c3" title="리서처와 겸임"></span></td>
+        <td class="dot-cell"><span class="dot d4"></span></td>
+        <td class="dot-cell"><span class="dot d5"></span></td>
+      </tr>
+      <tr>
+        <td class="role-cell">리서처</td>
+        <td class="desc-cell">시장·사용자 조사, 발표 스크립트 작성</td>
+        <td class="dot-cell"><span class="dot c3" title="디자이너와 겸임"></span></td>
+        <td class="dot-cell"><span class="dot c4" title="기획자와 겸임"></span></td>
+        <td class="dot-cell"><span class="dot d5"></span></td>
+      </tr>
+    </tbody>
+  </table>
 
-      <!-- ── GROUP HEADER ── -->
-      <colgroup>
-        <col style="width:120px"><!-- role label -->
-        <!-- 3명 팀: 3 cols -->
-        <col><col><col>
-        <!-- 4명 팀: 4 cols -->
-        <col><col><col><col>
-        <!-- 5명 팀: 5 cols -->
-        <col><col><col><col><col>
-      </colgroup>
-
-      <thead>
-        <tr>
-          <th class="group-hd role-label-hd">역할</th>
-          <th class="group-hd g3" colspan="3">3명 팀</th>
-          <th class="group-hd g4" colspan="4">4명 팀</th>
-          <th class="group-hd g5" colspan="5">5명 팀</th>
-        </tr>
-        <tr>
-          <td class="role-label-cell" style="padding:6px 0 6px 16px; font-size:11px; color:var(--muted); font-weight:500">팀원</td>
-          <!-- 3명 -->
-          <td class="person-hd g3">①</td>
-          <td class="person-hd g3">②</td>
-          <td class="person-hd g3 group-sep">③</td>
-          <!-- 4명 -->
-          <td class="person-hd g4">①</td>
-          <td class="person-hd g4">②</td>
-          <td class="person-hd g4">③</td>
-          <td class="person-hd g4 group-sep">④</td>
-          <!-- 5명 -->
-          <td class="person-hd g5">①</td>
-          <td class="person-hd g5">②</td>
-          <td class="person-hd g5">③</td>
-          <td class="person-hd g5">④</td>
-          <td class="person-hd g5">⑤</td>
-        </tr>
-      </thead>
-
-      <tbody>
-        <!-- 팀장: 3①, 4①, 5① -->
-        <tr>
-          <td class="role-label-cell">팀장</td>
-          <td class="dot-cell g3"><span class="dot filled-3"></span></td>
-          <td class="dot-cell g3"><span class="dot empty"></span></td>
-          <td class="dot-cell g3 group-sep"><span class="dot empty"></span></td>
-          <td class="dot-cell g4"><span class="dot filled-4"></span></td>
-          <td class="dot-cell g4"><span class="dot empty"></span></td>
-          <td class="dot-cell g4"><span class="dot empty"></span></td>
-          <td class="dot-cell g4 group-sep"><span class="dot empty"></span></td>
-          <td class="dot-cell g5"><span class="dot filled-5"></span></td>
-          <td class="dot-cell g5"><span class="dot empty"></span></td>
-          <td class="dot-cell g5"><span class="dot empty"></span></td>
-          <td class="dot-cell g5"><span class="dot empty"></span></td>
-          <td class="dot-cell g5"><span class="dot empty"></span></td>
-        </tr>
-
-        <!-- 기획자: 3①(겸), 4②, 5② -->
-        <tr>
-          <td class="role-label-cell">기획자</td>
-          <td class="dot-cell g3"><span class="dot filled-3"></span></td>
-          <td class="dot-cell g3"><span class="dot empty"></span></td>
-          <td class="dot-cell g3 group-sep"><span class="dot empty"></span></td>
-          <td class="dot-cell g4"><span class="dot empty"></span></td>
-          <td class="dot-cell g4"><span class="dot filled-4"></span></td>
-          <td class="dot-cell g4"><span class="dot empty"></span></td>
-          <td class="dot-cell g4 group-sep"><span class="dot empty"></span></td>
-          <td class="dot-cell g5"><span class="dot empty"></span></td>
-          <td class="dot-cell g5"><span class="dot filled-5"></span></td>
-          <td class="dot-cell g5"><span class="dot empty"></span></td>
-          <td class="dot-cell g5"><span class="dot empty"></span></td>
-          <td class="dot-cell g5"><span class="dot empty"></span></td>
-        </tr>
-
-        <!-- 개발자: 3②, 4③, 5③ -->
-        <tr>
-          <td class="role-label-cell">개발자</td>
-          <td class="dot-cell g3"><span class="dot empty"></span></td>
-          <td class="dot-cell g3"><span class="dot filled-3"></span></td>
-          <td class="dot-cell g3 group-sep"><span class="dot empty"></span></td>
-          <td class="dot-cell g4"><span class="dot empty"></span></td>
-          <td class="dot-cell g4"><span class="dot empty"></span></td>
-          <td class="dot-cell g4"><span class="dot filled-4"></span></td>
-          <td class="dot-cell g4 group-sep"><span class="dot empty"></span></td>
-          <td class="dot-cell g5"><span class="dot empty"></span></td>
-          <td class="dot-cell g5"><span class="dot empty"></span></td>
-          <td class="dot-cell g5"><span class="dot filled-5"></span></td>
-          <td class="dot-cell g5"><span class="dot empty"></span></td>
-          <td class="dot-cell g5"><span class="dot empty"></span></td>
-        </tr>
-
-        <!-- 디자이너: 3③(겸), 4④, 5④ -->
-        <tr>
-          <td class="role-label-cell">디자이너</td>
-          <td class="dot-cell g3"><span class="dot empty"></span></td>
-          <td class="dot-cell g3"><span class="dot empty"></span></td>
-          <td class="dot-cell g3 group-sep"><span class="dot filled-3"></span></td>
-          <td class="dot-cell g4"><span class="dot empty"></span></td>
-          <td class="dot-cell g4"><span class="dot empty"></span></td>
-          <td class="dot-cell g4"><span class="dot empty"></span></td>
-          <td class="dot-cell g4 group-sep"><span class="dot filled-4"></span></td>
-          <td class="dot-cell g5"><span class="dot empty"></span></td>
-          <td class="dot-cell g5"><span class="dot empty"></span></td>
-          <td class="dot-cell g5"><span class="dot empty"></span></td>
-          <td class="dot-cell g5"><span class="dot filled-5"></span></td>
-          <td class="dot-cell g5"><span class="dot empty"></span></td>
-        </tr>
-
-        <!-- 리서처: 3③(겸), 4②(겸), 5⑤ -->
-        <tr>
-          <td class="role-label-cell" style="border-bottom:none">리서처</td>
-          <td class="dot-cell g3" style="border-bottom:none"><span class="dot empty"></span></td>
-          <td class="dot-cell g3" style="border-bottom:none"><span class="dot empty"></span></td>
-          <td class="dot-cell g3 group-sep" style="border-bottom:none"><span class="dot filled-3"></span></td>
-          <td class="dot-cell g4" style="border-bottom:none"><span class="dot empty"></span></td>
-          <td class="dot-cell g4" style="border-bottom:none"><span class="dot filled-4"></span></td>
-          <td class="dot-cell g4" style="border-bottom:none"><span class="dot empty"></span></td>
-          <td class="dot-cell g4 group-sep" style="border-bottom:none"><span class="dot empty"></span></td>
-          <td class="dot-cell g5" style="border-bottom:none"><span class="dot empty"></span></td>
-          <td class="dot-cell g5" style="border-bottom:none"><span class="dot empty"></span></td>
-          <td class="dot-cell g5" style="border-bottom:none"><span class="dot empty"></span></td>
-          <td class="dot-cell g5" style="border-bottom:none"><span class="dot empty"></span></td>
-          <td class="dot-cell g5" style="border-bottom:none"><span class="dot filled-5"></span></td>
-        </tr>
-      </tbody>
-
-    </table>
-
-    <!-- legend + note -->
-    <div class="legend">
-      <span class="legend-item"><span class="legend-dot ld3"></span>3명 팀 — ① 팀장·기획자 &nbsp;② 개발자 &nbsp;③ 디자이너·리서처</span>
-      <span class="legend-item"><span class="legend-dot ld4"></span>4명 팀 — ① 팀장 &nbsp;② 기획자·리서처 &nbsp;③ 개발자 &nbsp;④ 디자이너</span>
-      <span class="legend-item"><span class="legend-dot ld5"></span>5명 팀 — 각 역할 전담</span>
-    </div>
+  <div class="legend">
+    <span class="legend-item">
+      <span class="leg-dot-full" style="background:#2a8264"></span>
+      3명 — ① 팀장+기획자 &nbsp; ② 개발자 &nbsp; ③ 디자이너+리서처
+    </span>
+    <span class="legend-item">
+      <span class="leg-dot-full" style="background:#2c5fa8"></span>
+      4명 — ① 팀장 &nbsp; ② 기획자+리서처 &nbsp; ③ 개발자 &nbsp; ④ 디자이너
+    </span>
+    <span class="legend-item">
+      <span class="leg-dot-full" style="background:#7c3aed"></span>
+      5명 — 각 역할 전담 1인
+    </span>
+    <span class="legend-item" style="margin-left:auto">
+      <span class="leg-dot-half"></span> 겸임 &nbsp;&nbsp;
+      <span class="leg-dot-full" style="background:var(--ink)"></span> 전담
+    </span>
   </div>
 
 </div>
