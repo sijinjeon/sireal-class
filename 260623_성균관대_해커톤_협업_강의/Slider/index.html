@@ -1271,7 +1271,7 @@ code {
   </div>
 
   <!-- Slide 30 -->
-  <div class="slide slide-grad-8" data-notes="Agent mode가 기본이다. Plan mode는 방향이 불명확할 때만 쓴다.">
+  <div class="slide slide-grad-8" data-notes="Agent mode가 기본이다. Plan mode는 여러 페이지·기능을 한꺼번에 구현하거나 복잡한 기능을 다룰 때 계획을 먼저 잡고 Agent로 전환한다.">
     <div class="content-body">
       <p class="a sm text-muted">구현</p>
       <div class="a divider"></div>
@@ -1286,10 +1286,12 @@ code {
         </ul>
       </div>
       <div class="two-col-item">
-        <h3>Plan mode (불명확할 때만)</h3>
+        <h3>Plan mode (이럴 때 사용)</h3>
         <ul>
-          <li>"어떻게 구현할지 계획 먼저 보여줘"</li>
-          <li>확인 후 Agent 전환</li>
+          <li>여러 페이지·기능을 <strong>한꺼번에</strong> 구현할 때</li>
+          <li>동시에 <strong>여러 단계</strong>를 거쳐야 할 때</li>
+          <li><strong>복잡한 기능</strong>이라 범위 파악이 먼저 필요할 때</li>
+          <li>→ 계획 확인 후 Agent 전환</li>
         </ul>
       </div>
     </div>
@@ -1373,21 +1375,21 @@ code {
   </div>
 
   <!-- Slide 36 -->
-  <div class="slide slide-grad-3" data-notes="'코드를 모르면 오류수정을 못 한다'는 생각을 깨야 한다. AI에게 증상과 기대 결과를 정확하게 전달하는 것이 핵심이다.">
+  <div class="slide slide-grad-3" data-notes="개발자가 있으면 코드를 직접 보면서 수정하는 게 가장 빠르다. 팀에 개발자가 없다면 비개발자가 AI와 함께 주도한다.">
     <div class="content-body" style="max-width:880px">
       <p class="a sm text-muted">오류수정</p>
       <div class="a divider"></div>
-      <h2 class="a lg" style="margin-top:8px">오류수정은 비개발자가 주도한다</h2>
-      <table class="a data-table">
+      <h2 class="a lg" style="margin-top:8px">개발자가 있다면, 없다면</h2>
+      <p class="a" style="font-size:18px; color:var(--fg-body); margin-top:12px">가능하면 <span class="highlight">개발자가 코드를 직접 보면서</span> 수정하는 것이 가장 좋다.<br>팀에 개발자가 없다면, 비개발자가 AI와 함께 주도한다.</p>
+      <table class="a data-table" style="margin-top:20px">
         <thead>
-          <tr><th>역할</th><th>하는 일</th></tr>
+          <tr><th>상황</th><th>누가 어떻게</th></tr>
         </thead>
         <tbody>
-          <tr><td><strong>비개발자 (주도)</strong></td><td>발견 → 재현 → 지시문 작성 → 확인 → Changelog → <strong>Push</strong></td></tr>
-          <tr><td>개발자 (보조)</td><td>지시문 보완 · 에러 로그 해석 · 배포 환경 점검</td></tr>
+          <tr><td><strong>개발자가 있을 때</strong></td><td>개발자가 코드·에러 로그를 직접 보고 수정 주도</td></tr>
+          <tr><td><strong>개발자가 없을 때</strong></td><td>비개발자가 발견 → 재현 → AI 지시 → 확인 → <strong>Commit + Push</strong></td></tr>
         </tbody>
       </table>
-      <div class="a warn-box" style="margin-top:20px">비개발자 = <strong>발견 · 재현 · 기록 · 확인 · Commit + Push</strong></div>
     </div>
   </div>
 
