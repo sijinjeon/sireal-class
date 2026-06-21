@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>팀 역할 분담 — 해커톤 AI 협업</title>
+<style>
+@font-face {
+  font-family: 'Pretendard Variable';
+  font-weight: 300 700;
+  font-style: normal;
+  font-display: swap;
+  src: url('fonts/PretendardVariable.woff2') format('woff2-variations'),
+       url('fonts/PretendardVariable.woff2') format('woff2');
+}
+:root {
+  --primary:       #f54e00;
+  --ink:           #26251e;
+  --body-color:    #5a5852;
+  --muted:         #807d72;
+  --hairline:      #e6e5e0;
+  --hairline-soft: #efeee8;
+  --canvas:        #f7f7f4;
+  --surface-card:  #ffffff;
+  --surface-strong:#e6e5e0;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body {
+  width: 1280px; height: 720px;
+  overflow: hidden;
+  background: var(--canvas);
+  font-family: 'Pretendard Variable', 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+.slide {
+  width: 1280px; height: 720px;
+  display: flex; flex-direction: column;
+  padding: 48px 72px 40px;
+}
+.section-label {
+  font-size: 12px; font-weight: 500;
+  color: var(--muted); letter-spacing: 0.5px;
+  margin-bottom: 10px;
+}
+.divider-line {
+  width: 100%; height: 1px;
+  background: var(--hairline);
+  margin-bottom: 20px;
+}
+.slide-title {
+  font-size: 32px; font-weight: 700;
+  color: var(--ink); letter-spacing: -0.8px;
+  margin-bottom: 24px;
+}
+.slide-title span { color: var(--primary); }
+
+/* ── table ── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--surface-card);
+  border: 1px solid var(--hairline);
+  border-radius: 14px;
+  overflow: hidden;
+  font-size: 15px;
+}
+thead tr th {
+  padding: 10px 20px;
+  background: var(--surface-strong);
+  font-size: 11px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.8px;
+  color: var(--ink); text-align: left;
+}
+thead tr th.num-col {
+  text-align: center;
+  border-left: 1px solid var(--hairline);
+  font-size: 12px;
+}
+thead tr th.col-3 { color: #2a8264; }
+thead tr th.col-4 { color: #2c5fa8; }
+thead tr th.col-5 { color: #7c3aed; }
+
+tbody tr { border-top: 1px solid var(--hairline-soft); }
+tbody tr:hover { background: #fafaf7; }
+td.role-cell {
+  padding: 14px 20px;
+  font-weight: 600; color: var(--ink);
+  white-space: nowrap; width: 110px;
+}
+td.desc-cell {
+  padding: 14px 20px;
+  color: var(--body-color);
+  line-height: 1.5;
+}
+td.dot-cell {
+  text-align: center;
+  border-left: 1px solid var(--hairline-soft);
+  width: 90px;
+  vertical-align: middle;
+}
+
+/* ── dots ── */
+.dot {
+  display: inline-block;
+  width: 20px; height: 20px;
+  border-radius: 50%;
+}
+/* 전담 (dedicated) */
+.dot.d3 { background: #2a8264; }
+.dot.d4 { background: #2c5fa8; }
+.dot.d5 { background: #7c3aed; }
+/* 겸임 (combined) — half-filled */
+.dot.c3 {
+  background: linear-gradient(to right, #2a8264 50%, transparent 50%);
+  border: 2px solid #2a8264;
+}
+.dot.c4 {
+  background: linear-gradient(to right, #2c5fa8 50%, transparent 50%);
+  border: 2px solid #2c5fa8;
+}
+
+/* ── legend ── */
+.legend {
+  display: flex; align-items: center; gap: 32px;
+  margin-top: 16px; padding-left: 2px;
+}
+.legend-item {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 13px; color: var(--body-color);
+}
+.leg-dot-full {
+  width: 14px; height: 14px; border-radius: 50%;
+  background: var(--ink);
+}
+.leg-dot-half {
+  width: 14px; height: 14px; border-radius: 50%;
+  background: linear-gradient(to right, var(--ink) 50%, transparent 50%);
+  border: 2px solid var(--ink);
+}
+</style>
+</head>
+<body>
+<div class="slide">
+
+  <p class="section-label">소통 창구 만들기</p>
+  <div class="divider-line"></div>
+  <h1 class="slide-title">팀 역할 분담 — <span>누가 무엇을 맡는가</span></h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>역할</th>
+        <th>핵심 책임</th>
+        <th class="num-col col-3">3명</th>
+        <th class="num-col col-4">4명</th>
+        <th class="num-col col-5">5명</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="role-cell">팀장</td>
+        <td class="desc-cell">전체 일정 조율, 회의 진행, 의사결정, 발표 주도</td>
+        <td class="dot-cell"><span class="dot c3" title="기획자와 겸임"></span></td>
+        <td class="dot-cell"><span class="dot d4"></span></td>
+        <td class="dot-cell"><span class="dot d5"></span></td>
+      </tr>
+      <tr>
+        <td class="role-cell">기획자</td>
+        <td class="desc-cell">아이디어 발전, 요구사항 정리(PRD), 딥리서치 주도</td>
+        <td class="dot-cell"><span class="dot c3" title="팀장과 겸임"></span></td>
+        <td class="dot-cell"><span class="dot c4" title="리서처와 겸임"></span></td>
+        <td class="dot-cell"><span class="dot d5"></span></td>
+      </tr>
+      <tr>
+        <td class="role-cell">개발자</td>
+        <td class="desc-cell">구현, 오류수정, GitHub · Vercel 관리</td>
+        <td class="dot-cell"><span class="dot d3"></span></td>
+        <td class="dot-cell"><span class="dot d4"></span></td>
+        <td class="dot-cell"><span class="dot d5"></span></td>
+      </tr>
+      <tr>
+        <td class="role-cell">디자이너</td>
+        <td class="desc-cell">UI/UX, 슬라이드 제작, 시각자료</td>
+        <td class="dot-cell"><span class="dot c3" title="리서처와 겸임"></span></td>
+        <td class="dot-cell"><span class="dot d4"></span></td>
+        <td class="dot-cell"><span class="dot d5"></span></td>
+      </tr>
+      <tr>
+        <td class="role-cell">리서처</td>
+        <td class="desc-cell">시장·사용자 조사, 발표 스크립트 작성</td>
+        <td class="dot-cell"><span class="dot c3" title="디자이너와 겸임"></span></td>
+        <td class="dot-cell"><span class="dot c4" title="기획자와 겸임"></span></td>
+        <td class="dot-cell"><span class="dot d5"></span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="legend">
+    <span class="legend-item">
+      <span class="leg-dot-full" style="background:#2a8264"></span>
+      3명 — ① 팀장+기획자 &nbsp; ② 개발자 &nbsp; ③ 디자이너+리서처
+    </span>
+    <span class="legend-item">
+      <span class="leg-dot-full" style="background:#2c5fa8"></span>
+      4명 — ① 팀장 &nbsp; ② 기획자+리서처 &nbsp; ③ 개발자 &nbsp; ④ 디자이너
+    </span>
+    <span class="legend-item">
+      <span class="leg-dot-full" style="background:#7c3aed"></span>
+      5명 — 각 역할 전담 1인
+    </span>
+    <span class="legend-item" style="margin-left:auto">
+      <span class="leg-dot-half"></span> 겸임 &nbsp;&nbsp;
+      <span class="leg-dot-full" style="background:var(--ink)"></span> 전담
+    </span>
+  </div>
+
+</div>
+</body>
+</html>
