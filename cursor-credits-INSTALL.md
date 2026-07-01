@@ -41,3 +41,33 @@ pnpm dev
 | `MAIL_FROM` | 발신 이메일 (테스트: onboarding@resend.dev) |
 
 `.env.local`은 git에 커밋되지 않습니다.
+
+## CSV 업로드가 안 될 때
+
+앱은 **`checked_in_at`(체크인 시각)이 있는 행만** 업로드합니다. 0명이면 다음 단계가 비어 "작동 안 함"처럼 보입니다.
+
+필수 컬럼: `email`, `first_name`, `last_name`, `checked_in_at`
+
+CSV 진단:
+
+```bash
+node scripts/validate-cursor-credits-csv.mjs "/path/to/cursor.csv"
+```
+
+흔한 원인:
+
+- Luma에서 체크인 없이 CSV만 export
+- 컬럼명 불일치 (Luma export 사용 권장)
+- `checked_in_at` 값이 전부 비어 있음
+
+## Cloud Agent(원격)에서 실행 중일 때
+
+설치 경로: `/workspace/cursor-credits` (원격 Linux)
+
+다른 PC에서 접속:
+
+1. Cursor로 **같은 Cloud Agent 세션** 접속
+2. 원격 터미널에서 `cd /workspace/cursor-credits && pnpm dev` 확인
+3. 해당 PC 브라우저에서 `http://localhost:5173` 접속
+
+Mac 로컬 폴더에 clone하지 않아도 Cursor 포트 포워딩으로 열립니다. 세션이 종료되면 접속 불가.
